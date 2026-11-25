@@ -1,0 +1,12 @@
+schema_version: 1
+status: preliminary-reading-list
+sources:
+  - {name: Rhapsody, url: 'https://github.com/younghanstark/rhapsody'}
+  - {name: ClipSense, url: 'https://github.com/NamanBhatia-NB/ClipSense_AI'}
+  - {name: Chapter-Llama, url: 'https://github.com/lucas-ventura/chapter-llama'}
+  - {name: MAGIC-Video, url: 'https://github.com/lijiazheng0917/MAGIC-video'}
+  - {name: GraphTP, url: 'https://github.com/ppapalampidi/GraphTP'}
+  - {name: NEST, url: 'https://github.com/aliasgerovs/nest'}
+  - {name: Pull Quote Selection, url: 'https://github.com/tannerbohn/AutomaticPullQuoteSelection'}
+  - {name: QMSum, url: 'https://github.com/Yale-LILY/QMSum'}
+  - {name: STEPs, url: 'https://github.com/anshulbshah/STEPs'}

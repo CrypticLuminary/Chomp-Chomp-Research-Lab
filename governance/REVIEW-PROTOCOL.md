@@ -1,0 +1,3 @@
+# Review protocol
+
+Nexus (A00) coordinates independent review. Submit v0.9.0 with pinned base/head commits, source inventory, findings register, actual test results, open questions and integration implications. Review rubric: depth 20; source traceability 20; source-code investigation 20; technical understanding 15; project relevance 10; experimental methodology 10; reproducibility 5. Fabricated claims, untraceable evidence or invalid methodology block approval regardless of score. Reviewer records approve / changes requested / reject with rationale. Only reviewer-approved findings may enter verified knowledge. Merge approval is not production deployment authorization. Main branch rules are procedural, not necessarily enforced by GitHub settings.

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "cycle": "C02",
+  "phase": "K",
+  "approved_findings": [],
+  "note": "Task-local findings are indexed in each task branch; coordinator updates this index after review."
+}

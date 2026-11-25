@@ -1,0 +1,12 @@
+schema_version: 1
+agents:
+  - {id: A00, codename: Nexus, responsibility: coordination}
+  - {id: A01, codename: SegmentLab, task: KR01}
+  - {id: A02, codename: MemoryLab, task: KR02}
+  - {id: A03, codename: NarrativeLab, task: KR03}
+  - {id: A04, codename: InterestLab, task: KR04}
+  - {id: A05, codename: BoundaryLab, task: KR05}
+  - {id: A06, codename: DeepScout, task: KR06}
+  - {id: A07, codename: DataForge, task: KR07}
+  - {id: A08, codename: EvalLab, task: KR08}
+  - {id: A09, codename: Keystone, responsibility: engineering}

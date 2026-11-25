@@ -1,0 +1,68 @@
+schema_version: 1
+cycle: C02
+phase: K
+tasks:
+  - id: KR01
+    agent: A01
+    codename: SegmentLab
+    title: Semantic segmentation
+    directory: research/C02/K/KR01-A01-SegmentLab
+    branch: research/cc-c02-k-kr01-a01-v0.1.0
+    initial_sources: "Chapter-Llama; ChunkyEdit; GEBD"
+    status: planned
+  - id: KR02
+    agent: A02
+    codename: MemoryLab
+    title: Long-video contextual memory
+    directory: research/C02/K/KR02-A02-MemoryLab
+    branch: research/cc-c02-k-kr02-a02-v0.1.0
+    initial_sources: "MAGIC-Video; VideoAgent; Ego4D"
+    status: planned
+  - id: KR03
+    agent: A03
+    codename: NarrativeLab
+    title: Narrative and discourse relationships
+    directory: research/C02/K/KR03-A03-NarrativeLab
+    branch: research/cc-c02-k-kr03-a03-v0.1.0
+    initial_sources: "GraphTP; NEST; argument mining"
+    status: planned
+  - id: KR04
+    agent: A04
+    codename: InterestLab
+    title: Human interestingness
+    directory: research/C02/K/KR04-A04-InterestLab
+    branch: research/cc-c02-k-kr04-a04-v0.1.0
+    initial_sources: "Rhapsody; COHETS; pull quote selection"
+    status: planned
+  - id: KR05
+    agent: A05
+    codename: BoundaryLab
+    title: Contextual boundaries
+    directory: research/C02/K/KR05-A05-BoundaryLab
+    branch: research/cc-c02-k-kr05-a05-v0.1.0
+    initial_sources: "CALF; TimeRefine"
+    status: planned
+  - id: KR06
+    agent: A06
+    codename: DeepScout
+    title: Multimodal discovery and fusion
+    directory: research/C02/K/KR06-A06-DeepScout
+    branch: research/cc-c02-k-kr06-a06-v0.1.0
+    initial_sources: "ClipSense; STEPs; RADAR-X"
+    status: planned
+  - id: KR07
+    agent: A07
+    codename: DataForge
+    title: Dataset and training feasibility
+    directory: research/C02/K/KR07-A07-DataForge
+    branch: research/cc-c02-k-kr07-a07-v0.1.0
+    initial_sources: "Licensing; checkpoints; hardware"
+    status: planned
+  - id: KR08
+    agent: A08
+    codename: EvalLab
+    title: Human preferences and evaluation
+    directory: research/C02/K/KR08-A08-EvalLab
+    branch: research/cc-c02-k-kr08-a08-v0.1.0
+    initial_sources: "ChompBench; ClipLedger"
+    status: planned

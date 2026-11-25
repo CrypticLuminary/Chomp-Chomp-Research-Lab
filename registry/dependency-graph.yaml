@@ -1,0 +1,10 @@
+schema_version: 1
+note: Knowledge tracks run in parallel; these are coordination relationships, not blocking prerequisites.
+relationships:
+  KR01: [KR02, KR03, KR06, KR08]
+  KR02: [KR03, KR05]
+  KR03: [KR04, KR05]
+  KR04: [KR07, KR08]
+  KR05: [KR08]
+  KR06: [KR04, KR08]
+  KR07: [KR08]

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "findings": [],
+  "required_fields": [
+    "finding_id",
+    "task_id",
+    "agent_id",
+    "substage",
+    "version",
+    "title",
+    "description",
+    "evidence_class",
+    "sources",
+    "code_references",
+    "limitations",
+    "relevance",
+    "related_tasks",
+    "review_status",
+    "created_at",
+    "updated_at"
+  ]
+}
