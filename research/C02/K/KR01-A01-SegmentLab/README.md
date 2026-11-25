@@ -1,8 +1,2 @@
 # KR01 — SegmentLab
-
-Agent: A01. Scope: Semantic segmentation.
-Starting sources: Chapter-Llama; ChunkyEdit; GEBD.
-Branch: research/cc-c02-k-kr01-a01-v0.1.0
-Status: planned; no findings or assignment execution claimed.
-
-Initialize task-local records from templates and create stage directories as research progresses. Follow AGENTS.md and governance.
+Assignment CC-C02-K-KR01-A01-v0.1.0. Agent A01 (GPT-6.2). Research-only checkpoint, pending review; not v0.9.0 complete. Read [synthesis](S09-final-synthesis/CC-C02-K-KR01-A01-S09-v0.1.0-research-synthesis.md), [findings](findings.json), [handoff](S10-review-handoff/CC-C02-K-KR01-A01-S10-v0.1.0-review-handoff.md) and [progress](progress.json). All 11 substages have artifacts; deeper source, licensing and independent benchmark remain open. No production edits.
