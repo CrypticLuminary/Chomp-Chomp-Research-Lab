@@ -1,10 +1,28 @@
 {
   "version": "v0.1.0",
-  "stage": "S00",
-  "status": "in-progress",
-  "completed": [
-    "repository verification",
-    "governance review"
-  ],
-  "review": "pending"
+  "stage": "S10",
+  "status": "partial-checkpoint-submitted",
+  "stages": {
+    "S00": "initialized",
+    "S01": "draft",
+    "S02": "33 screened, 12 focused dossiers; detailed results incomplete",
+    "S03": "3 partial external code audits, production read-only, 6 parser checks",
+    "S04": "draft",
+    "S05": "partial; license and checkpoint gaps",
+    "S06": "draft",
+    "S07": "proposal",
+    "S08": "protocol only",
+    "S09": "draft synthesis",
+    "S10": "early-review handoff"
+  },
+  "model_inference": false,
+  "real_footage": false,
+  "findings_count": 12,
+  "review": "pending",
+  "next": [
+    "trace full multimodal source and evaluation",
+    "verify licenses/compute",
+    "freeze independent gold",
+    "run matched benchmarks"
+  ]
 }
