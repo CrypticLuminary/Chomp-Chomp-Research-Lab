@@ -1,0 +1,484 @@
+{
+  "schema_version": 1,
+  "findings": [
+    {
+      "finding_id": "CC-C02-K-KR02-F001",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "Director lacks searchable semantic memory",
+      "description": "90s/60s windows, last 12 leads; range reads require already localized timestamps, cap four and 180s; both directions allowed within section.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/c04157d129af2a3585a7efef9ddb32d1c5fb29fa/chomp/director/semantic.py#L178-L293",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "scan_dialogue",
+        "investigate"
+      ],
+      "limitations": "Source static audit; no runtime rerun.",
+      "relevance": "Add sidecar query-to-interval retrieval.",
+      "related_tasks": [
+        "KR01",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F002",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S02",
+      "version": "v0.1.0",
+      "title": "MAGIC-Video combines multimodal graph and narrative chain",
+      "description": "Authors report improvements of 10.1/7.4/5.9 points over prior best agentic systems on EgoLifeQA/Ego-R1/MM-Lifelong.",
+      "evidence_class": "REPORTED",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08271v1",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "Sec.3–4"
+      ],
+      "limitations": "Question-answering, not editorial discovery; not independently reproduced.",
+      "relevance": "Investigate query-directed evidence recovery.",
+      "related_tasks": [
+        "KR03",
+        "KR06",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F003",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S05",
+      "version": "v0.1.0",
+      "title": "MAGIC offline preprocessing is expensive",
+      "description": "Appendix I estimates ~4805 neural operations per captioned hour, including 3600 visual captions; 76.4h actual captioned MM-Lifelong Month subset. Four-hour extrapolation ~19220 ops before NMC.",
+      "evidence_class": "REPORTED",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08271v1",
+          "accessed_at": "2026-11-25"
+        },
+        {
+          "url": "https://github.com/lijiazheng0917/MAGIC-video/blob/632d7fcd1574deb9f4b1b07794862c0beb088bd6/README.md",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "Appendix I, Table 15"
+      ],
+      "limitations": "Operation count not API call count, latency or dollars.",
+      "relevance": "Favor selective modalities and account total cost.",
+      "related_tasks": [
+        "KR06",
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F004",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "MAGIC graph retrieval is undirected PPR × cosine with quotas",
+      "description": "Combined seed text/BM25/visual, PPR undirected, rerank by shifted text cosine, result caps 8/4/3/0 for 30s/3min/10min/1h.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/lijiazheng0917/MAGIC-video/blob/632d7fcd1574deb9f4b1b07794862c0beb088bd6/src/worldmm/memory/unified/retrieval.py#L22-L244",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "build_reset_vector, _run_ppr, _multiscale_filter"
+      ],
+      "limitations": "Static trace; no upstream execution. Association does not prove identity or causal support.",
+      "relevance": "Graph optional ablation, raw rescue required.",
+      "related_tasks": [
+        "KR03",
+        "KR06"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F005",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "MAGIC uses dataset-specific clocks and derived IDs",
+      "description": "EgoLife DHHMMSSFF, broadcast float seconds, visual IDs integer seconds; normalize first person to subject.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/lijiazheng0917/MAGIC-video/blob/632d7fcd1574deb9f4b1b07794862c0beb088bd6/src/worldmm/memory/unified/nodes.py#L35-L206",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "GraphNode; make_visual_id"
+      ],
+      "limitations": "No multi-speaker identity validation; static audit.",
+      "relevance": "Use source-scoped integer ms and occurrence refs.",
+      "related_tasks": [
+        "KR01",
+        "KR03",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F006",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "MAGIC controller has bounded search and node dedup",
+      "description": "WorldMemory._answer_unified uses search/answer with max rounds/errors; direct temporal reads; graph results dedup by node ID; visual frame budget.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/lijiazheng0917/MAGIC-video/blob/632d7fcd1574deb9f4b1b07794862c0beb088bd6/src/worldmm/memory/memory.py#L1020-L1205",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "_answer_unified"
+      ],
+      "limitations": "Final chain injection and stopping path not fully traced.",
+      "relevance": "Adapt bounded evidence planning; do not force QA answer.",
+      "related_tasks": [
+        "KR04",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F007",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "Keystone evidence and budgets are reusable",
+      "description": "Content-derived research evidence IDs bind source interval, modality, provenance and fingerprint; default total120 allocated 115/4/1; cache key includes source/provider/phase/schema/prompt.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/c04157d129af2a3585a7efef9ddb32d1c5fb29fa/chomp/research_interfaces.py#L24-L73",
+          "accessed_at": "2026-11-25"
+        },
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/c04157d129af2a3585a7efef9ddb32d1c5fb29fa/chomp/director/semantic.py#L68-L176",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "validate_evidence; BudgetPolicy; EditorialCalls"
+      ],
+      "limitations": "No production semantic acceptance expansion.",
+      "relevance": "Add adapter and review; keep immutable evidence.",
+      "related_tasks": [
+        "KR01",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F008",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "RAPTOR has both collapsed and top-down tree retrieval",
+      "description": "Parent summaries attach child IDs; collapsed search ranks all nodes then breaks when one exceeds remaining token budget; top-down narrows to selected children.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/parthsarthi03/raptor/blob/7da1d48a7e1d7dec61a63c9d9aae84e2dfaa5767/raptor/tree_retriever.py#L158-L251",
+          "accessed_at": "2026-11-25"
+        },
+        {
+          "url": "https://github.com/parthsarthi03/raptor/blob/7da1d48a7e1d7dec61a63c9d9aae84e2dfaa5767/raptor/cluster_tree_builder.py#L55-L151",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "retrieve_information; construct_tree"
+      ],
+      "limitations": "No upstream inference; license exact file not found.",
+      "relevance": "Independent raw retrieval and token packing ablation.",
+      "related_tasks": [
+        "KR01",
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F009",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "HippoRAG 2 has dense rescue but repeated text metadata hazard",
+      "description": "Index uses content hash for chunk ID and overwrites conflicting metadata with warning; retrieves dense passages when fact rerank empty.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/OSU-NLP-Group/HippoRAG/blob/d5c8329422e0a0b834a15874545cb6a74b4f9b26/src/hipporag/HippoRAG.py#L499-L594",
+          "accessed_at": "2026-11-25"
+        },
+        {
+          "url": "https://github.com/OSU-NLP-Group/HippoRAG/blob/d5c8329422e0a0b834a15874545cb6a74b4f9b26/src/hipporag/HippoRAG.py#L704-L795",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "index; retrieve"
+      ],
+      "limitations": "Current code HippoRAG 2, not original 2024 exact implementation.",
+      "relevance": "Preserve same-text occurrences by time and use raw rescue.",
+      "related_tasks": [
+        "KR01",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F010",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "GraphRAG separates context token allocation",
+      "description": "LocalSearchMixedContext budgets raw text, community summaries and entity/relationship data independently, returns context records.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/microsoft/graphrag/blob/bc7c828d23f50f030f048eaf6d2b3ebe5e537958/packages/graphrag/graphrag/query/structured_search/local_search/mixed_context.py#L91-L223",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "build_context"
+      ],
+      "limitations": "No indexed experiment; construction cost unresolved.",
+      "relevance": "Reserve raw evidence budget separately.",
+      "related_tasks": [
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F011",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "VideoAgent QA parsing can randomize invalid outputs",
+      "description": "Out-of-range answer/confidence returns random value; cache miss prompts input before API call; controller proposes evidence frame descriptions.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/unique-chan/VideoAgent2/blob/52ff8f0237a02f3ed2a8e449962745f15277cc67/main.py#L23-L190",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "parse_text_find_number; parse_text_find_confidence; get_llm_response"
+      ],
+      "limitations": "Partial static audit; no model execution.",
+      "relevance": "Reject random fallback; adapt search description only.",
+      "related_tasks": [
+        "KR06",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F012",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "MovieChat uses compressed visual feature memory",
+      "description": "Short frame buffer merges adjacent similar representations and appends to long memory; separate visual path caps long buffer.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/wenhaochai/MovieChat/blob/ba9bb802ea209c6d8e8b4333ec917ae3aee55b1d/MovieChat/models/moviechat.py#L266-L403",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "encode_short_memory_frame; encode_long_video"
+      ],
+      "limitations": "No raw provenance retrieval established; model weights not run.",
+      "relevance": "Do not replace evidence store with learned tokens.",
+      "related_tasks": [
+        "KR06",
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F013",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S08",
+      "version": "v0.1.0",
+      "title": "Synthetic E001 flat retrieval finds 10 of 12 essential references",
+      "description": "10 positive cases; BM25, lexical cosine, RRF, entity and graph each hit 10/12, all essential in 8/10. Nearby hits 0/12, deliberately remote design.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/3efe288144102afc6b02455de9a2315b853e7363/research/C02/K/KR02-A02-MemoryLab/S08-experimental-protocol/CC-C02-K-KR02-A02-S08-v0.1.0-synthetic-retrieval-results.json",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "E001 script and results"
+      ],
+      "limitations": "Authored synthetic queries, no independent gold, dense model, matched tokens or real footage. REPRODUCED means local mechanics executed, not upstream score reproduction.",
+      "relevance": "Establish flat baseline; no graph superiority claim.",
+      "related_tasks": [
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F014",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S08",
+      "version": "v0.1.0",
+      "title": "Synthetic summary gate misses evidence; raw rescue partly recovers",
+      "description": "Hierarchy 7/12; hierarchy raw rescue 9/12; all non-nearby methods return empty in 1/2 no-support cases.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/3efe288144102afc6b02455de9a2315b853e7363/research/C02/K/KR02-A02-MemoryLab/S08-experimental-protocol/CC-C02-K-KR02-A02-S08-v0.1.0-synthetic-retrieval-results.json",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "E001 script and results"
+      ],
+      "limitations": "Toy first-five-token compression; not actual abstractive hierarchy. No abstention classifier.",
+      "relevance": "Never make summary-only retrieval mandatory.",
+      "related_tasks": [
+        "KR01",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F015",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S07",
+      "version": "v0.1.0",
+      "title": "Separate interpretation context from viewer-essential clip spans",
+      "description": "Sidecar search returns source refs, unresolved requirements and budget; no automatic expansion of final contiguous clip.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/125a7bb81e13904d181701d6e55f198172cacea6/research/C02/K/KR01-A01-SegmentLab/S07-transfer-design/CC-C02-K-KR01-A01-S07-v0.2.0-annotation-contract.md",
+          "accessed_at": "2026-11-25"
+        },
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/c04157d129af2a3585a7efef9ddb32d1c5fb29fa/chomp/director/selection.py#L65-L75",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "containing_span; KR01 F023"
+      ],
+      "limitations": "Proposed contract, no production integration or peer approval.",
+      "relevance": "Allow distant evidence without unfaithful extraction.",
+      "related_tasks": [
+        "KR01",
+        "KR03",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR02-F016",
+      "task_id": "KR02",
+      "agent_id": "A02",
+      "substage": "S07",
+      "version": "v0.1.0",
+      "title": "Progressive architecture and explicit stopping",
+      "description": "Start with global lexical and temporal index; test parallel hierarchy, then graph only if gains. Stop closed, outside source, no new evidence, budget exhausted or unresolved.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2605.08271v1",
+          "accessed_at": "2026-11-25"
+        },
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/3efe288144102afc6b02455de9a2315b853e7363/research/C02/K/KR02-A02-MemoryLab/S08-experimental-protocol/CC-C02-K-KR02-A02-S08-v0.1.0-synthetic-retrieval-results.json",
+          "accessed_at": "2026-11-25"
+        }
+      ],
+      "code_references": [
+        "S07 proposed design"
+      ],
+      "limitations": "Not approved; no agentic query generation measured.",
+      "relevance": "Constrain investigative cost and false closure.",
+      "related_tasks": [
+        "KR04",
+        "KR05",
+        "KR06",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    }
+  ]
+}
