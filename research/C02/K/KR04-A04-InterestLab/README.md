@@ -1,8 +1,2 @@
 # KR04 — InterestLab
-
-Agent: A04. Scope: Human interestingness.
-Starting sources: Rhapsody; COHETS; pull quote selection.
-Branch: research/cc-c02-k-kr04-a04-v0.1.0
-Status: planned; no findings or assignment execution claimed.
-
-Initialize task-local records from templates and create stage directories as research progresses. Follow AGENTS.md and governance.
+Assignment CC-C02-K-KR04-A04-v0.1.0. Preliminary checkpoint pending Nexus review. Base d0dbef6583165f781f217a095f50993faad742e8. Read [synthesis](S09-final-synthesis/CC-C02-K-KR04-A04-S09-v0.1.0-preliminary-synthesis.md), [source audit](S03-source-code-audit/CC-C02-K-KR04-A04-S03-v0.1.0-rhapsody-clipsense-production.md), [findings](findings.json), [progress](progress.json), [handoff](S10-review-handoff/CC-C02-K-KR04-A04-S10-v0.1.0-checkpoint-handoff.md). All stages have draft artifacts, but only S00 is complete. No production changes.

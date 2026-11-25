@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "preliminary_checkpoint",
+  "current_substage": "S03",
+  "completed_substages": [
+    "S00"
+  ],
+  "draft_artifacts": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10"
+  ],
+  "blockers": [
+    "Gated dataset rights/access and checkpoint unresolved",
+    "No real independent annotations",
+    "DeepScout full audit and six-source target incomplete",
+    "Full literature and model inventory incomplete",
+    "Local network DNS blocked clone"
+  ],
+  "updated_at": "2026-11-25"
+}

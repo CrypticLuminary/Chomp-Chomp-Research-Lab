@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "required_fields": [
+    "finding_id",
+    "task_id",
+    "agent_id",
+    "substage",
+    "version",
+    "title",
+    "description",
+    "evidence_class",
+    "sources",
+    "code_references",
+    "limitations",
+    "relevance",
+    "related_tasks",
+    "review_status",
+    "created_at",
+    "updated_at"
+  ],
+  "findings": [
+    {
+      "finding_id": "CC-C02-K-KR04-F001",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S01",
+      "version": "v0.1.0",
+      "title": "Interest is not mere novelty",
+      "description": "Novelty and comprehensibility are appraisals associated with interest.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/15755222/"
+      ],
+      "code_references": [],
+      "limitations": "Psychology not a calibrated clip model",
+      "relevance": "Context-aware interest hypotheses",
+      "related_tasks": [
+        "KR02"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F002",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S02",
+      "version": "v0.1.0",
+      "title": "Rhapsody domain-specific supervision",
+      "description": "HuBERT fine-tuned F1 .197 vs text-only .163 and Gemini text .065 on 2467 nonempty replay-positive episodes.",
+      "evidence_class": "REPORTED",
+      "sources": [
+        "https://arxiv.org/html/2505.19429v2"
+      ],
+      "code_references": [],
+      "limitations": "Replay labels; random episode split; not reproduced",
+      "relevance": "Test weak pretraining, not final clip approval",
+      "related_tasks": [
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F003",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "Replay label construction",
+      "description": "First bin replaced by second, strict >.5 and top20.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/utils.py"
+      ],
+      "code_references": [
+        "graph_to_indices"
+      ],
+      "limitations": "Not human preference",
+      "relevance": "Separate target labels",
+      "related_tasks": [
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F004",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "QLoRA segment classifier",
+      "description": "Marker hidden state plus optional projected audio and linear BCE head.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/ft_llm/train.py",
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/methods/ft_llm.py"
+      ],
+      "code_references": [
+        "main",
+        "predict_single"
+      ],
+      "limitations": "Static audit; no neural run",
+      "relevance": "Reproduce lightweight training",
+      "related_tasks": [
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F005",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "Empty GT excluded by default",
+      "description": "Train validation and evaluator skip empty labels by default.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/evaluate.py",
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/ft_llm/train.py"
+      ],
+      "code_references": [
+        "main",
+        "validate"
+      ],
+      "limitations": "Optional include_empty_gt in evaluation; replay-negative not editorial-negative",
+      "relevance": "Explicit routine-VOD evaluation",
+      "related_tasks": [
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F006",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "Potential truncation misalignment",
+      "description": "Tokenizer truncates at max length while labels and audio use original bins.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/methods/ft_llm.py",
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/ft_llm/train.py"
+      ],
+      "code_references": [
+        "predict_single",
+        "main"
+      ],
+      "limitations": "Potential failure not executed",
+      "relevance": "Require alignment assertions",
+      "related_tasks": [
+        "KR01"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F007",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "ClipSense consensus bias remains",
+      "description": "Mean and boundary normalized by available modalities, diversity denominator four; inherited context is not verification.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/pipeline/mter/reasoner.py"
+      ],
+      "code_references": [
+        "_evaluate_candidate_interval"
+      ],
+      "limitations": "Static, no full runtime",
+      "relevance": "Independent lanes; separate closure",
+      "related_tasks": [
+        "KR06",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F008",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "ClipSense pilot lacks visual/prosody",
+      "description": "Five episodes; K<=3 transcript mAP .1265 vs MTER .0601, unequal duration. At K5 MTER F1 exceeds text.",
+      "evidence_class": "REPORTED",
+      "sources": [
+        "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/evaluation/rhapsody_sub3600_eval_output_final/EVALUATION_REPORT.md"
+      ],
+      "code_references": [],
+      "limitations": "Reported small linguistic-only pilot; not reproduced",
+      "relevance": "No full multimodal superiority claim",
+      "related_tasks": [
+        "KR06",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F009",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "Existing Director already supports open dialogue discovery",
+      "description": "90s window, 60s stride, bounded retrieval, explicit no forced quota; visuals/chat unavailable in policy.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/c04157d129af2a3585a7efef9ddb32d1c5fb29fa/chomp/director/semantic.py",
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/c04157d129af2a3585a7efef9ddb32d1c5fb29fa/chomp/director/selection.py"
+      ],
+      "code_references": [
+        "SCAN",
+        "DECIDE",
+        "DECISION_SCHEMA"
+      ],
+      "limitations": "Partial read not executed",
+      "relevance": "Reuse existing interface",
+      "related_tasks": [
+        "KR02",
+        "KR06"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F010",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S05",
+      "version": "v0.1.0",
+      "title": "Rhapsody commercial eligibility unresolved",
+      "description": "Gated 65.8GB listing, paper academic-use ethics, code license separate; weights unverified.",
+      "evidence_class": "OPEN",
+      "sources": [
+        "https://huggingface.co/datasets/yhpark/rhapsody",
+        "https://arxiv.org/html/2505.19429v2"
+      ],
+      "code_references": [],
+      "limitations": "No gated access or model training",
+      "relevance": "Rights gate",
+      "related_tasks": [
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F011",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S08",
+      "version": "v0.1.0",
+      "title": "Replay/metric edge-case probes",
+      "description": "Transcribed equivalent operations: intro correction drops first-only peak; strict threshold excludes equality; duplicate AP=2.0.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/utils.py",
+        "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/metrics.py"
+      ],
+      "code_references": [
+        "E001 probe.py"
+      ],
+      "limitations": "Synthetic CPU; not direct upstream module or real predictions",
+      "relevance": "Dedup, range validation and test empty labels",
+      "related_tasks": [
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F012",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S08",
+      "version": "v0.1.0",
+      "title": "Consensus arithmetic sensitivity",
+      "description": "One active lane subtotal .5625/.3125/.1875 for 1/2/4 globally available lanes.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/pipeline/mter/reasoner.py"
+      ],
+      "code_references": [
+        "E001 probe.py"
+      ],
+      "limitations": "Formula-only synthetic, not full reasoner output",
+      "relevance": "Test modality masks and isolated interest",
+      "related_tasks": [
+        "KR06"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F013",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S07",
+      "version": "v0.1.0",
+      "title": "InterestNet hybrid and alternatives",
+      "description": "Independent candidate lanes, evidence-backed hypotheses and contextual verification; separate replay and human approval.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/tree/125a7bb81e13904d181701d6e55f198172cacea6/research/C02/K/KR01-A01-SegmentLab",
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/c04157d129af2a3585a7efef9ddb32d1c5fb29fa/chomp/research_interfaces.py"
+      ],
+      "code_references": [],
+      "limitations": "Not tested, no production approval",
+      "relevance": "Compare training-free, lightweight and PEFT",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR05",
+        "KR06",
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    }
+  ]
+}
