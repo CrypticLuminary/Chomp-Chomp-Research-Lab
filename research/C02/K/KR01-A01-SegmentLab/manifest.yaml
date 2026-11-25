@@ -1,0 +1,19 @@
+schema_version: 1
+project: Chomp-Chomp
+project_id: CC
+cycle: C02
+phase: K
+task_id: KR01
+agent_id: A01
+codename: SegmentLab
+research_version: v0.1.0
+status: in-progress
+agent_model: GPT-6.2
+execution_environment: ChatGPT with GitHub connector, web search and Python sandbox
+repository: CrypticLuminary/Chomp-Chomp-Research-Lab
+branch: research/cc-c02-k-kr01-a01-v0.1.0
+base_commit: d0dbef6583165f781f217a095f50993faad742e8
+dependencies: [KR02, KR03, KR06, KR08]
+reviewer: A00
+review_status: pending
+execution_date: 2026-11-25
