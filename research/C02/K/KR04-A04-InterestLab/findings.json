@@ -342,6 +342,168 @@
       "review_status": "pending",
       "created_at": "2026-11-25",
       "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F014",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "Pull quote inclusion is learnable without audio",
+      "description": "SimplePQModel fits logistic regression on sentence encodings and binary editor inclusion; macro per-article ROC-AUC; FlexiblePQModel BCE.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/tannerbohn/AutomaticPullQuoteSelection/blob/74d33a4407ce436a46d33ed8b5e66421168a534c/models/SimplePQModel.py",
+        "https://github.com/tannerbohn/AutomaticPullQuoteSelection/blob/74d33a4407ce436a46d33ed8b5e66421168a534c/models/FlexiblePQModel.py",
+        "https://github.com/tannerbohn/AutomaticPullQuoteSelection/blob/74d33a4407ce436a46d33ed8b5e66421168a534c/utils/Evaluator.py"
+      ],
+      "code_references": [
+        "fit",
+        "predict_article",
+        "evaluate"
+      ],
+      "limitations": "Written edited articles; no real audio; no independent run",
+      "relevance": "Test text-only frozen encoder and editorial labels",
+      "related_tasks": [
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F015",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "PDVC event localization is not interest",
+      "description": "Hungarian matching over class, box and GIoU costs; focal class, count, box and overlap losses.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/ttengwang/PDVC/blob/0b025c84f42fe27da51c312e8871c4b19628a04c/pdvc/matcher.py",
+        "https://github.com/ttengwang/PDVC/blob/0b025c84f42fe27da51c312e8871c4b19628a04c/pdvc/criterion.py"
+      ],
+      "code_references": [
+        "HungarianMatcher.forward",
+        "SetCriterion.loss_labels",
+        "SetCriterion.loss_boxes"
+      ],
+      "limitations": "Partial static trace, no caption head or training execution",
+      "relevance": "Independent visual events as candidate evidence",
+      "related_tasks": [
+        "KR01",
+        "KR06"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F016",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "Moment-DETR salience uses preference-like hinge",
+      "description": "Video memory linear saliency projection; annotator scores aggregated to select pos/neg; margin hinge + span/class losses.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/moment_detr/model.py",
+        "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/moment_detr/start_end_dataset.py"
+      ],
+      "code_references": [
+        "loss_saliency",
+        "get_saliency_labels"
+      ],
+      "limitations": "Query-conditioned relevance; no inference or checkpoint test",
+      "relevance": "Adapt pairwise loss to audience-conditioned editorial labels",
+      "related_tasks": [
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F017",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "MUStARD contextual ablation transferable",
+      "description": "RBF SVM on concatenated BERT/GloVe, audio, video and optional context/author; stratified CV and held-out show split.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/soujanyaporia/MUStARD/blob/b34b5134beeec42a36cdac79330637de9cc9894e/train_svm.py",
+        "https://github.com/soujanyaporia/MUStARD/blob/b34b5134beeec42a36cdac79330637de9cc9894e/data_loader.py",
+        "https://github.com/soujanyaporia/MUStARD/blob/b34b5134beeec42a36cdac79330637de9cc9894e/config.py"
+      ],
+      "code_references": [
+        "train_io",
+        "svm_train",
+        "speaker_independent_split"
+      ],
+      "limitations": "Scripted dataset, short context; no editorial ranking or training executed",
+      "relevance": "Context ablation and source-disjoint holdout",
+      "related_tasks": [
+        "KR02",
+        "KR03"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F018",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "RADAR-X allocation is complementary not editorial inference",
+      "description": "Typed overlap/link grouping, lane ranks, max rank percentile plus optional block/lane balance, gap exploration; candidate remains unverified.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/66430342237bb2c96118e9cbb14ff865b713ebcd/chomp/research/radar_x.py"
+      ],
+      "code_references": [
+        "Evidence",
+        "discover",
+        "adapt"
+      ],
+      "limitations": "No semantic vision or acoustic provider in adapter; fixed typed thresholds, global budget and synthetic evaluation",
+      "relevance": "InterestNet should emit semantic hypotheses/evidence for RADAR-X, verify downstream",
+      "related_tasks": [
+        "KR06"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR04-F019",
+      "task_id": "KR04",
+      "agent_id": "A04",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "RADAR-X low-budget tradeoff",
+      "description": "Reported synthetic 144 events: budget10 weighted/RRF 63 vs adaptive50; budget40 all three 135 vs baseline126. No real footage/human labels.",
+      "evidence_class": "REPORTED",
+      "sources": [
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/66430342237bb2c96118e9cbb14ff865b713ebcd/docs/research/DS-01-results-summary.json"
+      ],
+      "code_references": [],
+      "limitations": "Reported by other agent; not reproduced; only synthetic observations, not actual multimodal inference",
+      "relevance": "Do not mandate adaptive allocation; compare budgets",
+      "related_tasks": [
+        "KR06",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
     }
   ]
 }

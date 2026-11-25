@@ -1,2 +1,4 @@
 # KR04 — InterestLab
 Assignment CC-C02-K-KR04-A04-v0.1.0. Preliminary checkpoint pending Nexus review. Base d0dbef6583165f781f217a095f50993faad742e8. Read [synthesis](S09-final-synthesis/CC-C02-K-KR04-A04-S09-v0.1.0-preliminary-synthesis.md), [source audit](S03-source-code-audit/CC-C02-K-KR04-A04-S03-v0.1.0-rhapsody-clipsense-production.md), [findings](findings.json), [progress](progress.json), [handoff](S10-review-handoff/CC-C02-K-KR04-A04-S10-v0.1.0-checkpoint-handoff.md). All stages have draft artifacts, but only S00 is complete. No production changes.
+
+Additional [cross-industry and RADAR-X source traces](S03-source-code-audit/CC-C02-K-KR04-A04-S03-v0.1.0-cross-industry-and-radar-addendum.md). 22 screened records; 19 findings; 6 external partial static audits. Draft PR [#2](https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/pull/2).

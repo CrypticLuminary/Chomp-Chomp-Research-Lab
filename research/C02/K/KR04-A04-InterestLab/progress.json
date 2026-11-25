@@ -20,9 +20,12 @@
   "blockers": [
     "Gated dataset rights/access and checkpoint unresolved",
     "No real independent annotations",
-    "DeepScout full audit and six-source target incomplete",
+    "Six external partial static source traces complete; full training/inference/license audits incomplete",
     "Full literature and model inventory incomplete",
     "Local network DNS blocked clone"
   ],
-  "updated_at": "2026-11-25"
+  "updated_at": "2026-11-25",
+  "source_records_screened": 22,
+  "findings_count": 19,
+  "draft_pr": 2
 }
