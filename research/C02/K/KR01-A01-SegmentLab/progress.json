@@ -1,28 +1,30 @@
 {
-  "version": "v0.1.0",
+  "version": "v0.2.0",
   "stage": "S10",
-  "status": "partial-checkpoint-submitted",
+  "status": "r01-expanded-draft",
   "stages": {
     "S00": "initialized",
-    "S01": "draft",
-    "S02": "33 screened, 12 focused dossiers; detailed results incomplete",
-    "S03": "3 partial external code audits, production read-only, 6 parser checks",
+    "S01": "canonical question register; 15 IDs",
+    "S02": "CausalChapter mathematical dossier expanded",
+    "S03": "multimodal trace and four alternative audits; 8 direct original parser probes; CausalChapter LCDS unresolved",
     "S04": "draft",
-    "S05": "partial; license and checkpoint gaps",
+    "S05": "license text and adapter publication records verified; artifact access and actual resources pending",
     "S06": "draft",
-    "S07": "proposal",
-    "S08": "protocol only",
-    "S09": "draft synthesis",
-    "S10": "early-review handoff"
+    "S07": "refined annotation contract proposed; peer review pending",
+    "S08": "six CPU synthetic baselines; no independent gold or LLM inference",
+    "S09": "R01 synthesis",
+    "S10": "coordination requests recorded; review pending"
   },
   "model_inference": false,
   "real_footage": false,
-  "findings_count": 12,
-  "review": "pending",
+  "findings_count": 27,
+  "review": "v0.1.0 R01 preliminary accepted 72/100; v0.2.0 pending",
   "next": [
-    "trace full multimodal source and evaluation",
-    "verify licenses/compute",
-    "freeze independent gold",
-    "run matched benchmarks"
-  ]
+    "verify actual licensed checkpoint access and CausalChapter provenance/LCDS",
+    "obtain peer feedback KR02 KR03 KR05 KR07 KR08",
+    "freeze independently annotated authorized samples",
+    "run matched pretrained and structured semantic baselines without paid resources"
+  ],
+  "questions_count": 15,
+  "reviewed_commit": "ab9c64b794adeb922016f79be299dd256597fe5c"
 }
