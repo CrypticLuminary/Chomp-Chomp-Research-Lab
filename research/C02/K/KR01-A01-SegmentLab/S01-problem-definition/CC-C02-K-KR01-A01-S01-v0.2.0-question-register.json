@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "version": "v0.2.0",
+  "rule": "Canonical IDs preserve S01 original meanings. S10 local duplicate labels are superseded aliases scoped to the original file; never reuse or resolve unqualified historical IDs without provenance.",
+  "questions": [
+    {
+      "id": "CC-C02-K-KR01-Q001",
+      "question": "Can semantic units recover complete thoughts and visual actions better than fixed windows at matched downstream budgets?",
+      "origin": "S01 v0.1.0",
+      "status": "open",
+      "notes": "E002 synthetic L3 only; needs L2 and visual gold",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q002",
+      "question": "Which resolutions must overlap?",
+      "origin": "S01 v0.1.0",
+      "status": "open",
+      "notes": "Independent timelines and nested L2 proposed",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q003",
+      "question": "Which observable evidence can ground a boundary?",
+      "origin": "S01 v0.1.0",
+      "status": "open",
+      "notes": "Evidence identifiers and acceptable ranges proposed",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q004",
+      "question": "How does missing speech change allocation?",
+      "origin": "S01 v0.1.0",
+      "status": "open",
+      "notes": "Independent visual rescue lane",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q005",
+      "question": "What is the cost of context expansion?",
+      "origin": "S01 v0.1.0",
+      "status": "open",
+      "notes": "No local model timing; count extraction and interventions",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q006",
+      "question": "Which L2 definition and acceptable ranges do KR05/KR08 need?",
+      "origin": "S10 v0.1.0 local Q001",
+      "status": "proposed-answer",
+      "notes": "R01 annotation contract; peer review pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q007",
+      "question": "Can independent timelines cross coarse topics without forced containment?",
+      "origin": "S10 v0.1.0 local Q002",
+      "status": "proposed-answer",
+      "notes": "Yes as a design proposal; empirical impact open; related Q002",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q008",
+      "question": "Should Chapter-Llama serve coarse indexing or fine model tuning?",
+      "origin": "S10 v0.1.0 local Q003",
+      "status": "open",
+      "notes": "Coarse indexing comparator first",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q009",
+      "question": "What independent visual rescue budget is affordable?",
+      "origin": "S10 v0.1.0 local Q004",
+      "status": "open",
+      "notes": "Frame cost needs measurement",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q010",
+      "question": "Which authorized creator-disjoint footage and annotation hours are available?",
+      "origin": "S10 v0.1.0 local Q005",
+      "status": "open",
+      "notes": "No authorized real VODs supplied",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q011",
+      "question": "Can KR07 verify model/data licenses and GPU context cost?",
+      "origin": "S10 v0.1.0 local Q006",
+      "status": "open",
+      "notes": "Rights ledger published; peer confirmation pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q012",
+      "question": "Should Nexus approve the provisional schema or align with KR02/03/06 first?",
+      "origin": "S10 v0.1.0 local Q007",
+      "status": "open",
+      "notes": "Cross-agent review needed",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q013",
+      "question": "Can removing/restoring context detect essential meaning loss rather than wording change?",
+      "origin": "R01 priority 2",
+      "status": "open",
+      "notes": "Test group removals and negative controls",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q014",
+      "question": "Can CausalChapter full LCDS training and inference be reproduced from the located release?",
+      "origin": "R01 priority 2",
+      "status": "open",
+      "notes": "Inspected boundary modules lacked reconstruction path; release uses fixed predictions",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "id": "CC-C02-K-KR01-Q015",
+      "question": "How robust are lexical and cheap embeddings on independent gold?",
+      "origin": "R01 priority 4",
+      "status": "open",
+      "notes": "Negative toy results; no pretrained embedding or structured LLM tested",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    }
+  ],
+  "superseded_aliases": [
+    {
+      "document": "S10-review-handoff/CC-C02-K-KR01-A01-S10-v0.1.0-review-handoff.md",
+      "revision": "ab9c64b794adeb922016f79be299dd256597fe5c",
+      "local_id": "Q001",
+      "canonical_id": "CC-C02-K-KR01-Q006",
+      "reason": "Collision with original S01 IDs; preserve original wording"
+    },
+    {
+      "document": "S10-review-handoff/CC-C02-K-KR01-A01-S10-v0.1.0-review-handoff.md",
+      "revision": "ab9c64b794adeb922016f79be299dd256597fe5c",
+      "local_id": "Q002",
+      "canonical_id": "CC-C02-K-KR01-Q007",
+      "reason": "Collision with original S01 IDs; preserve original wording"
+    },
+    {
+      "document": "S10-review-handoff/CC-C02-K-KR01-A01-S10-v0.1.0-review-handoff.md",
+      "revision": "ab9c64b794adeb922016f79be299dd256597fe5c",
+      "local_id": "Q003",
+      "canonical_id": "CC-C02-K-KR01-Q008",
+      "reason": "Collision with original S01 IDs; preserve original wording"
+    },
+    {
+      "document": "S10-review-handoff/CC-C02-K-KR01-A01-S10-v0.1.0-review-handoff.md",
+      "revision": "ab9c64b794adeb922016f79be299dd256597fe5c",
+      "local_id": "Q004",
+      "canonical_id": "CC-C02-K-KR01-Q009",
+      "reason": "Collision with original S01 IDs; preserve original wording"
+    },
+    {
+      "document": "S10-review-handoff/CC-C02-K-KR01-A01-S10-v0.1.0-review-handoff.md",
+      "revision": "ab9c64b794adeb922016f79be299dd256597fe5c",
+      "local_id": "Q005",
+      "canonical_id": "CC-C02-K-KR01-Q010",
+      "reason": "Collision with original S01 IDs; preserve original wording"
+    },
+    {
+      "document": "S10-review-handoff/CC-C02-K-KR01-A01-S10-v0.1.0-review-handoff.md",
+      "revision": "ab9c64b794adeb922016f79be299dd256597fe5c",
+      "local_id": "Q006",
+      "canonical_id": "CC-C02-K-KR01-Q011",
+      "reason": "Collision with original S01 IDs; preserve original wording"
+    },
+    {
+      "document": "S10-review-handoff/CC-C02-K-KR01-A01-S10-v0.1.0-review-handoff.md",
+      "revision": "ab9c64b794adeb922016f79be299dd256597fe5c",
+      "local_id": "Q007",
+      "canonical_id": "CC-C02-K-KR01-Q012",
+      "reason": "Collision with original S01 IDs; preserve original wording"
+    }
+  ]
+}
+
