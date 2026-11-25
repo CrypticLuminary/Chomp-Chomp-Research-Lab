@@ -1,0 +1,26 @@
+schema_version: 1
+project: Chomp-Chomp
+project_id: CC
+cycle: C02
+phase: K
+task_id: KR02
+agent_id: A02
+codename: MemoryLab
+research_version: v0.1.0
+status: preliminary_checkpoint
+agent_model: GPT-6.2
+execution_environment: GitHub connector, public web sources, JavaScript V8 CPU synthetic experiment
+repository: CrypticLuminary/Chomp-Chomp-Research-Lab
+branch: research/cc-c02-k-kr02-a02-v0.1.0
+base_commit: d0dbef6583165f781f217a095f50993faad742e8
+dependencies:
+  - {task: KR01, commit: 125a7bb81e13904d181701d6e55f198172cacea6, status: pending}
+  - {task: KR04, commit: 9439cbbdfba4abebae8f7763c2e7a96053711c0b, status: pending}
+  - {task: A09, commit: c04157d129af2a3585a7efef9ddb32d1c5fb29fa, status: pending}
+  - {task: KR03, status: pending}
+  - {task: KR05, status: pending}
+  - {task: KR06, status: pending}
+  - {task: KR07, status: pending}
+  - {task: KR08, status: pending}
+reviewer: A00
+review_status: pending
