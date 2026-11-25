@@ -1,0 +1,10 @@
+{
+  "version": "v0.1.0",
+  "stage": "S00",
+  "status": "in-progress",
+  "completed": [
+    "repository verification",
+    "governance review"
+  ],
+  "review": "pending"
+}
