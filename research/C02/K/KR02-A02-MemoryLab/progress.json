@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "status": "preliminary_checkpoint",
+  "current_substage": "S02",
+  "completed_substages": [
+    "S00"
+  ],
+  "draft_artifacts": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10"
+  ],
+  "experiment_ids": [
+    "CC-C02-K-KR02-A02-E001-v0.1.0"
+  ],
+  "blockers": [
+    "Systematic 35–50 paper screening and 12–15 detailed dossiers incomplete",
+    "Deep graph/chain internals, exact upstream checkpoints and rights incomplete",
+    "No independent authorized annotation or matched-budget model benchmark",
+    "Coordination pending; no production approval"
+  ],
+  "updated_at": "2026-11-25"
+}
