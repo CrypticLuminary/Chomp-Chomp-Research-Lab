@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "questions": [
+    {
+      "question_id": "CC-C02-K-KR04-Q001",
+      "question": "What human audience appraisals predict interest?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q002",
+      "question": "Does replay pretraining transfer to approval?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q003",
+      "question": "How to preserve silent and quiet candidates?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q004",
+      "question": "Does context removal/restoration predict faithful judgment?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q005",
+      "question": "Which rights permit commercial training?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q006",
+      "question": "Does creator-disjoint performance degrade?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q007",
+      "question": "Can cheap triage match exhaustive recall?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q008",
+      "question": "How to calibrate abstention?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q009",
+      "question": "How to condition on audience without identity leakage?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR04-Q010",
+      "question": "Which checkpoint and preprocessing components are reproducible?",
+      "status": "open"
+    }
+  ]
+}
