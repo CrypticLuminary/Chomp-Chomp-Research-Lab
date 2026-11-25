@@ -1,0 +1,1992 @@
+{
+  "experiment_id": "CC-C02-K-KR02-A02-E001-v0.1.0",
+  "description": "Author-generated isolated cases; queries supplied, fixed K=3 evidence units, no equal token/compute or independent annotations. Not an autonomous system or real-world acceptance test.",
+  "K": 3,
+  "cases": [
+    [
+      "callback",
+      2700,
+      "blue penguin promise",
+      [
+        "a"
+      ],
+      [
+        [
+          20,
+          "a",
+          "Mira promised to call her lost vehicle the blue penguin."
+        ],
+        [
+          2660,
+          "b",
+          "Blue team won a penguin themed match."
+        ],
+        [
+          2730,
+          "c",
+          "The penguin skin is expensive."
+        ],
+        [
+          2690,
+          "d",
+          "Mira talks about dinner."
+        ],
+        [
+          2900,
+          "e",
+          "Blue penguin is a new cosmetic."
+        ]
+      ]
+    ],
+    [
+      "pronoun",
+      2400,
+      "Who did it again? Niko crash bridge",
+      [
+        "a"
+      ],
+      [
+        [
+          360,
+          "a",
+          "Niko drove the truck into the bridge and apologized."
+        ],
+        [
+          2380,
+          "b",
+          "Bridge repairs are expensive."
+        ],
+        [
+          2410,
+          "c",
+          "Tariq crashed a different car."
+        ],
+        [
+          2300,
+          "d",
+          "Niko discusses the menu."
+        ],
+        [
+          2600,
+          "e",
+          "Someone repaired the bridge."
+        ]
+      ]
+    ],
+    [
+      "qualification",
+      900,
+      "Mira claim developer ban qualification",
+      [
+        "a"
+      ],
+      [
+        [
+          1020,
+          "a",
+          "Mira clarifies the developer ban was temporary and only for cheating."
+        ],
+        [
+          870,
+          "b",
+          "Mira praises the developer."
+        ],
+        [
+          920,
+          "c",
+          "Mira discusses a ban on chat spam."
+        ],
+        [
+          720,
+          "d",
+          "Developer update released."
+        ],
+        [
+          1440,
+          "e",
+          "Mira dislikes the menu."
+        ]
+      ]
+    ],
+    [
+      "correction",
+      1800,
+      "Jules correction controller price",
+      [
+        "a"
+      ],
+      [
+        [
+          2160,
+          "a",
+          "Jules corrects the controller price: forty not eighty."
+        ],
+        [
+          1790,
+          "b",
+          "Controller price varies."
+        ],
+        [
+          1810,
+          "c",
+          "Jules changes controller settings."
+        ],
+        [
+          1600,
+          "d",
+          "Jules corrects camera alignment."
+        ],
+        [
+          2200,
+          "e",
+          "The price of a keyboard changed."
+        ]
+      ]
+    ],
+    [
+      "emotional_payoff",
+      3000,
+      "Mira sister tournament promise",
+      [
+        "a",
+        "b"
+      ],
+      [
+        [
+          120,
+          "a",
+          "Mira promised her sister she would finish the tournament."
+        ],
+        [
+          2200,
+          "b",
+          "Her sister sent a message that she was watching."
+        ],
+        [
+          2980,
+          "c",
+          "Tournament schedule is delayed."
+        ],
+        [
+          3010,
+          "d",
+          "Mira discusses another tournament."
+        ],
+        [
+          2820,
+          "e",
+          "A different player makes a promise."
+        ]
+      ]
+    ],
+    [
+      "visual",
+      2400,
+      "red key inventory locked vault",
+      [
+        "a"
+      ],
+      [
+        [
+          540,
+          "a",
+          "Visual: red key placed into inventory after opening the vault."
+        ],
+        [
+          2390,
+          "b",
+          "Red car drives past a locked door."
+        ],
+        [
+          2410,
+          "c",
+          "Inventory contains an unrelated tool."
+        ],
+        [
+          2100,
+          "d",
+          "Chat talks about a key binding."
+        ],
+        [
+          2700,
+          "e",
+          "Vault is shown empty."
+        ]
+      ]
+    ],
+    [
+      "interleaved",
+      2100,
+      "Jules teammate hospital story",
+      [
+        "a"
+      ],
+      [
+        [
+          180,
+          "a",
+          "Jules says teammate Niko missed practice because of a hospital visit."
+        ],
+        [
+          2090,
+          "b",
+          "Game character visits hospital."
+        ],
+        [
+          2120,
+          "c",
+          "Jules discusses a teammate in another game."
+        ],
+        [
+          1980,
+          "d",
+          "Hospital mission unlocked."
+        ],
+        [
+          2200,
+          "e",
+          "Niko chooses a weapon."
+        ]
+      ]
+    ],
+    [
+      "false_similarity",
+      1700,
+      "Mira trust Tariq leaked draft",
+      [
+        "a"
+      ],
+      [
+        [
+          100,
+          "a",
+          "Tariq leaked Mira's private draft and apologized."
+        ],
+        [
+          1680,
+          "b",
+          "Mira trusts the new save system."
+        ],
+        [
+          1720,
+          "c",
+          "Tariq discusses a leaked trailer."
+        ],
+        [
+          1500,
+          "d",
+          "Mira drafts a shopping list."
+        ],
+        [
+          1800,
+          "e",
+          "Tariq trusts a different teammate."
+        ]
+      ]
+    ],
+    [
+      "multi_hop",
+      3500,
+      "Why did Mira refuse the Phoenix invite?",
+      [
+        "a",
+        "b"
+      ],
+      [
+        [
+          340,
+          "a",
+          "Mira said she would refuse Phoenix because Jules advised against it."
+        ],
+        [
+          120,
+          "b",
+          "Jules explained that Tariq had copied the team's strategy."
+        ],
+        [
+          3490,
+          "c",
+          "Phoenix invite appeared on screen."
+        ],
+        [
+          3520,
+          "d",
+          "Mira accepted another invite."
+        ],
+        [
+          3200,
+          "e",
+          "Phoenix is a different game's name."
+        ]
+      ]
+    ],
+    [
+      "rare_detail",
+      2800,
+      "cobalt wrench",
+      [
+        "a"
+      ],
+      [
+        [
+          140,
+          "a",
+          "Niko spent time talking about mundane equipment and then hid the cobalt wrench under the stair."
+        ],
+        [
+          2790,
+          "b",
+          "Cobalt color is unpopular."
+        ],
+        [
+          2810,
+          "c",
+          "Wrench icon changed."
+        ],
+        [
+          1000,
+          "d",
+          "Niko fixed a vehicle."
+        ],
+        [
+          2900,
+          "e",
+          "The team repaired a stair."
+        ]
+      ]
+    ],
+    [
+      "outside_source",
+      2000,
+      "unseen childhood incident",
+      [],
+      [
+        [
+          1970,
+          "b",
+          "Mira talks about tomorrow."
+        ],
+        [
+          2020,
+          "c",
+          "Childhood game released."
+        ],
+        [
+          100,
+          "d",
+          "A fictional incident in the game."
+        ],
+        [
+          500,
+          "e",
+          "The menu changed."
+        ],
+        [
+          2600,
+          "f",
+          "An old song played."
+        ]
+      ]
+    ],
+    [
+      "complete",
+      1000,
+      "",
+      [],
+      [
+        [
+          980,
+          "b",
+          "A player explains game settings."
+        ],
+        [
+          1020,
+          "c",
+          "The game continues."
+        ],
+        [
+          200,
+          "d",
+          "Chat says hello."
+        ],
+        [
+          600,
+          "e",
+          "Music begins."
+        ],
+        [
+          1500,
+          "f",
+          "A menu closes."
+        ]
+      ]
+    ]
+  ],
+  "rows": [
+    {
+      "case": "callback",
+      "method": "nearby",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "d",
+        "c",
+        "b"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "callback",
+      "method": "bm25",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "e",
+        "b",
+        "a"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "callback",
+      "method": "cosine",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "e",
+        "b",
+        "a"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "callback",
+      "method": "rrf",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "e",
+        "b",
+        "a"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "callback",
+      "method": "entity",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "e",
+        "b",
+        "a"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "callback",
+      "method": "graph",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "callback",
+      "method": "hierarchy",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "e",
+        "c",
+        "b"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "callback",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "e",
+        "c",
+        "b"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "pronoun",
+      "method": "nearby",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "c",
+        "b"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "pronoun",
+      "method": "bm25",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "pronoun",
+      "method": "cosine",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "pronoun",
+      "method": "rrf",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "pronoun",
+      "method": "entity",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "pronoun",
+      "method": "graph",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "pronoun",
+      "method": "hierarchy",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "pronoun",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "qualification",
+      "method": "nearby",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "c",
+        "b"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "qualification",
+      "method": "bm25",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "qualification",
+      "method": "cosine",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "a",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "qualification",
+      "method": "rrf",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "qualification",
+      "method": "entity",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "qualification",
+      "method": "graph",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "qualification",
+      "method": "hierarchy",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "qualification",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "correction",
+      "method": "nearby",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "c"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "correction",
+      "method": "bm25",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "correction",
+      "method": "cosine",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "a",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "correction",
+      "method": "rrf",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "correction",
+      "method": "entity",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "correction",
+      "method": "graph",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "correction",
+      "method": "hierarchy",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "e",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "correction",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "e",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "emotional_payoff",
+      "method": "nearby",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "d",
+        "c"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "emotional_payoff",
+      "method": "bm25",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "d",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "emotional_payoff",
+      "method": "cosine",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "d",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "emotional_payoff",
+      "method": "rrf",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "d",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "emotional_payoff",
+      "method": "entity",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "d",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "emotional_payoff",
+      "method": "graph",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "d",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "emotional_payoff",
+      "method": "hierarchy",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "e",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "emotional_payoff",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "e",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "visual",
+      "method": "nearby",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "c"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "visual",
+      "method": "bm25",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "visual",
+      "method": "cosine",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "visual",
+      "method": "rrf",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "visual",
+      "method": "entity",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "visual",
+      "method": "graph",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "visual",
+      "method": "hierarchy",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "visual",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "interleaved",
+      "method": "nearby",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "c"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "interleaved",
+      "method": "bm25",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "c",
+        "a",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "interleaved",
+      "method": "cosine",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "interleaved",
+      "method": "rrf",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "interleaved",
+      "method": "entity",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "c",
+        "a",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "interleaved",
+      "method": "graph",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "interleaved",
+      "method": "hierarchy",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "interleaved",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "false_similarity",
+      "method": "nearby",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "c"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "false_similarity",
+      "method": "bm25",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "false_similarity",
+      "method": "cosine",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "false_similarity",
+      "method": "rrf",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "false_similarity",
+      "method": "entity",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "false_similarity",
+      "method": "graph",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "c",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "false_similarity",
+      "method": "hierarchy",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "c",
+        "d",
+        "b"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "false_similarity",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "c",
+        "d",
+        "a"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "multi_hop",
+      "method": "nearby",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "c",
+        "d"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "multi_hop",
+      "method": "bm25",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "d",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "multi_hop",
+      "method": "cosine",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "multi_hop",
+      "method": "rrf",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "c",
+        "d"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "multi_hop",
+      "method": "entity",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "d",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "multi_hop",
+      "method": "graph",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "a",
+        "c",
+        "e"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "multi_hop",
+      "method": "hierarchy",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "d",
+        "c",
+        "a"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "multi_hop",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a",
+        "b"
+      ],
+      "got": [
+        "d",
+        "c",
+        "a"
+      ],
+      "hits": 1,
+      "recall": 0.5,
+      "precision": 0.3333333333333333,
+      "all": false
+    },
+    {
+      "case": "rare_detail",
+      "method": "nearby",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "c"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "rare_detail",
+      "method": "bm25",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "rare_detail",
+      "method": "cosine",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "rare_detail",
+      "method": "rrf",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "rare_detail",
+      "method": "entity",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "b",
+        "c"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "rare_detail",
+      "method": "graph",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "a",
+        "d",
+        "b"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "rare_detail",
+      "method": "hierarchy",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "c",
+        "e"
+      ],
+      "hits": 0,
+      "recall": 0,
+      "precision": 0,
+      "all": false
+    },
+    {
+      "case": "rare_detail",
+      "method": "hierarchy_raw_rescue",
+      "gold": [
+        "a"
+      ],
+      "got": [
+        "b",
+        "c",
+        "a"
+      ],
+      "hits": 1,
+      "recall": 1,
+      "precision": 0.3333333333333333,
+      "all": true
+    },
+    {
+      "case": "outside_source",
+      "method": "nearby",
+      "gold": [],
+      "got": [
+        "c",
+        "b"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "outside_source",
+      "method": "bm25",
+      "gold": [],
+      "got": [
+        "c",
+        "d"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "outside_source",
+      "method": "cosine",
+      "gold": [],
+      "got": [
+        "c",
+        "d"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "outside_source",
+      "method": "rrf",
+      "gold": [],
+      "got": [
+        "c",
+        "d"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "outside_source",
+      "method": "entity",
+      "gold": [],
+      "got": [
+        "c",
+        "d"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "outside_source",
+      "method": "graph",
+      "gold": [],
+      "got": [
+        "c",
+        "d"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "outside_source",
+      "method": "hierarchy",
+      "gold": [],
+      "got": [
+        "d",
+        "c",
+        "b"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "outside_source",
+      "method": "hierarchy_raw_rescue",
+      "gold": [],
+      "got": [
+        "d",
+        "c"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "complete",
+      "method": "nearby",
+      "gold": [],
+      "got": [
+        "b",
+        "c"
+      ],
+      "hits": 0,
+      "recall": null,
+      "precision": 0,
+      "all": null
+    },
+    {
+      "case": "complete",
+      "method": "bm25",
+      "gold": [],
+      "got": [],
+      "hits": 0,
+      "recall": null,
+      "precision": null,
+      "all": null
+    },
+    {
+      "case": "complete",
+      "method": "cosine",
+      "gold": [],
+      "got": [],
+      "hits": 0,
+      "recall": null,
+      "precision": null,
+      "all": null
+    },
+    {
+      "case": "complete",
+      "method": "rrf",
+      "gold": [],
+      "got": [],
+      "hits": 0,
+      "recall": null,
+      "precision": null,
+      "all": null
+    },
+    {
+      "case": "complete",
+      "method": "entity",
+      "gold": [],
+      "got": [],
+      "hits": 0,
+      "recall": null,
+      "precision": null,
+      "all": null
+    },
+    {
+      "case": "complete",
+      "method": "graph",
+      "gold": [],
+      "got": [],
+      "hits": 0,
+      "recall": null,
+      "precision": null,
+      "all": null
+    },
+    {
+      "case": "complete",
+      "method": "hierarchy",
+      "gold": [],
+      "got": [],
+      "hits": 0,
+      "recall": null,
+      "precision": null,
+      "all": null
+    },
+    {
+      "case": "complete",
+      "method": "hierarchy_raw_rescue",
+      "gold": [],
+      "got": [],
+      "hits": 0,
+      "recall": null,
+      "precision": null,
+      "all": null
+    }
+  ],
+  "metrics": [
+    {
+      "method": "nearby",
+      "positive_cases": 10,
+      "essential_hits": 0,
+      "essential_total": 12,
+      "macro_recall": 0,
+      "all_essential": 0,
+      "retrieved_positive": 21,
+      "negative_empty": 0,
+      "negative_total": 2
+    },
+    {
+      "method": "bm25",
+      "positive_cases": 10,
+      "essential_hits": 10,
+      "essential_total": 12,
+      "macro_recall": 0.9,
+      "all_essential": 8,
+      "retrieved_positive": 30,
+      "negative_empty": 1,
+      "negative_total": 2
+    },
+    {
+      "method": "cosine",
+      "positive_cases": 10,
+      "essential_hits": 10,
+      "essential_total": 12,
+      "macro_recall": 0.9,
+      "all_essential": 8,
+      "retrieved_positive": 30,
+      "negative_empty": 1,
+      "negative_total": 2
+    },
+    {
+      "method": "rrf",
+      "positive_cases": 10,
+      "essential_hits": 10,
+      "essential_total": 12,
+      "macro_recall": 0.9,
+      "all_essential": 8,
+      "retrieved_positive": 30,
+      "negative_empty": 1,
+      "negative_total": 2
+    },
+    {
+      "method": "entity",
+      "positive_cases": 10,
+      "essential_hits": 10,
+      "essential_total": 12,
+      "macro_recall": 0.9,
+      "all_essential": 8,
+      "retrieved_positive": 30,
+      "negative_empty": 1,
+      "negative_total": 2
+    },
+    {
+      "method": "graph",
+      "positive_cases": 10,
+      "essential_hits": 10,
+      "essential_total": 12,
+      "macro_recall": 0.9,
+      "all_essential": 8,
+      "retrieved_positive": 30,
+      "negative_empty": 1,
+      "negative_total": 2
+    },
+    {
+      "method": "hierarchy",
+      "positive_cases": 10,
+      "essential_hits": 7,
+      "essential_total": 12,
+      "macro_recall": 0.6,
+      "all_essential": 5,
+      "retrieved_positive": 30,
+      "negative_empty": 1,
+      "negative_total": 2
+    },
+    {
+      "method": "hierarchy_raw_rescue",
+      "positive_cases": 10,
+      "essential_hits": 9,
+      "essential_total": 12,
+      "macro_recall": 0.8,
+      "all_essential": 7,
+      "retrieved_positive": 30,
+      "negative_empty": 1,
+      "negative_total": 2
+    }
+  ]
+}

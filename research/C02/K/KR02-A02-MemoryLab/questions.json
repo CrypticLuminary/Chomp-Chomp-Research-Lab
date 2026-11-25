@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "questions": [
+    {
+      "question_id": "CC-C02-K-KR02-Q001",
+      "question": "What unit granularity preserves rare and remote evidence?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q002",
+      "question": "How much source information can be compressed without misleading omission?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q003",
+      "question": "How should raw evidence remain recoverable after summarization?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q004",
+      "question": "Can automatic requirement extraction identify missing context without a user query?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q005",
+      "question": "Does global lexical/dense retrieval locate unknown timestamps better than current Director?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q006",
+      "question": "How can offline bidirectional retrieval preserve later qualifications and avoid live leakage?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q007",
+      "question": "How do speaker-scoped entities and coreference resolve ambiguous references?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q008",
+      "question": "How should contradictions, corrections and alternate hypotheses be represented?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q009",
+      "question": "How can visual/audio/chat evidence be independently searched at affordable cost?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q010",
+      "question": "Does hierarchy or graph improve essential recall at matched total cost?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q011",
+      "question": "How can retrieval avoid repetition and hub/distractor drift?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q012",
+      "question": "What stopping and abstention policy minimizes false closure?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q013",
+      "question": "Which evidence is required by the editor versus viewer?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q014",
+      "question": "Which exact models/datasets are usable and legally cleared?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR02-Q015",
+      "question": "Do real creator-disjoint annotations validate memory-assisted editorial quality?",
+      "status": "open",
+      "review_status": "pending"
+    }
+  ]
+}
