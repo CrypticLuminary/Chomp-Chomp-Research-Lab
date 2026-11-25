@@ -1,0 +1,59 @@
+{
+  "experiment": "CC-C02-K-KR01-A01-E003-v0.2.0",
+  "evidence": "REPRODUCED",
+  "environment": "Python 3.13.5, CPU, stdlib",
+  "source": "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/src/test/utils_chapters.py",
+  "blob": "752f70be64c38b4fb7a33715cde16e565a085898",
+  "acquisition": "Connector text copied byte-for-byte to sandbox; git hash-object matched remote blob. Direct curl DNS failed. Imported unchanged module; no model.",
+  "results": [
+    [
+      "singleton",
+      {}
+    ],
+    [
+      "duplicate",
+      {
+        "00:00:00": "Replacement",
+        "00:01:00": "Next"
+      }
+    ],
+    [
+      "outside without duration",
+      {
+        "00:00:00": "Start",
+        "09:00:00": "Outside"
+      }
+    ],
+    [
+      "exact end",
+      {
+        "00:00:00": "Start",
+        "00:10:00": "End"
+      }
+    ],
+    [
+      "unordered with duration",
+      {
+        "00:01:00": "Earlier",
+        "00:02:00": "Later"
+      }
+    ],
+    [
+      "unanchored prose",
+      {
+        "00:01:00": "We might start at  - Topic"
+      }
+    ],
+    [
+      "unordered without duration",
+      {}
+    ],
+    [
+      "outside with duration",
+      {
+        "00:01:00": "Valid"
+      }
+    ]
+  ]
+}
+
