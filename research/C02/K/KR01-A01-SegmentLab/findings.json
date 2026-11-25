@@ -1,0 +1,718 @@
+{
+  "schema_version": 1,
+  "findings": [
+    {
+      "finding_id": "CC-C02-K-KR01-F001",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S01",
+      "version": "v0.1.0",
+      "title": "Distinguish chapter and complete-thought units",
+      "description": "Coarse topical boundary does not guarantee a self-contained thought; use independently annotated L2 and L3.",
+      "evidence_classification": "PROPOSED",
+      "original_sources": [
+        "https://aclanthology.org/J97-1003/",
+        "https://research.adobe.com/publication/chunkyedit-text-first-video-interview-editing-via-chunking/"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Conceptual inference, not real VOD evaluation",
+      "relevance_to_chomp_chomp": "Coarse topical boundary does not guarantee a self-contained thought; use independently annotated L2 and L3.",
+      "related_research_tasks": [
+        "KR03",
+        "KR05",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F002",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.1.0",
+      "title": "Single-video Chapter-Llama entry point is ASR-only",
+      "description": "CLI instantiates PromptASR for every adapter name, without visual caption step. Benchmark path and paper pipeline must be distinguished.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/inference.py#L13-L36",
+        "https://huggingface.co/lucas-ventura/chapter-llama"
+      ],
+      "source_code_references": [
+        "inference.py:13–36",
+        "src/data/utils_asr.py:71–82"
+      ],
+      "confidence_and_limitations": "High confidence for pinned CLI only; full multimodal pipeline not traced",
+      "relevance_to_chomp_chomp": "CLI instantiates PromptASR for every adapter name, without visual caption step. Benchmark path and paper pipeline must be distinguished.",
+      "related_research_tasks": [
+        "KR06",
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25",
+      "follow_up": "F013/F016 extend source trace; original raw CLI observation stands."
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F003",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.1.0",
+      "title": "Parser validation edge cases",
+      "description": "Six reconstructed parser probes: single valid chapter discarded; duplicate timestamp overwritten; outside timestamp accepted without duration; exact end accepted; reordered output sorted with duration; unanchored prose accepted.",
+      "evidence_classification": "REPRODUCED",
+      "original_sources": [
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/src/test/utils_chapters.py"
+      ],
+      "source_code_references": [
+        "src/test/utils_chapters.py:4–62",
+        "src/test/vidchapters.py:12–46",
+        "S03 parser-check.py and parser-check-results.json"
+      ],
+      "confidence_and_limitations": "Standalone reconstruction, not upstream installation or model evaluation",
+      "relevance_to_chomp_chomp": "Six reconstructed parser probes: single valid chapter discarded; duplicate timestamp overwritten; outside timestamp accepted without duration; exact end accepted; reordered output sorted with duration; unanchored prose accepted.",
+      "related_research_tasks": [
+        "KR05",
+        "KR08",
+        "KR09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25",
+      "follow_up": "F014 supersedes reconstructed evidence with exact-source execution; original result retained."
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F004",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.1.0",
+      "title": "STEPs requires procedural feature and clustering assumptions",
+      "description": "Default 7 clusters and CUDA, RGB+motion feature training; not arbitrary livestream segmentation.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/anshulbshah/STEPs/tree/3eb0af430088f92ef4eeae5ce96dfef54d3c667c"
+      ],
+      "source_code_references": [
+        "opts.py:6–38",
+        "methods/selfsup.py:15–103",
+        "methods/evaluation.py:15–66"
+      ],
+      "confidence_and_limitations": "Pinned code, no trained inference, license unresolved",
+      "relevance_to_chomp_chomp": "Default 7 clusters and CUDA, RGB+motion feature training; not arbitrary livestream segmentation.",
+      "related_research_tasks": [
+        "KR06",
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F005",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S02",
+      "version": "v0.1.0",
+      "title": "ChunkyEdit separates organization from editorial selection",
+      "description": "Thematic chunks are an intermediate human-assisted workflow; study with eight editors does not validate automatic clipping.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://research.adobe.com/publication/chunkyedit-text-first-video-interview-editing-via-chunking/"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Official abstract only; exact algorithm comparison not extracted",
+      "relevance_to_chomp_chomp": "Thematic chunks are an intermediate human-assisted workflow; study with eight editors does not validate automatic clipping.",
+      "related_research_tasks": [
+        "KR04",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F006",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S02",
+      "version": "v0.1.0",
+      "title": "NEST highlights difficult grounded event discovery",
+      "description": "Authors report best zero-shot ETD <8%, EL <6%, EAE <11% on main subsets; ERE 34.23 F1 zero-shot and 49.20 fine-tuned.",
+      "evidence_classification": "REPORTED",
+      "original_sources": [
+        "https://aclanthology.org/2026.emnlp-main.2512/"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Authors' metrics only, detailed denominators not extracted; no live transfer claim",
+      "relevance_to_chomp_chomp": "Authors report best zero-shot ETD <8%, EL <6%, EAE <11% on main subsets; ERE 34.23 F1 zero-shot and 49.20 fine-tuned.",
+      "related_research_tasks": [
+        "KR02",
+        "KR03",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F007",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S02",
+      "version": "v0.1.0",
+      "title": "CausalChapter separates local dependency shift and cross-segment support",
+      "description": "Masking-based feature reconstruction for boundaries, context removal for description support.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://aclanthology.org/2026.emnlp-main.635/"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Paper abstract; source/metrics not reproduced; not proof of causality",
+      "relevance_to_chomp_chomp": "Masking-based feature reconstruction for boundaries, context removal for description support.",
+      "related_research_tasks": [
+        "KR02",
+        "KR03",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25",
+      "follow_up": "F017/F018/F019/F025 provide mathematical and partial implementation follow-up."
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F008",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S02",
+      "version": "v0.1.0",
+      "title": "ARC-Chapter offers structured output and modality dropout",
+      "description": "Documentation exposes API; local training/inference code or checkpoint not verified. Adapt output ideas rather than depend on service.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://arxiv.org/abs/2511.14349",
+        "https://github.com/TencentARC/ARC-Chapter/tree/fdf5f1e50812e15ad262f32d32133acb4fae7be3"
+      ],
+      "source_code_references": [
+        "README.md API example"
+      ],
+      "confidence_and_limitations": "API not called; local weight availability open",
+      "relevance_to_chomp_chomp": "Documentation exposes API; local training/inference code or checkpoint not verified. Adapt output ideas rather than depend on service.",
+      "related_research_tasks": [
+        "KR06",
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F009",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.1.0",
+      "title": "Chomp fixed windows are processing units, not a semantic index",
+      "description": "18s transcript buckets, 90s semantic scan/60s stride, 12 retained leads; source-relative ASR and evidence IDs usable for sidecar.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/tree/24bf2f5f4ad2172e4b18728b198fe7d3e9d65aff"
+      ],
+      "source_code_references": [
+        "chomp/signals.py:104–120",
+        "chomp/director/semantic.py:16–17,120–165",
+        "chomp/models.py:11–60"
+      ],
+      "confidence_and_limitations": "Relevant pinned branch, not newest Keystone state",
+      "relevance_to_chomp_chomp": "18s transcript buckets, 90s semantic scan/60s stride, 12 retained leads; source-relative ASR and evidence IDs usable for sidecar.",
+      "related_research_tasks": [
+        "KR02",
+        "KR03",
+        "KR06",
+        "KR09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F010",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S07",
+      "version": "v0.1.0",
+      "title": "Independent hierarchical timelines with visual rescue",
+      "description": "Separate dialogue, visual, acoustic and topic segmentation; explicit relation edges; bounded semantic inspection; no chat requirement; compare against flat and holistic methods.",
+      "evidence_classification": "PROPOSED",
+      "original_sources": [
+        "https://aclanthology.org/2026.emnlp-main.2512/",
+        "https://openaccess.thecvf.com/content/ICCV2021/html/Shou_Generic_Event_Boundary_Detection_A_Benchmark_for_Event_Segmentation_ICCV_2021_paper.html"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Untested architecture and schema; pending coordinator review",
+      "relevance_to_chomp_chomp": "Separate dialogue, visual, acoustic and topic segmentation; explicit relation edges; bounded semantic inspection; no chat requirement; compare against flat and holistic methods.",
+      "related_research_tasks": [
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "KR06",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F011",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S05",
+      "version": "v0.1.0",
+      "title": "Model and dataset commercial feasibility",
+      "description": "Adapter license does not license base model or source footage; exact rights, access, memory and latency must be checked.",
+      "evidence_classification": "OPEN",
+      "original_sources": [
+        "https://huggingface.co/lucas-ventura/chapter-llama",
+        "https://antoyang.github.io/vidchapters.html"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "No downloads or GPU runs; no commercial clearance",
+      "relevance_to_chomp_chomp": "Adapter license does not license base model or source footage; exact rights, access, memory and latency must be checked.",
+      "related_research_tasks": [
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F012",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S08",
+      "version": "v0.1.0",
+      "title": "Matched-budget independent gold protocol",
+      "description": "Compare baseline and hierarchical units using one-to-one boundary F1, per-lane completeness, downstream core recall and total extraction/inference cost.",
+      "evidence_classification": "PROPOSED",
+      "original_sources": [
+        "https://aclanthology.org/J02-1002/",
+        "https://groups.inf.ed.ac.uk/ami/corpus/annotation.shtml"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Protocol only; no authorized annotated VODs",
+      "relevance_to_chomp_chomp": "Compare baseline and hierarchical units using one-to-one boundary F1, per-lane completeness, downstream core recall and total extraction/inference cost.",
+      "related_research_tasks": [
+        "KR08",
+        "KR09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F013",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "Speech-guided frame selection does not guarantee silent-interval coverage",
+      "description": "Notebook combines ASR-derived captions if present, otherwise 10s caption file if ASR file absent; caps at 100 frames. No within-video silent rescue guarantee.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/tools/captions/caption_selection.ipynb",
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/tools/captions/caption_selection.py"
+      ],
+      "source_code_references": [
+        "notebook cells 5,7,15 (zero-based)",
+        "caption_selection.py:64–103,242–254"
+      ],
+      "confidence_and_limitations": "Source trace only; silent visual recall not measured",
+      "relevance_to_chomp_chomp": "Notebook combines ASR-derived captions if present, otherwise 10s caption file if ASR file absent; caps at 100 frames. No within-video silent rescue guarantee.",
+      "related_research_tasks": [
+        "KR06",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F014",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "Original upstream parser reproduces eight edge-case behaviors",
+      "description": "Byte-exact original module imported and executed after Git blob verification; singleton dropped, duplicates overwritten, exact end accepted, prose accepted, duration-dependent order/filter behavior confirmed.",
+      "evidence_classification": "REPRODUCED",
+      "original_sources": [
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/src/test/utils_chapters.py",
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/research/cc-c02-k-kr01-a01-v0.1.0/research/C02/K/KR01-A01-SegmentLab/S03-source-code-audit/CC-C02-K-KR01-A01-S03-v0.2.0-upstream-parser-results.json"
+      ],
+      "source_code_references": [
+        "utils_chapters.py:4–62",
+        "blob 752f70be64c38b4fb7a33715cde16e565a085898"
+      ],
+      "confidence_and_limitations": "Eight synthetic probes; no model inference; not all benchmark conventions are defects",
+      "relevance_to_chomp_chomp": "Byte-exact original module imported and executed after Git blob verification; singleton dropped, duplicates overwritten, exact end accepted, prose accepted, duration-dependent order/filter behavior confirmed.",
+      "related_research_tasks": [
+        "KR05",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F015",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "Chapter-Llama F1 is averaged segment-overlap metric",
+      "description": "Evaluation averages precision/recall/F1 over tIoU .50:.05:.95, not exact temporal boundary F1.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/tools/results/metrics_overlap.py",
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/tools/results/metrics.py"
+      ],
+      "source_code_references": [
+        "metrics_overlap.py:93–111"
+      ],
+      "confidence_and_limitations": "No benchmark reproduction; assignment internals not exhaustively checked",
+      "relevance_to_chomp_chomp": "Evaluation averages precision/recall/F1 over tIoU .50:.05:.95, not exact temporal boundary F1.",
+      "related_research_tasks": [
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F016",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "Multimodal path is timestamped text, LoRA training and corpus inference",
+      "description": "Config interleaves caption/ASR; training masks non-answer tokens, uses Llama 8B rank8, 16384 context, one epoch. Single raw CLI remains ASR only.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/configs/model/llama3.1_8B.yaml",
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/src/data/utils_captions_asr.py",
+        "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/src/models/utils_tokenizer.py"
+      ],
+      "source_code_references": [
+        "llama3.1_8B.yaml:6–34",
+        "utils_captions_asr.py:24–83",
+        "utils_tokenizer.py:17–69"
+      ],
+      "confidence_and_limitations": "Config observed, no training or inference run; external library versions not pinned here",
+      "relevance_to_chomp_chomp": "Config interleaves caption/ASR; training masks non-answer tokens, uses Llama 8B rank8, 16384 context, one epoch. Single raw CLI remains ASR only.",
+      "related_research_tasks": [
+        "KR06",
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F017",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S02",
+      "version": "v0.2.0",
+      "title": "CausalChapter measures prediction sensitivity rather than causal truth",
+      "description": "LCDS masked reconstruction local dependency drops; CSSE directional KL on shared reference prefix over retrieved context removals; four-term supervised training objective.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://aclanthology.org/2026.emnlp-main.635/",
+        "https://arxiv.org/abs/2609.08686"
+      ],
+      "source_code_references": [
+        "arXiv v1 sections 3.2–3.5 equations 1–11"
+      ],
+      "confidence_and_limitations": "Paper reconstruction; no model run; no semantic-necessity or causal guarantee",
+      "relevance_to_chomp_chomp": "LCDS masked reconstruction local dependency drops; CSSE directional KL on shared reference prefix over retrieved context removals; four-term supervised training objective.",
+      "related_research_tasks": [
+        "KR02",
+        "KR03",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F018",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "Located CausalChapter release implements title-removal KL support scoring",
+      "description": "Historical retrieval uses MiniLM or hashing; teacher forcing shared prefix and targeted logits; candidates ranked by KL, pass2 uses selected titles.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/generate/retrieval/kl_support_retriever.py",
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/generate/models/fast_multimodal_lm.py",
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/generate/inference/causal_selection.py"
+      ],
+      "source_code_references": [
+        "kl_support_retriever.py:73–168,195–324",
+        "fast_multimodal_lm.py:34–87",
+        "causal_selection.py:102–195"
+      ],
+      "confidence_and_limitations": "Repository paper title matches; author ownership unverified; no inference",
+      "relevance_to_chomp_chomp": "Historical retrieval uses MiniLM or hashing; teacher forcing shared prefix and targeted logits; candidates ranked by KL, pass2 uses selected titles.",
+      "related_research_tasks": [
+        "KR02",
+        "KR03",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F019",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "CausalChapter release differs from paper and bypasses boundary inference",
+      "description": "Script reads shipped predictions, 3B r64 alpha128, K3 and 16 intervention tokens; paper ablation r8 alpha16 and K5. No LCDS implementation located in inspected boundary files; external adapter advertised but not downloaded.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/scripts/reproduce_best.sh",
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/checkpoints/qwen2p5_3b_crossattn_clip_best/shared_lora/adapter_config.json",
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/MANIFEST.sha256"
+      ],
+      "source_code_references": [
+        "reproduce_best.sh:9–31",
+        "adapter_config.json:9–36"
+      ],
+      "confidence_and_limitations": "No end-to-end reproduction; repo attribution, license, external weight access open",
+      "relevance_to_chomp_chomp": "Script reads shipped predictions, 3B r64 alpha128, K3 and 16 intervention tokens; paper ablation r8 alpha16 and K5. No LCDS implementation located in inspected boundary files; external adapter advertised but not downloaded.",
+      "related_research_tasks": [
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F020",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "GEBD visual boundary detection and duration-relative metric",
+      "description": "Unsupervised prediction error LoG peak detection, supervised ResNet local context; challenge uses 5% duration tolerance and best rater.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/StanLei52/GEBD/tree/5f7e722e0384f9877c75d116e1db72400d2bc58f"
+      ],
+      "source_code_references": [
+        "BdyDet/k400/detect_event_boundary.py:145–205",
+        "PC/modeling/resnetGEBD.py:348–392",
+        "Challenge_eval_Code/eval.py:12–68"
+      ],
+      "confidence_and_limitations": "Not transferable to hours without tolerance redesign; weights not verified",
+      "relevance_to_chomp_chomp": "Unsupervised prediction error LoG peak detection, supervised ResNet local context; challenge uses 5% duration tolerance and best rater.",
+      "related_research_tasks": [
+        "KR06",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F021",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "Alternative implementations support learned coherence and event set prediction",
+      "description": "DialogueTopicSegmenter uses BERT pairwise margin ranking and depth peaks; PDVC uses event queries and Hungarian matching; VidChapters has actual Vid2Seq and text-tiling paths.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/lxing532/Dialogue-Topic-Segmenter/tree/6e93de6dff4c6f6e138002f8ec067ddd3a5a549c",
+        "https://github.com/ttengwang/PDVC/tree/0b025c84f42fe27da51c312e8871c4b19628a04c",
+        "https://github.com/antoyang/VidChapters/tree/fa3900c6508d53ea9d490a07f079703b163c78ea"
+      ],
+      "source_code_references": [
+        "train.py:29–43; neural_texttiling.py:8–48,121–140",
+        "pdvc/pdvc.py:123–234; pdvc/matcher.py:20–105",
+        "model/vid2seq.py:10–168"
+      ],
+      "confidence_and_limitations": "Partial audits, no checkpoints loaded; no real VOD evaluation",
+      "relevance_to_chomp_chomp": "DialogueTopicSegmenter uses BERT pairwise margin ranking and depth peaks; PDVC uses event queries and Hungarian matching; VidChapters has actual Vid2Seq and text-tiling paths.",
+      "related_research_tasks": [
+        "KR06",
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F022",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S08",
+      "version": "v0.2.0",
+      "title": "Cheap semantic proxies underperform fixed windows on synthetic topic fixture",
+      "description": "6 test snippets, 10 gold boundaries; fixed tolerant F1 69.57%, embedding 46.15%, DP exact F1 31.58% but contains only 2/16 topics. Overlap cost 1180s vs source 700s. Structured cue proxy not LLM.",
+      "evidence_classification": "REPRODUCED",
+      "original_sources": [
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/research/cc-c02-k-kr01-a01-v0.1.0/research/C02/K/KR01-A01-SegmentLab/S08-experimental-protocol/CC-C02-K-KR01-A01-S08-v0.2.0-cpu-baseline-results.json"
+      ],
+      "source_code_references": [
+        "fixture commit 5a17a92f9a1eb780ac87b00b1d50922a8cdc3a93",
+        "benchmark commit b2851bf9aeb40896ba015f3bf518a3f6e8ba6aed"
+      ],
+      "confidence_and_limitations": "Author-made small synthetic L3 only; no pretrained embeddings, real editor labels, or timing; cannot infer population quality",
+      "relevance_to_chomp_chomp": "6 test snippets, 10 gold boundaries; fixed tolerant F1 69.57%, embedding 46.15%, DP exact F1 31.58% but contains only 2/16 topics. Overlap cost 1180s vs source 700s. Structured cue proxy not LLM.",
+      "related_research_tasks": [
+        "KR06",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F023",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S07",
+      "version": "v0.2.0",
+      "title": "Annotation requires independent timelines and typed essential context",
+      "description": "L1 atomic unit, L2 closure and essential spans, L3 topics; correlated acceptable edge ranges; nested/crossing units, external context graph, unknown coverage.",
+      "evidence_classification": "PROPOSED",
+      "original_sources": [
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/research/cc-c02-k-kr01-a01-v0.1.0/research/C02/K/KR01-A01-SegmentLab/S07-transfer-design/CC-C02-K-KR01-A01-S07-v0.2.0-annotation-contract.md"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Contract proposed, no peer acceptance, no annotation validation",
+      "relevance_to_chomp_chomp": "L1 atomic unit, L2 closure and essential spans, L3 topics; correlated acceptable edge ranges; nested/crossing units, external context graph, unknown coverage.",
+      "related_research_tasks": [
+        "KR02",
+        "KR03",
+        "KR05",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F024",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S05",
+      "version": "v0.2.0",
+      "title": "Commercial rights require separate model and dataset checks",
+      "description": "Llama gated community license, Chapter-Llama hub MIT tag not base clearance; Qwen 3B qwen-research; AVLectures CC BY-NC; exact MiniCPM mirror license unverified.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+        "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+        "https://github.com/Darshansingh11/AVLectures",
+        "https://huggingface.co/HwwwH/MiniCPM-V-2"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Metadata and license labels only; full rights and derivative terms require KR07 review",
+      "relevance_to_chomp_chomp": "Llama gated community license, Chapter-Llama hub MIT tag not base clearance; Qwen 3B qwen-research; AVLectures CC BY-NC; exact MiniCPM mirror license unverified.",
+      "related_research_tasks": [
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F025",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S03",
+      "version": "v0.2.0",
+      "title": "CausalChapter code F1@k uses label-index tolerance",
+      "description": "compute_f1_at_k compares integer boundary-list indices, not explicit timestamps; paper describes 30s, equivalence depends on grid.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/segment/eval_utils.py",
+        "https://arxiv.org/abs/2609.08686"
+      ],
+      "source_code_references": [
+        "segment/eval_utils.py:70–113"
+      ],
+      "confidence_and_limitations": "Exact paper metric implementation may differ; no metric reproduction; request author clarification",
+      "relevance_to_chomp_chomp": "compute_f1_at_k compares integer boundary-list indices, not explicit timestamps; paper describes 30s, equivalence depends on grid.",
+      "related_research_tasks": [
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F026",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S01",
+      "version": "v0.2.0",
+      "title": "Canonical question IDs resolve historical document collision",
+      "description": "Original S01 Q001–Q005 retained; S10 scoped aliases mapped to Q006–Q012, new Q013–Q015.",
+      "evidence_classification": "SOURCE",
+      "original_sources": [
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/research/cc-c02-k-kr01-a01-v0.1.0/research/C02/K/KR01-A01-SegmentLab/S01-problem-definition/CC-C02-K-KR01-A01-S01-v0.2.0-question-register.json"
+      ],
+      "source_code_references": [],
+      "confidence_and_limitations": "Local governance change only; prior text/history retained",
+      "relevance_to_chomp_chomp": "Original S01 Q001–Q005 retained; S10 scoped aliases mapped to Q006–Q012, new Q013–Q015.",
+      "related_research_tasks": [
+        "KR02",
+        "KR03",
+        "KR05",
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    },
+    {
+      "finding_id": "CC-C02-K-KR01-F027",
+      "research_task": "KR01",
+      "agent_id": "A01",
+      "research_substage": "S02",
+      "version": "v0.2.0",
+      "title": "CausalChapter published gains are benchmark-dependent",
+      "description": "Preprint AVLecture F1@30 63.93→72.97 versus Chapter-Llama Llama; VidChapters F1 45.3→46.2 but SODA 19.3→18.5.",
+      "evidence_classification": "REPORTED",
+      "original_sources": [
+        "https://arxiv.org/abs/2609.08686"
+      ],
+      "source_code_references": [
+        "Table 1(a,b), preprint v1"
+      ],
+      "confidence_and_limitations": "Authors' reported numbers; index/time metric ambiguity and reference generation; no independent reproduction",
+      "relevance_to_chomp_chomp": "Preprint AVLecture F1@30 63.93→72.97 versus Chapter-Llama Llama; VidChapters F1 45.3→46.2 but SODA 19.3→18.5.",
+      "related_research_tasks": [
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-25",
+      "updated_at": "2026-11-25"
+    }
+  ]
+}

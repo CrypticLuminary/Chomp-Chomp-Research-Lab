@@ -1,0 +1,47 @@
+{
+  "experiment": "CC-C02-K-KR01-A01-E001-v0.1.0",
+  "evidence": "REPRODUCED (standalone reconstruction only)",
+  "python": "3.13.5",
+  "results": [
+    {
+      "case": "single valid chapter",
+      "output": {}
+    },
+    {
+      "case": "duplicate",
+      "output": {
+        "00:00:00": "Replacement",
+        "00:01:00": "Next"
+      }
+    },
+    {
+      "case": "outside no duration",
+      "output": {
+        "00:00:00": "Start",
+        "09:00:00": "Outside"
+      }
+    },
+    {
+      "case": "exact end",
+      "output": {
+        "00:00:00": "Start",
+        "00:10:00": "End"
+      }
+    },
+    {
+      "case": "out of order",
+      "output": {
+        "00:01:00": "Earlier",
+        "00:02:00": "Later"
+      }
+    },
+    {
+      "case": "unanchored prose",
+      "output": {
+        "00:01:00": "We might start at  - Topic"
+      }
+    }
+  ],
+  "model_inference": false,
+  "limitations": "Six conceptual parser inputs; no real model outputs or full upstream environment; behavior only."
+}

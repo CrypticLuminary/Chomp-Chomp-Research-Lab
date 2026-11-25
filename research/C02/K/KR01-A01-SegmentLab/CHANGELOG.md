@@ -1,0 +1,3 @@
+# Changelog
+- v0.1.0 (2026-11-25): initialized task; initial taxonomy, 33-source inventory, 12 dossiers, partial pinned source audits, six parser probes, method reconstruction, feasibility, comparative and transfer designs, protocol, findings and early review handoff. No model or production changes. No promotion to v0.9.0 until remaining research completed.
+- v0.2.0 draft (2026-11-25): R01 response; multimodal source trace, direct original parser probes, CausalChapter equations/code and release gaps, alternative implementations, synthetic CPU comparison, annotation and question registers, licensing gates and peer review requests. Expanded draft only; no production changes or research approval.

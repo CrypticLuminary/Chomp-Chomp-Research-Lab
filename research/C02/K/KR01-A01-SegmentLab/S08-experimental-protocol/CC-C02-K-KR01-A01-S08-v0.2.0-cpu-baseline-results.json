@@ -1,0 +1,1755 @@
+{
+  "experiment": "CC-C02-K-KR01-A01-E002-v0.2.0",
+  "scope": "synthetic L3 only; no learned pretrained model, no audiovisual inference; structured_proxy is rule-based not LLM",
+  "metrics": "Micro F1 on unique interior edges, exact and ±1 utterance (10s). Overlap edges are proposal edges not partition boundaries. Full gold topic containment is not thought completeness; footage sums overlapping spans. Dev exact F1 tuned, tie fewer edges, then grid order. No statistical inference.",
+  "results": {
+    "fixed": {
+      "chosen_parameter": null,
+      "dev_search": [
+        {
+          "parameter": null,
+          "dev": {
+            "edge_predictions": 6,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 6,
+            "gold_units": 9,
+            "contained": 5,
+            "windows": 9,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.3333333333333333,
+            "tolerant_f1": 1,
+            "containment": 0.5555555555555556
+          }
+        }
+      ],
+      "test_aggregate": {
+        "edge_predictions": 13,
+        "gold_boundaries": 10,
+        "exact": 3,
+        "tolerant": 8,
+        "gold_units": 16,
+        "contained": 7,
+        "windows": 19,
+        "footage_units": 70,
+        "source_units": 70,
+        "exact_f1": 0.2608695652173913,
+        "tolerant_f1": 0.6956521739130435,
+        "containment": 0.4375
+      },
+      "test": [
+        {
+          "id": "test-01",
+          "gold": [
+            5,
+            9
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 2,
+          "exact": 0,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 1,
+          "windows": 3,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-02",
+          "gold": [
+            4,
+            10
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 2,
+          "exact": 1,
+          "tolerant": 1,
+          "gold_units": 3,
+          "contained": 2,
+          "windows": 3,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-03",
+          "gold": [
+            6
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8,
+              11
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 1,
+          "exact": 0,
+          "tolerant": 0,
+          "gold_units": 2,
+          "contained": 0,
+          "windows": 3,
+          "footage_units": 11,
+          "source_units": 11
+        },
+        {
+          "id": "test-04",
+          "gold": [
+            3,
+            7,
+            11
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              12,
+              13
+            ]
+          ],
+          "edge_predictions": 3,
+          "gold_boundaries": 3,
+          "exact": 0,
+          "tolerant": 3,
+          "gold_units": 4,
+          "contained": 1,
+          "windows": 4,
+          "footage_units": 13,
+          "source_units": 13
+        },
+        {
+          "id": "test-05",
+          "gold": [],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8,
+              10
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 0,
+          "exact": 0,
+          "tolerant": 0,
+          "gold_units": 1,
+          "contained": 0,
+          "windows": 3,
+          "footage_units": 10,
+          "source_units": 10
+        },
+        {
+          "id": "test-06",
+          "gold": [
+            4,
+            8
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 2,
+          "exact": 2,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 3,
+          "windows": 3,
+          "footage_units": 12,
+          "source_units": 12
+        }
+      ]
+    },
+    "overlap": {
+      "chosen_parameter": null,
+      "dev_search": [
+        {
+          "parameter": null,
+          "dev": {
+            "edge_predictions": 14,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 6,
+            "gold_units": 9,
+            "contained": 6,
+            "windows": 14,
+            "footage_units": 55,
+            "source_units": 33,
+            "exact_f1": 0.2,
+            "tolerant_f1": 0.6,
+            "containment": 0.6666666666666666
+          }
+        }
+      ],
+      "test_aggregate": {
+        "edge_predictions": 30,
+        "gold_boundaries": 10,
+        "exact": 5,
+        "tolerant": 10,
+        "gold_units": 16,
+        "contained": 8,
+        "windows": 30,
+        "footage_units": 118,
+        "source_units": 70,
+        "exact_f1": 0.25,
+        "tolerant_f1": 0.5,
+        "containment": 0.5
+      },
+      "test": [
+        {
+          "id": "test-01",
+          "gold": [
+            5,
+            9
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 5,
+          "gold_boundaries": 2,
+          "exact": 0,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 1,
+          "windows": 5,
+          "footage_units": 20,
+          "source_units": 12
+        },
+        {
+          "id": "test-02",
+          "gold": [
+            4,
+            10
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 5,
+          "gold_boundaries": 2,
+          "exact": 2,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 2,
+          "windows": 5,
+          "footage_units": 20,
+          "source_units": 12
+        },
+        {
+          "id": "test-03",
+          "gold": [
+            6
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              8,
+              11
+            ]
+          ],
+          "edge_predictions": 5,
+          "gold_boundaries": 1,
+          "exact": 1,
+          "tolerant": 1,
+          "gold_units": 2,
+          "contained": 0,
+          "windows": 5,
+          "footage_units": 19,
+          "source_units": 11
+        },
+        {
+          "id": "test-04",
+          "gold": [
+            3,
+            7,
+            11
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              10,
+              13
+            ]
+          ],
+          "edge_predictions": 6,
+          "gold_boundaries": 3,
+          "exact": 0,
+          "tolerant": 3,
+          "gold_units": 4,
+          "contained": 2,
+          "windows": 6,
+          "footage_units": 23,
+          "source_units": 13
+        },
+        {
+          "id": "test-05",
+          "gold": [],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              10
+            ]
+          ],
+          "edge_predictions": 4,
+          "gold_boundaries": 0,
+          "exact": 0,
+          "tolerant": 0,
+          "gold_units": 1,
+          "contained": 0,
+          "windows": 4,
+          "footage_units": 16,
+          "source_units": 10
+        },
+        {
+          "id": "test-06",
+          "gold": [
+            4,
+            8
+          ],
+          "predicted_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 5,
+          "gold_boundaries": 2,
+          "exact": 2,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 3,
+          "windows": 5,
+          "footage_units": 20,
+          "source_units": 12
+        }
+      ]
+    },
+    "lexical": {
+      "chosen_parameter": 0.45,
+      "dev_search": [
+        {
+          "parameter": 0.45,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 1,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 2,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.13333333333333333,
+            "tolerant_f1": 0.5333333333333333,
+            "containment": 0.2222222222222222
+          }
+        },
+        {
+          "parameter": 0.6,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 1,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 2,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.13333333333333333,
+            "tolerant_f1": 0.5333333333333333,
+            "containment": 0.2222222222222222
+          }
+        },
+        {
+          "parameter": 0.75,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 1,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 2,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.13333333333333333,
+            "tolerant_f1": 0.5333333333333333,
+            "containment": 0.2222222222222222
+          }
+        },
+        {
+          "parameter": 0.9,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 1,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 2,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.13333333333333333,
+            "tolerant_f1": 0.5333333333333333,
+            "containment": 0.2222222222222222
+          }
+        },
+        {
+          "parameter": 1,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 1,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 2,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.13333333333333333,
+            "tolerant_f1": 0.5333333333333333,
+            "containment": 0.2222222222222222
+          }
+        }
+      ],
+      "test_aggregate": {
+        "edge_predictions": 12,
+        "gold_boundaries": 10,
+        "exact": 2,
+        "tolerant": 4,
+        "gold_units": 16,
+        "contained": 8,
+        "windows": 18,
+        "footage_units": 70,
+        "source_units": 70,
+        "exact_f1": 0.18181818181818182,
+        "tolerant_f1": 0.36363636363636365,
+        "containment": 0.5
+      },
+      "test": [
+        {
+          "id": "test-01",
+          "gold": [
+            5,
+            9
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 2,
+          "exact": 0,
+          "tolerant": 1,
+          "gold_units": 3,
+          "contained": 1,
+          "windows": 3,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-02",
+          "gold": [
+            4,
+            10
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ],
+          "edge_predictions": 3,
+          "gold_boundaries": 2,
+          "exact": 1,
+          "tolerant": 1,
+          "gold_units": 3,
+          "contained": 1,
+          "windows": 4,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-03",
+          "gold": [
+            6
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              11
+            ]
+          ],
+          "edge_predictions": 3,
+          "gold_boundaries": 1,
+          "exact": 0,
+          "tolerant": 1,
+          "gold_units": 2,
+          "contained": 1,
+          "windows": 4,
+          "footage_units": 11,
+          "source_units": 11
+        },
+        {
+          "id": "test-04",
+          "gold": [
+            3,
+            7,
+            11
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              7,
+              13
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 3,
+          "exact": 1,
+          "tolerant": 1,
+          "gold_units": 4,
+          "contained": 3,
+          "windows": 3,
+          "footage_units": 13,
+          "source_units": 13
+        },
+        {
+          "id": "test-05",
+          "gold": [],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              10
+            ]
+          ],
+          "edge_predictions": 1,
+          "gold_boundaries": 0,
+          "exact": 0,
+          "tolerant": 0,
+          "gold_units": 1,
+          "contained": 0,
+          "windows": 2,
+          "footage_units": 10,
+          "source_units": 10
+        },
+        {
+          "id": "test-06",
+          "gold": [
+            4,
+            8
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              12
+            ]
+          ],
+          "edge_predictions": 1,
+          "gold_boundaries": 2,
+          "exact": 0,
+          "tolerant": 0,
+          "gold_units": 3,
+          "contained": 2,
+          "windows": 2,
+          "footage_units": 12,
+          "source_units": 12
+        }
+      ]
+    },
+    "embedding": {
+      "chosen_parameter": 0.9,
+      "dev_search": [
+        {
+          "parameter": 0.9,
+          "dev": {
+            "edge_predictions": 8,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 4,
+            "windows": 11,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.2857142857142857,
+            "tolerant_f1": 0.5714285714285714,
+            "containment": 0.4444444444444444
+          }
+        },
+        {
+          "parameter": 0.45,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 3,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.26666666666666666,
+            "tolerant_f1": 0.5333333333333333,
+            "containment": 0.3333333333333333
+          }
+        },
+        {
+          "parameter": 0.6,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 3,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.26666666666666666,
+            "tolerant_f1": 0.5333333333333333,
+            "containment": 0.3333333333333333
+          }
+        },
+        {
+          "parameter": 0.75,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 3,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.26666666666666666,
+            "tolerant_f1": 0.5333333333333333,
+            "containment": 0.3333333333333333
+          }
+        },
+        {
+          "parameter": 1,
+          "dev": {
+            "edge_predictions": 7,
+            "gold_boundaries": 6,
+            "exact": 1,
+            "tolerant": 3,
+            "gold_units": 9,
+            "contained": 4,
+            "windows": 10,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.15384615384615385,
+            "tolerant_f1": 0.46153846153846156,
+            "containment": 0.4444444444444444
+          }
+        }
+      ],
+      "test_aggregate": {
+        "edge_predictions": 16,
+        "gold_boundaries": 10,
+        "exact": 2,
+        "tolerant": 6,
+        "gold_units": 16,
+        "contained": 3,
+        "windows": 22,
+        "footage_units": 70,
+        "source_units": 70,
+        "exact_f1": 0.15384615384615385,
+        "tolerant_f1": 0.46153846153846156,
+        "containment": 0.1875
+      },
+      "test": [
+        {
+          "id": "test-01",
+          "gold": [
+            5,
+            9
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ],
+          "edge_predictions": 3,
+          "gold_boundaries": 2,
+          "exact": 0,
+          "tolerant": 1,
+          "gold_units": 3,
+          "contained": 0,
+          "windows": 4,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-02",
+          "gold": [
+            4,
+            10
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ],
+          "edge_predictions": 3,
+          "gold_boundaries": 2,
+          "exact": 0,
+          "tolerant": 1,
+          "gold_units": 3,
+          "contained": 0,
+          "windows": 4,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-03",
+          "gold": [
+            6
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          "edge_predictions": 3,
+          "gold_boundaries": 1,
+          "exact": 0,
+          "tolerant": 1,
+          "gold_units": 2,
+          "contained": 0,
+          "windows": 4,
+          "footage_units": 11,
+          "source_units": 11
+        },
+        {
+          "id": "test-04",
+          "gold": [
+            3,
+            7,
+            11
+          ],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              13
+            ]
+          ],
+          "edge_predictions": 4,
+          "gold_boundaries": 3,
+          "exact": 1,
+          "tolerant": 2,
+          "gold_units": 4,
+          "contained": 1,
+          "windows": 5,
+          "footage_units": 13,
+          "source_units": 13
+        },
+        {
+          "id": "test-05",
+          "gold": [],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              10
+            ]
+          ],
+          "edge_predictions": 1,
+          "gold_boundaries": 0,
+          "exact": 0,
+          "tolerant": 0,
+          "gold_units": 1,
+          "contained": 0,
+          "windows": 2,
+          "footage_units": 10,
+          "source_units": 10
+        },
+        {
+          "id": "test-06",
+          "gold": [
+            4,
+            8
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 2,
+          "exact": 1,
+          "tolerant": 1,
+          "gold_units": 3,
+          "contained": 2,
+          "windows": 3,
+          "footage_units": 12,
+          "source_units": 12
+        }
+      ]
+    },
+    "dp": {
+      "chosen_parameter": 0.75,
+      "dev_search": [
+        {
+          "parameter": 0.75,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 3,
+            "tolerant": 6,
+            "gold_units": 9,
+            "contained": 4,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.4,
+            "tolerant_f1": 0.8,
+            "containment": 0.4444444444444444
+          }
+        },
+        {
+          "parameter": 1,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 3,
+            "tolerant": 6,
+            "gold_units": 9,
+            "contained": 4,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.4,
+            "tolerant_f1": 0.8,
+            "containment": 0.4444444444444444
+          }
+        },
+        {
+          "parameter": 1.5,
+          "dev": {
+            "edge_predictions": 2,
+            "gold_boundaries": 6,
+            "exact": 1,
+            "tolerant": 1,
+            "gold_units": 9,
+            "contained": 8,
+            "windows": 5,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.25,
+            "tolerant_f1": 0.25,
+            "containment": 0.8888888888888888
+          }
+        },
+        {
+          "parameter": 0.25,
+          "dev": {
+            "edge_predictions": 12,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 6,
+            "gold_units": 9,
+            "contained": 2,
+            "windows": 15,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.2222222222222222,
+            "tolerant_f1": 0.6666666666666666,
+            "containment": 0.2222222222222222
+          }
+        },
+        {
+          "parameter": 0.5,
+          "dev": {
+            "edge_predictions": 12,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 6,
+            "gold_units": 9,
+            "contained": 2,
+            "windows": 15,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.2222222222222222,
+            "tolerant_f1": 0.6666666666666666,
+            "containment": 0.2222222222222222
+          }
+        },
+        {
+          "parameter": 2,
+          "dev": {
+            "edge_predictions": 0,
+            "gold_boundaries": 6,
+            "exact": 0,
+            "tolerant": 0,
+            "gold_units": 9,
+            "contained": 9,
+            "windows": 3,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0,
+            "tolerant_f1": 0,
+            "containment": 1
+          }
+        },
+        {
+          "parameter": 3,
+          "dev": {
+            "edge_predictions": 0,
+            "gold_boundaries": 6,
+            "exact": 0,
+            "tolerant": 0,
+            "gold_units": 9,
+            "contained": 9,
+            "windows": 3,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0,
+            "tolerant_f1": 0,
+            "containment": 1
+          }
+        }
+      ],
+      "test_aggregate": {
+        "edge_predictions": 28,
+        "gold_boundaries": 10,
+        "exact": 6,
+        "tolerant": 10,
+        "gold_units": 16,
+        "contained": 2,
+        "windows": 34,
+        "footage_units": 70,
+        "source_units": 70,
+        "exact_f1": 0.3157894736842105,
+        "tolerant_f1": 0.5263157894736842,
+        "containment": 0.125
+      },
+      "test": [
+        {
+          "id": "test-01",
+          "gold": [
+            5,
+            9
+          ],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ],
+          "edge_predictions": 5,
+          "gold_boundaries": 2,
+          "exact": 0,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 0,
+          "windows": 6,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-02",
+          "gold": [
+            4,
+            10
+          ],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ],
+          "edge_predictions": 5,
+          "gold_boundaries": 2,
+          "exact": 2,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 1,
+          "windows": 6,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-03",
+          "gold": [
+            6
+          ],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              11
+            ]
+          ],
+          "edge_predictions": 4,
+          "gold_boundaries": 1,
+          "exact": 0,
+          "tolerant": 1,
+          "gold_units": 2,
+          "contained": 0,
+          "windows": 5,
+          "footage_units": 11,
+          "source_units": 11
+        },
+        {
+          "id": "test-04",
+          "gold": [
+            3,
+            7,
+            11
+          ],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              13
+            ]
+          ],
+          "edge_predictions": 5,
+          "gold_boundaries": 3,
+          "exact": 2,
+          "tolerant": 3,
+          "gold_units": 4,
+          "contained": 1,
+          "windows": 6,
+          "footage_units": 13,
+          "source_units": 13
+        },
+        {
+          "id": "test-05",
+          "gold": [],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              10
+            ]
+          ],
+          "edge_predictions": 4,
+          "gold_boundaries": 0,
+          "exact": 0,
+          "tolerant": 0,
+          "gold_units": 1,
+          "contained": 0,
+          "windows": 5,
+          "footage_units": 10,
+          "source_units": 10
+        },
+        {
+          "id": "test-06",
+          "gold": [
+            4,
+            8
+          ],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              10,
+              12
+            ]
+          ],
+          "edge_predictions": 5,
+          "gold_boundaries": 2,
+          "exact": 2,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 0,
+          "windows": 6,
+          "footage_units": 12,
+          "source_units": 12
+        }
+      ]
+    },
+    "structured_proxy": {
+      "chosen_parameter": 0.9,
+      "dev_search": [
+        {
+          "parameter": 0.9,
+          "dev": {
+            "edge_predictions": 9,
+            "gold_boundaries": 6,
+            "exact": 3,
+            "tolerant": 5,
+            "gold_units": 9,
+            "contained": 4,
+            "windows": 12,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.4,
+            "tolerant_f1": 0.6666666666666666,
+            "containment": 0.4444444444444444
+          }
+        },
+        {
+          "parameter": 0.45,
+          "dev": {
+            "edge_predictions": 10,
+            "gold_boundaries": 6,
+            "exact": 3,
+            "tolerant": 5,
+            "gold_units": 9,
+            "contained": 3,
+            "windows": 13,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.375,
+            "tolerant_f1": 0.625,
+            "containment": 0.3333333333333333
+          }
+        },
+        {
+          "parameter": 0.6,
+          "dev": {
+            "edge_predictions": 10,
+            "gold_boundaries": 6,
+            "exact": 3,
+            "tolerant": 5,
+            "gold_units": 9,
+            "contained": 3,
+            "windows": 13,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.375,
+            "tolerant_f1": 0.625,
+            "containment": 0.3333333333333333
+          }
+        },
+        {
+          "parameter": 0.75,
+          "dev": {
+            "edge_predictions": 10,
+            "gold_boundaries": 6,
+            "exact": 3,
+            "tolerant": 5,
+            "gold_units": 9,
+            "contained": 3,
+            "windows": 13,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.375,
+            "tolerant_f1": 0.625,
+            "containment": 0.3333333333333333
+          }
+        },
+        {
+          "parameter": 1,
+          "dev": {
+            "edge_predictions": 8,
+            "gold_boundaries": 6,
+            "exact": 2,
+            "tolerant": 4,
+            "gold_units": 9,
+            "contained": 4,
+            "windows": 11,
+            "footage_units": 33,
+            "source_units": 33,
+            "exact_f1": 0.2857142857142857,
+            "tolerant_f1": 0.5714285714285714,
+            "containment": 0.4444444444444444
+          }
+        }
+      ],
+      "test_aggregate": {
+        "edge_predictions": 17,
+        "gold_boundaries": 10,
+        "exact": 3,
+        "tolerant": 7,
+        "gold_units": 16,
+        "contained": 3,
+        "windows": 23,
+        "footage_units": 70,
+        "source_units": 70,
+        "exact_f1": 0.2222222222222222,
+        "tolerant_f1": 0.5185185185185185,
+        "containment": 0.1875
+      },
+      "test": [
+        {
+          "id": "test-01",
+          "gold": [
+            5,
+            9
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ],
+          "edge_predictions": 4,
+          "gold_boundaries": 2,
+          "exact": 1,
+          "tolerant": 2,
+          "gold_units": 3,
+          "contained": 0,
+          "windows": 5,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-02",
+          "gold": [
+            4,
+            10
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              12
+            ]
+          ],
+          "edge_predictions": 3,
+          "gold_boundaries": 2,
+          "exact": 0,
+          "tolerant": 1,
+          "gold_units": 3,
+          "contained": 0,
+          "windows": 4,
+          "footage_units": 12,
+          "source_units": 12
+        },
+        {
+          "id": "test-03",
+          "gold": [
+            6
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              10,
+              11
+            ]
+          ],
+          "edge_predictions": 3,
+          "gold_boundaries": 1,
+          "exact": 0,
+          "tolerant": 1,
+          "gold_units": 2,
+          "contained": 0,
+          "windows": 4,
+          "footage_units": 11,
+          "source_units": 11
+        },
+        {
+          "id": "test-04",
+          "gold": [
+            3,
+            7,
+            11
+          ],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              13
+            ]
+          ],
+          "edge_predictions": 4,
+          "gold_boundaries": 3,
+          "exact": 1,
+          "tolerant": 2,
+          "gold_units": 4,
+          "contained": 1,
+          "windows": 5,
+          "footage_units": 13,
+          "source_units": 13
+        },
+        {
+          "id": "test-05",
+          "gold": [],
+          "predicted_spans": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              10
+            ]
+          ],
+          "edge_predictions": 1,
+          "gold_boundaries": 0,
+          "exact": 0,
+          "tolerant": 0,
+          "gold_units": 1,
+          "contained": 0,
+          "windows": 2,
+          "footage_units": 10,
+          "source_units": 10
+        },
+        {
+          "id": "test-06",
+          "gold": [
+            4,
+            8
+          ],
+          "predicted_spans": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "edge_predictions": 2,
+          "gold_boundaries": 2,
+          "exact": 1,
+          "tolerant": 1,
+          "gold_units": 3,
+          "contained": 2,
+          "windows": 3,
+          "footage_units": 12,
+          "source_units": 12
+        }
+      ]
+    }
+  }
+}

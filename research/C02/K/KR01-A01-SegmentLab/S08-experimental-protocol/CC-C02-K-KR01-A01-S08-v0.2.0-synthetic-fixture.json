@@ -1,0 +1,197 @@
+{
+  "schema": "kr01-synthetic-topic-fixture/1",
+  "unit_ms": 10000,
+  "gold_definition": "L3 topic partitions; boundary index is first utterance of next topic. Artificial equal-duration utterances, not real VOD; author-generated and labeled before executing benchmark; dev/test separation but no independent annotator. Test gold not used for parameter selection.",
+  "fixtures": [
+    {
+      "id": "dev-01",
+      "split": "dev",
+      "gold": [
+        3,
+        8
+      ],
+      "utterances": [
+        "I failed my first exam and felt terrible.",
+        "The exam was harder than I expected.",
+        "But studying every morning helped me pass.",
+        "Anyway the new game is loading.",
+        "The mission starts in a city.",
+        "We need to find a car.",
+        "The car is parked near a garage.",
+        "The mission is complete.",
+        "I cooked rice for dinner.",
+        "The rice needed more water.",
+        "Next time I will use a smaller pot."
+      ]
+    },
+    {
+      "id": "dev-02",
+      "split": "dev",
+      "gold": [
+        5,
+        9
+      ],
+      "utterances": [
+        "The laptop battery is dying.",
+        "I bought a charger yesterday.",
+        "The charger is too slow.",
+        "I checked the power supply.",
+        "It finally works now.",
+        "Let's talk about college.",
+        "My professor explained the assignment.",
+        "The assignment is due next week.",
+        "I finished the report.",
+        "The game server is back.",
+        "Join the server now.",
+        "The team is ready."
+      ]
+    },
+    {
+      "id": "dev-03",
+      "split": "dev",
+      "gold": [
+        4,
+        7
+      ],
+      "utterances": [
+        "I started running in the morning.",
+        "Running helps my health.",
+        "My legs hurt at first.",
+        "Now I can run farther.",
+        "The team is playing a game.",
+        "Our team missed the first goal.",
+        "We won the game.",
+        "My sister called about dinner.",
+        "She made rice and vegetables.",
+        "Dinner was ready."
+      ]
+    },
+    {
+      "id": "test-01",
+      "split": "test",
+      "gold": [
+        5,
+        9
+      ],
+      "utterances": [
+        "When I entered college I was scared.",
+        "My first exam went badly.",
+        "I studied with a friend for weeks.",
+        "My grades improved slowly.",
+        "That is why I value persistence.",
+        "Anyway the game has loaded.",
+        "The mission marker is on the bridge.",
+        "Take the car across the bridge.",
+        "We reached the next checkpoint.",
+        "My mother called about food.",
+        "She asked whether I had dinner.",
+        "I told her I ate rice."
+      ]
+    },
+    {
+      "id": "test-02",
+      "split": "test",
+      "gold": [
+        4,
+        10
+      ],
+      "utterances": [
+        "I think college can be a waste of time.",
+        "Some students only collect a certificate.",
+        "But I mean people with a clear career path already.",
+        "For everyone else education may still be valuable.",
+        "The car is stuck behind a wall.",
+        "I can move the car left.",
+        "The game physics are weird.",
+        "Wait that car disappeared.",
+        "The mission marker is gone too.",
+        "Okay the mission ended.",
+        "I need a new charger.",
+        "My laptop battery is almost empty."
+      ]
+    },
+    {
+      "id": "test-03",
+      "split": "test",
+      "gold": [
+        6
+      ],
+      "utterances": [
+        "My friend said he was a genius.",
+        "He claimed he could win any game.",
+        "Then he drove into the wall.",
+        "He said it was a tactical decision.",
+        "Yes obviously the wall was scared.",
+        "We laughed because he had bragged earlier.",
+        "The exam schedule came out today.",
+        "I have to study networks.",
+        "The professor posted lecture notes.",
+        "I should finish the assignment.",
+        "The deadline is Friday."
+      ]
+    },
+    {
+      "id": "test-04",
+      "split": "test",
+      "gold": [
+        3,
+        7,
+        11
+      ],
+      "utterances": [
+        "The rice is almost done.",
+        "Add a little water to the pot.",
+        "Turn off the stove now.",
+        "The city in the game looks amazing.",
+        "Drive along the river.",
+        "The bridge is blocked.",
+        "Go around the bridge.",
+        "I had a bad week at college.",
+        "I missed an assignment deadline.",
+        "My friend helped with the report.",
+        "I finally submitted it.",
+        "This charger keeps disconnecting.",
+        "The laptop needs a new cable."
+      ]
+    },
+    {
+      "id": "test-05",
+      "split": "test",
+      "gold": [],
+      "utterances": [
+        "My father always worked hard.",
+        "He worked late when I was young.",
+        "Our family had little money.",
+        "I remember him walking home.",
+        "He never complained about work.",
+        "I wanted to give up last year.",
+        "Then I remembered my father.",
+        "His example helped me keep trying.",
+        "I learned patience from him.",
+        "That is why I keep working."
+      ]
+    },
+    {
+      "id": "test-06",
+      "split": "test",
+      "gold": [
+        4,
+        8
+      ],
+      "utterances": [
+        "Uh the battery thing again.",
+        "The cable uh no power.",
+        "This charger maybe broken.",
+        "Yeah it works now.",
+        "So my exam um went bad.",
+        "I studied but forgot the question.",
+        "The professor said retry.",
+        "I can pass next time.",
+        "Right back to game.",
+        "Uh mission car where.",
+        "The bridge yes bridge.",
+        "We made it."
+      ]
+    }
+  ]
+}
