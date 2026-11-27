@@ -1,0 +1,43 @@
+schema_version: 1
+project: Chomp-Chomp
+project_id: CC
+cycle: C02
+phase: K
+task_id: KR05
+agent_id: A05
+codename: BoundaryLab
+research_version: v0.1.0
+status: in_progress
+agent_model: GPT-6.2
+execution_environment: "ChatGPT conversation; authenticated GitHub connector; static source inspection; no local checkout or model runtime used"
+repository: CrypticLuminary/Chomp-Chomp-Research-Lab
+branch: research/cc-c02-k-kr05-a05-v0.1.0
+base_commit: d0dbef6583165f781f217a095f50993faad742e8
+dependencies:
+  - task: KR01
+    commit: 125a7bb81e13904d181701d6e55f198172cacea6
+    status: pending_review
+    inspection: finding_register_27_entries
+  - task: KR02
+    commit: 88f6a5b7b170cff5cafb3a2d943505e45405ba11
+    status: pending_review
+    inspection: finding_register_16_entries
+  - task: KR04
+    commit: 93a21ee0fd67d25ef8ab6b06bf0375677a40799a
+    status: pending_review
+    inspection: finding_register_19_entries
+  - task: KR03
+    commit: 3b05448afa0f074e49338b20a866cae311f0bc5b
+    status: pending_review
+    inspection: branch_head_only
+  - task: A09
+    repository: CrypticLuminary/AI_Clipper-Chomp-Chomp-
+    branch: work/cycle2-keystone
+    commit: 5d4b84f45241e14d31934aee1ff3b2960511022b
+    status: partial_static_audit
+  - task: A09
+    branch: feat/stage1-clip-boundaries
+    commit: 82ad6d4dd61d8113c1dbfc9d774eed80203d00fa
+    status: head_verified_source_audit_pending
+reviewer: A00
+review_status: pending

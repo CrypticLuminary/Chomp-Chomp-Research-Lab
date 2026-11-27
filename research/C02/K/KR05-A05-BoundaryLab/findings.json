@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "findings": [
+    {
+      "finding_id": "CC-C02-K-KR05-F001",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S00",
+      "version": "v0.1.0",
+      "title": "Local boundary refinement explicitly does not establish semantic closure",
+      "description": "The refiner joins nearby ASR segments by temporal gaps, bounded side budgets, caps and padding. Fallback can snap to low audio levels; hard cuts are labelled. The code explicitly describes these signals as timing only.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/boundaries.py#L97-L229",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b"
+        }
+      ],
+      "code_references": [
+        {
+          "repository": "CrypticLuminary/AI_Clipper-Chomp-Chomp-",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b",
+          "path": "chomp/boundaries.py",
+          "lines": "L97-L229"
+        }
+      ],
+      "limitations": "Does not establish frequency or downstream output quality; not yet traced through every caller.",
+      "relevance": "Retain as matched baseline and mechanical boundary proposal; do not treat it as a semantic completeness oracle.",
+      "related_tasks": [
+        "KR01",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F002",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S00",
+      "version": "v0.1.0",
+      "title": "Director validates cited evidence but does not independently verify all essential context",
+      "description": "investigate() validates ID membership, retrieval limits and role-ID subsets; role IDs are optional. enforce() derives semantic span from cited evidence, checks section, proposal overlap, evidence intersection, campaign constraints and duplicates. These checks do not establish that a missing qualification or dependency was identified. No independent semantic completeness check occurs in these two functions.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/director/semantic.py#L225-L334",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b"
+        }
+      ],
+      "code_references": [
+        {
+          "repository": "CrypticLuminary/AI_Clipper-Chomp-Chomp-",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b",
+          "path": "chomp/director/semantic.py",
+          "lines": "L225-L334"
+        }
+      ],
+      "limitations": "Static observation of two functions, not proof no other system component ever performs verification. Production caller and export chain need deeper audit.",
+      "relevance": "Separate interval construction from independent contextual closure judgment; distinguish viewer-required spans from interpretation-only evidence.",
+      "related_tasks": [
+        "KR02",
+        "KR03",
+        "KR04",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F003",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S00",
+      "version": "v0.1.0",
+      "title": "Benchmark distinguishes temporal span coverage from human contextual completeness",
+      "description": "benchmark() emits human_context_completeness as unavailable without independent judgments; legacy setup_payoff_completeness alias is explicitly marked temporal_span_coverage_not_contextual_completeness.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/evaluation/benchmark.py#L260-L294",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b"
+        }
+      ],
+      "code_references": [
+        {
+          "repository": "CrypticLuminary/AI_Clipper-Chomp-Chomp-",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b",
+          "path": "chomp/evaluation/benchmark.py",
+          "lines": "L260-L294"
+        }
+      ],
+      "limitations": "Static audit of metric emission, not verification of all matching logic or independent assessment reliability.",
+      "relevance": "Reuse coverage metrics with explicit denominators, but keep human judgments and contextual faithfulness separate.",
+      "related_tasks": [
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    }
+  ],
+  "required_fields": [
+    "finding_id",
+    "task_id",
+    "agent_id",
+    "substage",
+    "version",
+    "title",
+    "description",
+    "evidence_class",
+    "sources",
+    "code_references",
+    "limitations",
+    "relevance",
+    "related_tasks",
+    "review_status",
+    "created_at",
+    "updated_at"
+  ]
+}
