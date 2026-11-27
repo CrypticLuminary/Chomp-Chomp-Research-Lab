@@ -478,6 +478,222 @@
       "review_status": "pending",
       "created_at": "2026-11-27",
       "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F012",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Oracle closure is mechanically reliable only under supplied labels",
+      "description": "Synthetic fixture: [{\"method\":\"fixed\",\"accepted\":15,\"faithful\":3,\"invalid\":12,\"correct_abstain\":0,\"false_abstain\":0,\"mean_faithful_duration_ms\":14666.666666666666},{\"method\":\"unit\",\"accepted\":11,\"faithful\":9,\"invalid\":2,\"correct_abstain\":2,\"false_abstain\":2,\"mean_faithful_duration_ms\":18888.88888888889},{\"method\":\"hull\",\"accepted\":11,\"faithful\":10,\"invalid\":1,\"correct_abstain\":4,\"false_abstain\":0,\"mean_faithful_duration_ms\":13400},{\"method\":\"closure\",\"accepted\":11,\"faithful\":11,\"invalid\":0,\"correct_abstain\":4,\"false_abstain\":0,\"mean_faithful_duration_ms\":13363.636363636364},{\"method\":\"missing\",\"accepted\":13,\"faithful\":3,\"invalid\":10,\"correct_abstain\":2,\"false_abstain\":0,\"mean_faithful_duration_ms\":7000},{\"method\":\"uncorrelated\",\"accepted\":11,\"faithful\":11,\"invalid\":0,\"correct_abstain\":4,\"false_abstain\":0,\"mean_faithful_duration_ms\":13363.636363636364}]. Gold oracle uses same predicates and endpoints; this is an invariant check, not fair learned-model comparison.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F013",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Independent endpoint acceptance does not imply pair acceptance",
+      "description": "Two acceptable pairs [10,30] and [20,24] seconds; both crossed pairs fail conditional fixture rules. Joint interval identity required.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F014",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "High temporal IoU can omit a critical qualification",
+      "description": "Synthetic cut [10,39] vs [10,40] seconds has tIoU 0.9666666666666667 but loses [39,40].",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F015",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Technical snapping can invalidate a previously valid interval",
+      "description": "Fixture [18,33] valid; snap to [18,30] removes qualification [28,32] and violates safe end. Independent recheck needed.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F016",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S07",
+      "version": "v0.2.0",
+      "title": "ContextClosure must distinguish hard gates from value and duration ranking",
+      "description": "Enumerate evidence-grounded interval pairs, require viewer dependencies and faithfulness, abstain on infeasible/unknown, then optimize preference/pacing.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F017",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S07",
+      "version": "v0.2.0",
+      "title": "Annotation needs conditional dependency groups and interval-specific review",
+      "description": "Record multiple valid pairs, conditional obligations introduced by earlier/later content, interpretation-only context, and independent blind preference.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
     }
   ],
   "required_fields": [

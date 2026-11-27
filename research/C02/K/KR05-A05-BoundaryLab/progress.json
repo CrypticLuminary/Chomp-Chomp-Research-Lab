@@ -1,14 +1,19 @@
 {
   "schema_version": 1,
   "status": "in_progress",
-  "current_substage": "S00",
+  "current_substage": "S08",
   "completed_substages": [],
-  "checkpoint": "governance_read_branch_initialized_peer_registers_and_initial_production_triage; full dependency artifact reads pending",
+  "checkpoint": "v0.2.0 partial across S00-S08; all stages remain subject to completion",
+  "screened_works": 35,
+  "external_static_audits": 6,
+  "registered_findings": 17,
+  "synthetic_experiments": 1,
   "blockers": [
-    "Full peer artifact review beyond finding registers pending (including CausalChapter, annotation contract, memory and InterestNet details).",
-    "No authorized independently annotated samples supplied; no empirical quality claim.",
-    "Deep external literature and source audit not started; model/checkpoint and dataset rights unverified.",
-    "No peer communication or independent review yet."
+    "Full peer reports and production call chain still need review; previous production boundary branch source not fully traced.",
+    "35 literature leads screened; only six external implementations inspected in selected source ranges; target 12–15 detailed papers not met.",
+    "No independently annotated authorized VODs; synthetic oracle shares gold rules.",
+    "Model binaries, full rights, data sizes, reported results and full training/evaluation traces not verified.",
+    "No actual peer communication or independent review; no v0.9.0 claim."
   ],
   "updated_at": "2026-11-27"
 }

@@ -1,0 +1,966 @@
+{
+  "fixture_count": 15,
+  "feasible": 11,
+  "summary": [
+    {
+      "method": "fixed",
+      "accepted": 15,
+      "faithful": 3,
+      "invalid": 12,
+      "correct_abstain": 0,
+      "false_abstain": 0,
+      "mean_faithful_duration_ms": 14666.666666666666
+    },
+    {
+      "method": "unit",
+      "accepted": 11,
+      "faithful": 9,
+      "invalid": 2,
+      "correct_abstain": 2,
+      "false_abstain": 2,
+      "mean_faithful_duration_ms": 18888.88888888889
+    },
+    {
+      "method": "hull",
+      "accepted": 11,
+      "faithful": 10,
+      "invalid": 1,
+      "correct_abstain": 4,
+      "false_abstain": 0,
+      "mean_faithful_duration_ms": 13400
+    },
+    {
+      "method": "closure",
+      "accepted": 11,
+      "faithful": 11,
+      "invalid": 0,
+      "correct_abstain": 4,
+      "false_abstain": 0,
+      "mean_faithful_duration_ms": 13363.636363636364
+    },
+    {
+      "method": "missing",
+      "accepted": 13,
+      "faithful": 3,
+      "invalid": 10,
+      "correct_abstain": 2,
+      "false_abstain": 0,
+      "mean_faithful_duration_ms": 7000
+    },
+    {
+      "method": "uncorrelated",
+      "accepted": 11,
+      "faithful": 11,
+      "invalid": 0,
+      "correct_abstain": 4,
+      "false_abstain": 0,
+      "mean_faithful_duration_ms": 13363.636363636364
+    }
+  ],
+  "correlated_pairs": [
+    {
+      "interval_ms": [
+        10000,
+        30000
+      ],
+      "accepted": true
+    },
+    {
+      "interval_ms": [
+        20000,
+        24000
+      ],
+      "accepted": true
+    },
+    {
+      "interval_ms": [
+        10000,
+        24000
+      ],
+      "accepted": false
+    },
+    {
+      "interval_ms": [
+        20000,
+        30000
+      ],
+      "accepted": false
+    }
+  ],
+  "highIoU": {
+    "gold_ms": [
+      10000,
+      40000
+    ],
+    "cut_ms": [
+      10000,
+      39000
+    ],
+    "essential_qualification_ms": [
+      39000,
+      40000
+    ],
+    "iou": 0.9666666666666667,
+    "covers_qualification": false
+  },
+  "snap": {
+    "original": [
+      18000,
+      33000
+    ],
+    "snapped": [
+      18000,
+      30000
+    ],
+    "original_valid": true,
+    "snapped_valid": false
+  },
+  "rows": [
+    {
+      "id": "motivation",
+      "feasible": false,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            33000,
+            49000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "controversy",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            15000,
+            32000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            12000,
+            37000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            20000,
+            33000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            20000,
+            33000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            20000,
+            27000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            20000,
+            33000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "roast",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            15000,
+            29000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            8000,
+            27000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            10000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            10000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            10000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "callback",
+      "feasible": false,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            2395000,
+            2410000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            2395000,
+            2410000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            2400000,
+            2405000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "quiet_emotion",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            19000,
+            34000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": true
+        },
+        "hull": {
+          "interval_ms": [
+            6000,
+            34000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            6000,
+            34000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            6000,
+            29000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            6000,
+            34000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "silent_comedy",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            15000,
+            29000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            10000,
+            31000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            11000,
+            28000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            11000,
+            28000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            11000,
+            24000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            11000,
+            28000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "gameplay",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            20000,
+            35000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            11000,
+            32000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            12000,
+            30000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            12000,
+            30000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            25000,
+            30000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            12000,
+            30000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "nested",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            15000,
+            31000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": true
+        },
+        "hull": {
+          "interval_ms": [
+            18000,
+            26000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            18000,
+            26000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            20000,
+            26000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            18000,
+            26000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "interleaved",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            35000,
+            49000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            35000,
+            50000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            36000,
+            46000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            36000,
+            46000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            36000,
+            44000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            36000,
+            46000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "delayed_correction",
+      "feasible": false,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            35000,
+            51000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            32000,
+            49000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            40000,
+            46000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "ambiguous_reference",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            13000,
+            28000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            0,
+            28000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            5000,
+            23000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            5000,
+            23000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            18000,
+            23000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            5000,
+            23000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "no_feasible",
+      "feasible": false,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            45000,
+            60000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": null,
+          "faithful_by_fixture": false,
+          "correct_abstain": true,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "correlated_pairs",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            15000,
+            29000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            10000,
+            30000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "technical_conflict",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            15000,
+            32000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            18000,
+            33000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            20000,
+            32000
+          ],
+          "faithful_by_fixture": false,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            20000,
+            33000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            20000,
+            33000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            20000,
+            33000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    },
+    {
+      "id": "simple",
+      "feasible": true,
+      "outcomes": {
+        "fixed": {
+          "interval_ms": [
+            15000,
+            29000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "unit": {
+          "interval_ms": [
+            19000,
+            25000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "hull": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "closure": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "missing": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        },
+        "uncorrelated": {
+          "interval_ms": [
+            20000,
+            24000
+          ],
+          "faithful_by_fixture": true,
+          "correct_abstain": false,
+          "false_abstain": false
+        }
+      }
+    }
+  ]
+}

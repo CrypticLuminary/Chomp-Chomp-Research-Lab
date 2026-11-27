@@ -6,10 +6,10 @@ phase: K
 task_id: KR05
 agent_id: A05
 codename: BoundaryLab
-research_version: v0.1.0
+research_version: v0.2.0
 status: in_progress
 agent_model: GPT-6.2
-execution_environment: "ChatGPT conversation; authenticated GitHub connector; static source inspection; no local checkout or model runtime used"
+execution_environment: "ChatGPT conversation; authenticated GitHub connector; static source inspection; ECMAScript V8 synthetic probe; no model runtime used"
 repository: CrypticLuminary/Chomp-Chomp-Research-Lab
 branch: research/cc-c02-k-kr05-a05-v0.1.0
 base_commit: d0dbef6583165f781f217a095f50993faad742e8

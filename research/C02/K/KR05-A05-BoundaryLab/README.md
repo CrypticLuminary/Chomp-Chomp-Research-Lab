@@ -1,7 +1,3 @@
 # KR05 — BoundaryLab
 
-Assignment: CC-C02-K-KR05-A05-v0.1.0. S00 initialized; S01–S10 pending. Review: pending A00.
-
-Goal: shortest sufficiently complete worthwhile contiguous interval, preserving setup, payoff, essential viewer context, qualifications and meaning. A valid timestamp is not proof of closure. No production change or paid inference.
-
-Read manifest.yaml, progress.json, JOURNAL.md, findings.json and questions.json. See S00-assignment/ for provenance and initial source triage. All findings are provisional.
+CC-C02-K-KR05-A05-v0.2.0 — substantive preliminary research, not approved. See S01 taxonomy, S02 literature screening, S03 pinned code audit, S04 methods, S05 feasibility, S06 comparative cases, S07 contract, S08 E001, S09 synthesis, S10 handoff. All findings pending. No production code modified; no paid inference. Source-clock integer milliseconds, contiguous only. Draft PR #5.
