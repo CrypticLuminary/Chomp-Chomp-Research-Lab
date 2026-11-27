@@ -236,14 +236,14 @@
       "evidence_class": "SOURCE",
       "sources": [
         {
-          "url": "https://github.com/jayleicn/moment_detr/blob/main/standalone_eval/eval.py#L249-L294",
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/standalone_eval/eval.py",
           "accessed_at": "2026-11-27"
         }
       ],
       "code_references": [
         "eval blob 786f8262cb36817f20225c1eaba244386028ce9f; default set match, optional intersection; Hit@1 any worker."
       ],
-      "limitations": "Full upstream commit not pinned here; utils lock GT.",
+      "limitations": "Pinned commit verified; not upstream execution. Missing or empty windows need explicit policy.",
       "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
       "related_tasks": [
         "KR01",
@@ -635,6 +635,90 @@
         "KR03",
         "KR04",
         "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F021",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "QVHighlights empty prediction and array length handling",
+      "description": "AP iterates populated prediction keys; empty windows may omit query; R@1 indexes first prediction; saliency arrays padded/truncated.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/standalone_eval/eval.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "AP iterates populated prediction keys; empty windows may omit query; R@1 indexes first prediction; saliency arrays padded/truncated."
+      ],
+      "limitations": "Static code only; no claim published model omitted queries.",
+      "relevance": "Validate exact assigned roster and invalid responses; namespace slices.",
+      "related_tasks": [
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F022",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "LongVideoBench random fallback and slice double count",
+      "description": "Malformed MCQ may receive random answer; aggregation sums duration and question-category buckets, doubling nominal count when disjoint; weighted accuracy unchanged under equal multiplicity.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/EvolvingLMMs-Lab/lmms-eval/blob/9134731f4f617e62ee80bcae9d0d5d9695ea55ef/lmms_eval/tasks/longvideobench/utils.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Malformed MCQ may receive random answer; aggregation sums duration and question-category buckets, doubling nominal count when disjoint; weighted accuracy unchanged under equal multiplicity."
+      ],
+      "limitations": "Task-level scorer only; full harness roster not traced.",
+      "relevance": "Validate exact assigned roster and invalid responses; namespace slices.",
+      "related_tasks": [
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F023",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Two arithmetic follow-up probes plus failure-policy illustration",
+      "description": "Executed 3 synthetic checks: assigned vs populated AP 0.5 vs 1, slice count 4 vs 2 with same 0.5 accuracy, explicit invalid failure policy.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "url": "https://github.com/EvolvingLMMs-Lab/lmms-eval/blob/9134731f4f617e62ee80bcae9d0d5d9695ea55ef/lmms_eval/tasks/longvideobench/utils.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Executed 3 synthetic checks: assigned vs populated AP 0.5 vs 1, slice count 4 vs 2 with same 0.5 accuracy, explicit invalid failure policy."
+      ],
+      "limitations": "Authored arithmetic not upstream execution; final policy check tautological.",
+      "relevance": "Validate exact assigned roster and invalid responses; namespace slices.",
+      "related_tasks": [
+        "KR08",
         "A09"
       ],
       "review_status": "pending",

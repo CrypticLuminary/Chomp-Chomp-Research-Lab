@@ -17,7 +17,7 @@
   ],
   "completion_scope": "draft design artifacts, not empirical or final approval",
   "blockers": [
-    "NEST release returned 404; LongVideoBench full evaluator not audited",
+    "NEST release returned 404; LongVideoBench full harness not traced (task scorer audited)",
     "No authorized pilot media, human labels, actual quality/cost comparisons",
     "Sidecar schema/adapter not executed against production",
     "Thresholds and sample size require pilot",
