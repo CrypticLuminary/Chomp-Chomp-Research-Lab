@@ -1,0 +1,18 @@
+schema_version: 1
+assignment: CC-C02-K-KR07-A07-v0.1.0
+task: KR07
+agent: A07
+codename: DataForge
+model: GPT-6.2
+app: ChatGPT chat
+attribution: self-reported
+coordinator: A00
+version: v0.1.0
+branch: research/cc-c02-k-kr07-a07-v0.1.0
+base_commit: d0dbef6583165f781f217a095f50993faad742e8
+status: preliminary_checkpoint
+review_status: pending
+production_changes: false
+gated_downloads: false
+paid_jobs: false
+training_executed: false
