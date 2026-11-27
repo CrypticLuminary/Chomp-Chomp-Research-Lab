@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "findings": [
+    {
+      "finding_id": "CC-C02-K-KR03-F001",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S00",
+      "version": "v0.1.0",
+      "title": "Research registers verified at assigned checkpoints",
+      "description": "27 KR01, 16 KR02, 19 KR04 entries; all pending review. Counts refer to records, not validated discoveries.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/125a7bb81e13904d181701d6e55f198172cacea6/research/C02/K/KR01-A01-SegmentLab/findings.json",
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/88f6a5b7b170cff5cafb3a2d943505e45405ba11/research/C02/K/KR02-A02-MemoryLab/findings.json",
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/93a21ee0fd67d25ef8ab6b06bf0375677a40799a/research/C02/K/KR04-A04-InterestLab/findings.json"
+      ],
+      "limitations": "Register inspection is not independent verification of claims.",
+      "relevance": "Prevents duplicating and prematurely adopting peer work.",
+      "code_references": [],
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F002",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S02",
+      "version": "v0.1.0",
+      "title": "GraphTP learns a task-specific sparse movie graph",
+      "description": "Publication defines movie summarization through turning-point scene identification with multimodal graph construction; semantic typed dependency transfer not established.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/17607",
+        "https://github.com/ppapalampidi/GraphTP"
+      ],
+      "limitations": "Abstract and README only; no code audit or spontaneous-video validation.",
+      "relevance": "Candidate proposal architecture, not gold relationship labels.",
+      "code_references": [],
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F003",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S00",
+      "version": "v0.1.0",
+      "title": "Separate retrieval, relation and dependency judgments",
+      "description": "Propose independent assessments of candidate evidence retrieval, typed relation grounding and necessity for interpretation/viewer.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/tree/88f6a5b7b170cff5cafb3a2d943505e45405ba11/research/C02/K/KR02-A02-MemoryLab"
+      ],
+      "limitations": "Untested; no independent annotation.",
+      "relevance": "Prevents treating embedding similarity or KL sensitivity as truth.",
+      "code_references": [],
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    }
+  ]
+}

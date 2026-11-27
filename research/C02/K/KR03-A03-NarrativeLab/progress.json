@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "in_progress",
+  "current_substage": "S00",
+  "completed_substages": [],
+  "stage_status": {
+    "S00": "governance and registers verified; dependency documents partially inspected; production source review pending",
+    "S01": "draft",
+    "S02": "initial screen"
+  },
+  "blockers": [
+    "KR05 branch absent at initial listing",
+    "No independent annotation",
+    "Detailed upstream and production source tracing pending"
+  ],
+  "updated_at": "2026-11-27"
+}

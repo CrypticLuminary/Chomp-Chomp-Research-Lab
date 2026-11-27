@@ -1,0 +1,23 @@
+schema_version: 1
+project: Chomp-Chomp
+project_id: CC
+cycle: C02
+phase: K
+task_id: KR03
+agent_id: A03
+codename: NarrativeLab
+research_version: v0.1.0
+status: in_progress
+agent_model: GPT-6.2
+execution_environment: ChatGPT connector-based GitHub reads and writes, web search; no local checkout or model execution
+repository: CrypticLuminary/Chomp-Chomp-Research-Lab
+branch: research/cc-c02-k-kr03-a03-v0.1.0
+base_commit: d0dbef6583165f781f217a095f50993faad742e8
+dependencies:
+  - {task: KR01, commit: 125a7bb81e13904d181701d6e55f198172cacea6, review_status: pending}
+  - {task: KR02, commit: 88f6a5b7b170cff5cafb3a2d943505e45405ba11, review_status: pending}
+  - {task: KR04, commit: 93a21ee0fd67d25ef8ab6b06bf0375677a40799a, review_status: pending}
+  - {task: KR05, status: pending_branch}
+  - {agent: A09, commit: 5d4b84f45241e14d31934aee1ff3b2960511022b, status: pr_metadata_verified}
+reviewer: A00
+review_status: pending
