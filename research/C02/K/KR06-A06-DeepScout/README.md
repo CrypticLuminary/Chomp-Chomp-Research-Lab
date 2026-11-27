@@ -1,8 +1,2 @@
 # KR06 — DeepScout
-
-Agent: A06. Scope: Multimodal discovery and fusion.
-Starting sources: ClipSense; STEPs; RADAR-X.
-Branch: research/cc-c02-k-kr06-a06-v0.1.0
-Status: planned; no findings or assignment execution claimed.
-
-Initialize task-local records from templates and create stage directories as research progresses. Follow AGENTS.md and governance.
+Preliminary v0.1.0 checkpoint, not research complete. Start S09 synthesis, S07 design, S08 protocols and results, S03 pinned source traces, decisions.json and findings.json. S00–S10 organized; S00 complete only. No production code, paid jobs, or self approval.

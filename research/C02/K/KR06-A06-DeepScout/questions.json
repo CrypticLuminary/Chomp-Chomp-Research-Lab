@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "questions": [
+    {
+      "question_id": "CC-C02-K-KR06-Q001",
+      "question": "What existing discovery misses?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D001",
+      "remaining_uncertainty": "Real quiet/silent failure frequencies not known"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q002",
+      "question": "Which semantic audio models?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D002",
+      "remaining_uncertainty": "Domain transfer, source attribution, latency, weights terms"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q003",
+      "question": "Can quiet meaningful events be discovered?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D003",
+      "remaining_uncertainty": "Neutral sarcasm, ASR errors, quiet speakers"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q004",
+      "question": "Which visual models?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D004",
+      "remaining_uncertainty": "Temporal domain transfer, loader issue, GPU cost"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q005",
+      "question": "How to understand visual sequences?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D005",
+      "remaining_uncertainty": "Minimum duration depends on event"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q006",
+      "question": "Avoid missing silent events?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D006",
+      "remaining_uncertainty": "Unobserved transient misses; decode cost"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q007",
+      "question": "Adaptive perception policy?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D007",
+      "remaining_uncertainty": "Uncertainty estimates may be poor"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q008",
+      "question": "Combine modalities?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D008",
+      "remaining_uncertainty": "Scores not calibrated; linking errors"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q009",
+      "question": "Allocate budgets?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D009",
+      "remaining_uncertainty": "Singleton ties, weak lanes, costs"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q010",
+      "question": "Lightweight high-recall proposals?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D010",
+      "remaining_uncertainty": "Dataset sufficiency, bias and domain shift"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q011",
+      "question": "Preserve diversity and unfamiliar content?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D011",
+      "remaining_uncertainty": "Identity annotation and false merges"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q012",
+      "question": "Best quality-cost design?",
+      "status": "open",
+      "decision_id": "CC-C02-K-KR06-D012",
+      "remaining_uncertainty": "No comparative real-media measurement"
+    }
+  ]
+}
