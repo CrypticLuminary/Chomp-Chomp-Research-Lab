@@ -1,4 +1,417 @@
 {
   "schema_version": 1,
-  "findings": []
+  "findings": [
+    {
+      "finding_id": "CC-C02-K-KR06-F001",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S01",
+      "version": "v0.1.0",
+      "title": "RADAR-X is not a perception model",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/pull/12",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "PR #12 head 66430342237bb2c96118e9cbb14ff865b713ebcd; chomp/research/radar_x.py adapt/discover",
+      "description": "Only legacy audio/transcript/chat adapted; acoustic and visual accept injected Evidence. Baseline speech density and Director semantic scans are distinct.",
+      "limitations": "No independent real media failure frequency.",
+      "relevance": "Q001,Q012",
+      "related_tasks": [
+        "A09",
+        "KR04"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F002",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S01",
+      "version": "v0.1.0",
+      "title": "Prior complex adaptive allocation lost at tight budget",
+      "evidence_class": "REPORTED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/pull/12",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "DS-01 results and failure analysis",
+      "description": "At K=20/hour simple RRF 113/144 vs adaptive 92/144; K=40 both 135/144 vs baseline 126/144. Context hits RRF 134/144 vs baseline 81/144.",
+      "limitations": "Synthetic observations generated near gold; not inference or human judgments.",
+      "relevance": "Q009,Q012",
+      "related_tasks": [
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F003",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S01",
+      "version": "v0.1.0",
+      "title": "Keystone extension is not production acceptance",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/research_interfaces.py",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "SemanticAudioProvider, semantic_audio, evidence_item, validate_evidence, retrieve_frames, collect_candidates",
+      "description": "Explicit source clocks, content-derived evidence IDs, selected track, actual PTS, unavailable state; overflow errors unless experimental lane-order opt-in. Non-dialogue production semantic acceptance remains unimplemented per integration contract.",
+      "limitations": "Research-only; do not bypass Director utterance validation.",
+      "relevance": "Q001,Q008,Q009",
+      "related_tasks": [
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F004",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "YAMNet yields localized acoustic tags and embeddings",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/tensorflow/models/blob/8f3b2e48fff92a7fa8d504908b51a6eb51e868a0/research/audioset/yamnet/features.py",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "waveform_to_log_mel_spectrogram_patches L22–79; pad_waveform L82–107; params.py L25–34; yamnet.py L95–129; yamnet_class_map.csv",
+      "description": "16k mono; 0.96s patches / 0.48s hop, 521 classes; includes laughter, sigh, speech, conversation, music. 1024-dimensional embedding documented in TensorFlow tutorial.",
+      "limitations": "Tags are not speaker attribution or interest; padded final tail is not real observation; binary and performance untested.",
+      "relevance": "Q002,Q003",
+      "related_tasks": [
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F005",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "CLAP uses bounded windows, not precise localization",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/LAION-AI/CLAP/blob/1fd4c37df5ffbfcfbad5415c170bc66cf94c9994/src/laion_clap/hook.py",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "load_ckpt L75–119; get_audio_embedding_from_filelist L121–156; get_audio_embedding_from_data L158–193; training/data.py get_audio_features L402+; clap_module/model.py L698–741; loss.py L120+",
+      "description": "48k mono; 480000 samples, repeatpad or random truncate/fusion; normalized embeddings; contrastive dot product/cross entropy. Explicit <=10s windows avoid implicit long crop; prompt similarity is not probability.",
+      "limitations": "Model does not explain causes or locate sub-window events; no measured throughput.",
+      "relevance": "Q002,Q003,Q010",
+      "related_tasks": [
+        "KR07",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F006",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "BEATs returns features or pooled classifier probabilities",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/microsoft/unilm/blob/31c5b904ca1bf2afb4c234a6675c683a4e5fc7cd/beats/BEATs.py",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "preprocess L118–131; extract_features L133–179; README checkpoint examples L46–83",
+      "description": "Kaldi 128 mel fbank at 16k, 25ms frame/10ms shift; normalize; patch transformer; masked pooling and sigmoid for finetuned predictor; label_dict resolves outputs.",
+      "limitations": "527 output config not equivalent to YAMNet 521; no frame-precise class score guarantee; actual binary rights not resolved.",
+      "relevance": "Q002,Q010",
+      "related_tasks": [
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F007",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "SigLIP frame and VideoMAE tubelet representations differ",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/huggingface/transformers/blob/d5a6bfe462882c221ac35a06b920bd14530233a0/src/transformers/models/videomae/modeling_videomae.py",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "VideoMAEPatchEmbeddings L127–178; siglip/modeling_siglip.py SiglipVisionEmbeddings L116–188 and SiglipVisionModel L552+",
+      "description": "Single-frame image encoder vs temporal patch projection. Frozen representations and classifiers do not independently localize narrative events.",
+      "limitations": "No measured game-domain performance; model preprocessing and revision need pinning.",
+      "relevance": "Q004,Q005",
+      "related_tasks": [
+        "KR01",
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F008",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S03",
+      "version": "v0.1.0",
+      "title": "V-JEPA native loader pin requires sanity check",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/facebookresearch/vjepa2/blob/204698b45b3712590f06245fbfba32d3be539812/src/hub/backbones.py",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "VJEPA_BASE_URL near file start, _make_vjepa2_model; hubconf.py",
+      "description": "Pinned source sets localhost test URL instead of published CDN; default 64-frame, 256-pixel, tubelet=2, patch=16; returns encoder/predictor. Prefer verified HF revision 782cad603941c8e1ab643579d1fcff514372b3f6 for experiment.",
+      "limitations": "Demo script/preprocessor guessed paths failed; no runtime reproduction, no claim all releases affected.",
+      "relevance": "Q004,Q005",
+      "related_tasks": [
+        "KR07"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F009",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S02",
+      "version": "v0.1.0",
+      "title": "Independent visual rescue not guaranteed by speech-conditioned sampling",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/125a7bb81e13904d181701d6e55f198172cacea6/research/C02/K/KR01-A01-SegmentLab/findings.json",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "KR01-F010,F013,F020 (peer draft)",
+      "description": "Independent visual coverage; GEBD can suggest boundaries, not interest. No speech precondition.",
+      "limitations": "Peer findings pending review; no own GEBD inference.",
+      "relevance": "Q005,Q006",
+      "related_tasks": [
+        "KR01"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F010",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S02",
+      "version": "v0.1.0",
+      "title": "Memory retrieval must retain original evidence",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/88f6a5b7b170cff5cafb3a2d943505e45405ba11/research/C02/K/KR02-A02-MemoryLab/findings.json",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "KR02-F003,F007,F014,F016 (peer draft)",
+      "description": "Expensive graph preprocessing and summary omissions motivate raw evidence rescue, cache and bounded requests.",
+      "limitations": "Peer synthetic retrieval not real highlight recall.",
+      "relevance": "Q007,Q011",
+      "related_tasks": [
+        "KR02"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F011",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S02",
+      "version": "v0.1.0",
+      "title": "Interest and relation are distinct from perception",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/159fad1f768ec6758d695507d751e4ac075b60c2/research/C02/K/KR03-A03-NarrativeLab/findings.json",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "KR03-F003,F009,F012,F014; KR04-F001,F007,F008,F009; KR05-F009,F014,F016",
+      "description": "Typed hypotheses separate from observation; do not require modality consensus or assume boundary coverage equals closure.",
+      "limitations": "Peer draft registers only; deeper trace pending.",
+      "relevance": "Q003,Q008,Q011",
+      "related_tasks": [
+        "KR03",
+        "KR04",
+        "KR05"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F012",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S04",
+      "version": "v0.1.0",
+      "title": "Uniform sampling has a duration-dependent blind spot",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_AdaFrame_Adaptive_Frame_Selection_for_Fast_Video_Recognition_CVPR_2019_paper.html",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "Analytic random-phase lattice",
+      "description": "For event duration d <= sampling interval delta, hit probability min(1,d/delta) under uniform independent phase and perfect instant visibility. A 0.2s event has 10% hit probability at 0.5fps. Not a semantic recall guarantee.",
+      "limitations": "Assumes continuous visibility, no frame decode error, random phase.",
+      "relevance": "Q006,Q007",
+      "related_tasks": [
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F013",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S07",
+      "version": "v0.1.0",
+      "title": "Use separate coverage and evidence state",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/research_interfaces.py",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "evidence_item/validate_evidence; sidecar keyed by id",
+      "description": "Available_no_detection vs not_sampled vs unavailable vs positive vs contradicted claims; do not invent empty negative evidence or change existing modality literals. Visual temporal inference cited through frame IDs plus proposed sidecar.",
+      "limitations": "Needs A09 approval; no new production schema.",
+      "relevance": "Q007,Q008",
+      "related_tasks": [
+        "A09",
+        "KR02"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F014",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S07",
+      "version": "v0.1.0",
+      "title": "Bounded quota then rank-fill is a shadow policy",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/pull/12#issuecomment-7166657985",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "REV-05 request; E05 protocol",
+      "description": "Reserve 1 candidate per nonempty eligible independent lane if K permits; separate exploration, fill remaining with RRF across linked groups, return unserved lanes and costs. Never require crossmodal votes.",
+      "limitations": "Can waste quota on weak lanes; compare RRF, fixed equal and order truncation at same K/footage/cost.",
+      "relevance": "Q008,Q009,Q011",
+      "related_tasks": [
+        "A09",
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F015",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S07",
+      "version": "v0.1.0",
+      "title": "Architecture A first, C after evidence of benefit",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/research_interfaces.py",
+          "access_date": "2026-11-27"
+        }
+      ],
+      "code_references": "Existing optional adapters and retrieval budgets",
+      "description": "Add YAMNet and independent sparse SigLIP coverage to Director/RADAR-X shadow before selective temporal/VLM stage. B is parallel full model cost; D is an expensive comparator, not presumed upper bound.",
+      "limitations": "No real recall, walltime or dollar measurements.",
+      "relevance": "Q010,Q012",
+      "related_tasks": [
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR06-F016",
+      "task_id": "KR06",
+      "agent_id": "A06",
+      "substage": "S08",
+      "version": "v0.1.0",
+      "title": "Uniform phase-grid probe confirms duration blind spot",
+      "description": "Executed 28 combinations, 10000 evenly spaced phases each. E.g. 0.2s at 2s gap 1000/10000; at 8s gap 250/10000. Matches analytic lattice hit fraction. Not model recall.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/tree/research/cc-c02-k-kr06-a06-v0.1.0/research/C02/K/KR06-A06-DeepScout/S08-experimental-protocol",
+          "date": "2026-11-27"
+        }
+      ],
+      "code_references": "sampling-probe.js, sampling-probe-results.json",
+      "limitations": "No real frames, perfect continuous visibility; no claim about adaptive strategy.",
+      "relevance": "Q006",
+      "related_tasks": [
+        "KR08"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    }
+  ]
 }

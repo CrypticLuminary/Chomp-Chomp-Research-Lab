@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "question_id": "CC-C02-K-KR06-Q001",
+      "decision_id": "CC-C02-K-KR06-D001",
+      "question": "What existing discovery misses?",
+      "classification": "ADAPT",
+      "competing_approaches": "Existing Director and RADAR-X vs fresh producers",
+      "recommendation": "Retain baseline; instrument independent coverage and missing evidence",
+      "reason": "Evidence F001,F002,F003; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F001",
+        "CC-C02-K-KR06-F002",
+        "CC-C02-K-KR06-F003"
+      ],
+      "computational_implications": "Record decode, encoder, retrieval and verification costs; no paid inference authorized.",
+      "cheapest_decisive_experiment": "E007",
+      "dependent_agents": [
+        "KR01",
+        "KR04",
+        "A09"
+      ],
+      "remaining_uncertainty": "Real quiet/silent failure frequencies not known",
+      "implementation_readiness": "Baseline and test design ready",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q002",
+      "decision_id": "CC-C02-K-KR06-D002",
+      "question": "Which semantic audio models?",
+      "classification": "REPRODUCE",
+      "competing_approaches": "RMS vs YAMNet vs CLAP vs BEATs",
+      "recommendation": "YAMNet continuous; CLAP selective; BEATs challenger",
+      "reason": "Evidence F004,F005,F006; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F004",
+        "CC-C02-K-KR06-F005",
+        "CC-C02-K-KR06-F006"
+      ],
+      "computational_implications": "Audio windows and frame counts specified in S05/S08; cache and cap expensive calls.",
+      "cheapest_decisive_experiment": "E001",
+      "dependent_agents": [
+        "KR07",
+        "KR08"
+      ],
+      "remaining_uncertainty": "Domain transfer, source attribution, latency, weights terms",
+      "implementation_readiness": "Model adapter needs runtime gate",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q003",
+      "decision_id": "CC-C02-K-KR06-D003",
+      "question": "Can quiet meaningful events be discovered?",
+      "classification": "ADAPT",
+      "competing_approaches": "Transcript-only vs prosody vs frozen speech vs combined",
+      "recommendation": "Independent open dialogue discovery; prosody contextual only",
+      "reason": "Evidence F001,F004,F011; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F001",
+        "CC-C02-K-KR06-F004",
+        "CC-C02-K-KR06-F011"
+      ],
+      "computational_implications": "Record decode, encoder, retrieval and verification costs; no paid inference authorized.",
+      "cheapest_decisive_experiment": "E001,E007",
+      "dependent_agents": [
+        "KR03",
+        "KR04"
+      ],
+      "remaining_uncertainty": "Neutral sarcasm, ASR errors, quiet speakers",
+      "implementation_readiness": "Shadow design ready",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q004",
+      "decision_id": "CC-C02-K-KR06-D004",
+      "question": "Which visual models?",
+      "classification": "REPRODUCE",
+      "competing_approaches": "CLIP/SigLIP vs VideoMAE/V-JEPA vs VLM",
+      "recommendation": "SigLIP sparse embeddings; VideoMAE temporal comparator; V-JEPA selective",
+      "reason": "Evidence F007,F008; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F007",
+        "CC-C02-K-KR06-F008"
+      ],
+      "computational_implications": "Audio windows and frame counts specified in S05/S08; cache and cap expensive calls.",
+      "cheapest_decisive_experiment": "E002,E003",
+      "dependent_agents": [
+        "KR07",
+        "KR01"
+      ],
+      "remaining_uncertainty": "Temporal domain transfer, loader issue, GPU cost",
+      "implementation_readiness": "Checkpoint gates pending",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q005",
+      "decision_id": "CC-C02-K-KR06-D005",
+      "question": "How to understand visual sequences?",
+      "classification": "ADAPT",
+      "competing_approaches": "Frame descriptions vs before/after vs temporal encoder",
+      "recommendation": "Use time ordered frames, state change, short temporal embeddings; escalate longer narrative context",
+      "reason": "Evidence F007,F008,F009; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F007",
+        "CC-C02-K-KR06-F008",
+        "CC-C02-K-KR06-F009"
+      ],
+      "computational_implications": "Record decode, encoder, retrieval and verification costs; no paid inference authorized.",
+      "cheapest_decisive_experiment": "E003",
+      "dependent_agents": [
+        "KR01",
+        "KR03"
+      ],
+      "remaining_uncertainty": "Minimum duration depends on event",
+      "implementation_readiness": "Test design ready",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q006",
+      "decision_id": "CC-C02-K-KR06-D006",
+      "question": "Avoid missing silent events?",
+      "classification": "ADOPT",
+      "competing_approaches": "Uniform vs shot/motion/novelty vs hybrid",
+      "recommendation": "Independent uniform floor + non-audio motion/semantic rescue",
+      "reason": "Evidence F009,F012; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F009",
+        "CC-C02-K-KR06-F012"
+      ],
+      "computational_implications": "Audio windows and frame counts specified in S05/S08; cache and cap expensive calls.",
+      "cheapest_decisive_experiment": "E002,E006",
+      "dependent_agents": [
+        "KR01",
+        "KR08"
+      ],
+      "remaining_uncertainty": "Unobserved transient misses; decode cost",
+      "implementation_readiness": "Shadow design ready; no quality claim",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q007",
+      "decision_id": "CC-C02-K-KR06-D007",
+      "question": "Adaptive perception policy?",
+      "classification": "REPRODUCE",
+      "competing_approaches": "Fixed windows vs uncertainty and value/cost",
+      "recommendation": "Deterministic bounded action queue, explicit stop and holdout tuned gain",
+      "reason": "Evidence F010,F012,F013; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F010",
+        "CC-C02-K-KR06-F012",
+        "CC-C02-K-KR06-F013"
+      ],
+      "computational_implications": "Record decode, encoder, retrieval and verification costs; no paid inference authorized.",
+      "cheapest_decisive_experiment": "E002,E003",
+      "dependent_agents": [
+        "KR02",
+        "KR03",
+        "A09"
+      ],
+      "remaining_uncertainty": "Uncertainty estimates may be poor",
+      "implementation_readiness": "Prototype after cost profiling",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q008",
+      "decision_id": "CC-C02-K-KR06-D008",
+      "question": "Combine modalities?",
+      "classification": "ADAPT",
+      "competing_approaches": "Consensus, early fusion, RRF, candidate union",
+      "recommendation": "Union independent evidence; late rank fusion; verify contradiction separately",
+      "reason": "Evidence F003,F011,F013,F014; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F003",
+        "CC-C02-K-KR06-F011",
+        "CC-C02-K-KR06-F013",
+        "CC-C02-K-KR06-F014"
+      ],
+      "computational_implications": "Audio windows and frame counts specified in S05/S08; cache and cap expensive calls.",
+      "cheapest_decisive_experiment": "E004",
+      "dependent_agents": [
+        "KR04",
+        "A09"
+      ],
+      "remaining_uncertainty": "Scores not calibrated; linking errors",
+      "implementation_readiness": "Shadow design ready",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q009",
+      "decision_id": "CC-C02-K-KR06-D009",
+      "question": "Allocate budgets?",
+      "classification": "REPRODUCE",
+      "competing_approaches": "Fixed equal, RRF, bounded quota, lane order",
+      "recommendation": "Compare bounded min quota plus rank-fill; do not copy failed RADAR adaptive bonuses",
+      "reason": "Evidence F002,F014; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F002",
+        "CC-C02-K-KR06-F014"
+      ],
+      "computational_implications": "Record decode, encoder, retrieval and verification costs; no paid inference authorized.",
+      "cheapest_decisive_experiment": "E005",
+      "dependent_agents": [
+        "KR08",
+        "A09"
+      ],
+      "remaining_uncertainty": "Singleton ties, weak lanes, costs",
+      "implementation_readiness": "Shadow policy only",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q010",
+      "decision_id": "CC-C02-K-KR06-D010",
+      "question": "Lightweight high-recall proposals?",
+      "classification": "DEFER",
+      "competing_approaches": "Frozen encoders + TCN/logistic/MIL, distillation, open-vocab novelty",
+      "recommendation": "Start frozen zero-shot; train only with independent labels and feature extraction cost accounted",
+      "reason": "Evidence F005,F006,F015; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F005",
+        "CC-C02-K-KR06-F006",
+        "CC-C02-K-KR06-F015"
+      ],
+      "computational_implications": "Audio windows and frame counts specified in S05/S08; cache and cap expensive calls.",
+      "cheapest_decisive_experiment": "E007",
+      "dependent_agents": [
+        "KR04",
+        "KR07"
+      ],
+      "remaining_uncertainty": "Dataset sufficiency, bias and domain shift",
+      "implementation_readiness": "Training not authorized",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q011",
+      "decision_id": "CC-C02-K-KR06-D011",
+      "question": "Preserve diversity and unfamiliar content?",
+      "classification": "ADAPT",
+      "competing_approaches": "Time NMS vs semantic dedup vs MMR",
+      "recommendation": "Only suppress same event interpretation with strong identity; retain overlapping distinct and nested events",
+      "reason": "Evidence F010,F011,F014; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F010",
+        "CC-C02-K-KR06-F011",
+        "CC-C02-K-KR06-F014"
+      ],
+      "computational_implications": "Record decode, encoder, retrieval and verification costs; no paid inference authorized.",
+      "cheapest_decisive_experiment": "E005,E007",
+      "dependent_agents": [
+        "KR02",
+        "KR03",
+        "KR04"
+      ],
+      "remaining_uncertainty": "Identity annotation and false merges",
+      "implementation_readiness": "Test design ready",
+      "status": "open_pending_nexus"
+    },
+    {
+      "question_id": "CC-C02-K-KR06-Q012",
+      "decision_id": "CC-C02-K-KR06-D012",
+      "question": "Best quality-cost design?",
+      "classification": "REPRODUCE",
+      "competing_approaches": "A audio-first+vision floor; B parallel; C hierarchical; D VLM",
+      "recommendation": "A smallest shadow; progress to C only on matched gain; D deferred full coverage",
+      "reason": "Evidence F002,F015; aim for independent observable evidence and matched-budget recall before editorial selection.",
+      "evidence": [
+        "CC-C02-K-KR06-F002",
+        "CC-C02-K-KR06-F015"
+      ],
+      "computational_implications": "Audio windows and frame counts specified in S05/S08; cache and cap expensive calls.",
+      "cheapest_decisive_experiment": "E007",
+      "dependent_agents": [
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "remaining_uncertainty": "No comparative real-media measurement",
+      "implementation_readiness": "Conditional prototype only",
+      "status": "open_pending_nexus"
+    }
+  ]
+}

@@ -1,2 +1,3 @@
 # Journal
-2026-11-27 +05:45 — S00: read governance, verified assignment and prior production PRs #12/#13. Created task branch from main. Peer registers available KR01–05; KR07 missing register, KR08 empty when queried. No paid work.
+- 2026-11-27 +05:45 S00: governance, base d0dbef6583165f781f217a095f50993faad742e8, branch init b8948c9238f914de25aae3ebe70296e58fd51016, production PRs #12/#13 and peer register audit. KR07 register 404, KR08 empty. 
+- 2026-11-27 +05:45 S01–S10: pinned five upstream repositories, read prioritized functions and model cards; V-JEPA demo/preprocessor lookup errors, localhost loader URL observed; no weights tested. F001–F016, Q001–Q012 and D001–D012. Ran E000 phase grid, wrote raw JSON. Revised assumption: do not rebuild RADAR ranking; add real producers, separate coverage and exploration. E001–E007 not run. No paid inference. Next: rights/runtime, independent labels and Nexus review. Commit SHA tracked by branch/PR.

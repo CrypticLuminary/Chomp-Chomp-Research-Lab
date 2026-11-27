@@ -1,12 +1,42 @@
 {
   "schema_version": 1,
   "status": "preliminary",
-  "current_substage": "S01",
+  "current_substage": "S10",
   "completed_substages": [
     "S00"
   ],
+  "draft_substages": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10"
+  ],
+  "findings_count": 16,
+  "questions_count": 12,
+  "executed_experiments": [
+    "E000"
+  ],
+  "planned_experiments": [
+    "E001",
+    "E002",
+    "E003",
+    "E004",
+    "E005",
+    "E006",
+    "E007"
+  ],
   "blockers": [
-    "Independent authorized VOD annotations and model runtime tests pending"
+    "Model downloads/rights/runtime not verified",
+    "No independently annotated real VODs",
+    "Full upstream training/eval traces incomplete",
+    "Peer KR07/KR08 outputs not available at lookup",
+    "Nexus review pending"
   ],
   "updated_at": "2026-11-27"
 }
