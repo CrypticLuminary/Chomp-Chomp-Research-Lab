@@ -1,8 +1,3 @@
 # KR05 — BoundaryLab
 
-Agent: A05. Scope: Contextual boundaries.
-Starting sources: CALF; TimeRefine.
-Branch: research/cc-c02-k-kr05-a05-v0.1.0
-Status: planned; no findings or assignment execution claimed.
-
-Initialize task-local records from templates and create stage directories as research progresses. Follow AGENTS.md and governance.
+CC-C02-K-KR05-A05-v0.2.0 — substantive preliminary research, not approved. See S01 taxonomy, S02 literature screening, S03 pinned code audit, S04 methods, S05 feasibility, S06 comparative cases, S07 contract, S08 E001, S09 synthesis, S10 handoff. All findings pending. No production code modified; no paid inference. Source-clock integer milliseconds, contiguous only. Draft PR #5.

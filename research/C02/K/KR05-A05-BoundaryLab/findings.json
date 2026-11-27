@@ -1,0 +1,717 @@
+{
+  "schema_version": 1,
+  "findings": [
+    {
+      "finding_id": "CC-C02-K-KR05-F001",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S00",
+      "version": "v0.1.0",
+      "title": "Local boundary refinement explicitly does not establish semantic closure",
+      "description": "The refiner joins nearby ASR segments by temporal gaps, bounded side budgets, caps and padding. Fallback can snap to low audio levels; hard cuts are labelled. The code explicitly describes these signals as timing only.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/boundaries.py#L97-L229",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b"
+        }
+      ],
+      "code_references": [
+        {
+          "repository": "CrypticLuminary/AI_Clipper-Chomp-Chomp-",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b",
+          "path": "chomp/boundaries.py",
+          "lines": "L97-L229"
+        }
+      ],
+      "limitations": "Does not establish frequency or downstream output quality; not yet traced through every caller.",
+      "relevance": "Retain as matched baseline and mechanical boundary proposal; do not treat it as a semantic completeness oracle.",
+      "related_tasks": [
+        "KR01",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F002",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S00",
+      "version": "v0.1.0",
+      "title": "Director validates cited evidence but does not independently verify all essential context",
+      "description": "investigate() validates ID membership, retrieval limits and role-ID subsets; role IDs are optional. enforce() derives semantic span from cited evidence, checks section, proposal overlap, evidence intersection, campaign constraints and duplicates. These checks do not establish that a missing qualification or dependency was identified. No independent semantic completeness check occurs in these two functions.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/director/semantic.py#L225-L334",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b"
+        }
+      ],
+      "code_references": [
+        {
+          "repository": "CrypticLuminary/AI_Clipper-Chomp-Chomp-",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b",
+          "path": "chomp/director/semantic.py",
+          "lines": "L225-L334"
+        }
+      ],
+      "limitations": "Static observation of two functions, not proof no other system component ever performs verification. Production caller and export chain need deeper audit.",
+      "relevance": "Separate interval construction from independent contextual closure judgment; distinguish viewer-required spans from interpretation-only evidence.",
+      "related_tasks": [
+        "KR02",
+        "KR03",
+        "KR04",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F003",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S00",
+      "version": "v0.1.0",
+      "title": "Benchmark distinguishes temporal span coverage from human contextual completeness",
+      "description": "benchmark() emits human_context_completeness as unavailable without independent judgments; legacy setup_payoff_completeness alias is explicitly marked temporal_span_coverage_not_contextual_completeness.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/evaluation/benchmark.py#L260-L294",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b"
+        }
+      ],
+      "code_references": [
+        {
+          "repository": "CrypticLuminary/AI_Clipper-Chomp-Chomp-",
+          "commit": "5d4b84f45241e14d31934aee1ff3b2960511022b",
+          "path": "chomp/evaluation/benchmark.py",
+          "lines": "L260-L294"
+        }
+      ],
+      "limitations": "Static audit of metric emission, not verification of all matching logic or independent assessment reliability.",
+      "relevance": "Reuse coverage metrics with explicit denominators, but keep human judgments and contextual faithfulness separate.",
+      "related_tasks": [
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F004",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "CALF explicitly ignores the immediate pre-event region in its context loss",
+      "description": "Six piecewise zones include a zero-loss pre-event region, post-event positive target and tapered negative penalties. This is not a learned setup/payoff segmentation model.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "name": "CALF",
+          "repository": "SoccerNet/sn-spotting",
+          "commit": "9842826f94e1419580a9d17219c11aca7225f7ce",
+          "path": "Benchmarks/CALF/src/loss.py",
+          "lines": "L10-L55",
+          "url": "https://github.com/SoccerNet/sn-spotting/blob/9842826f94e1419580a9d17219c11aca7225f7ce/Benchmarks/CALF/src/loss.py#L10-L55"
+        }
+      ],
+      "code_references": [
+        {
+          "name": "CALF",
+          "repository": "SoccerNet/sn-spotting",
+          "commit": "9842826f94e1419580a9d17219c11aca7225f7ce",
+          "path": "Benchmarks/CALF/src/loss.py",
+          "lines": "L10-L55",
+          "url": "https://github.com/SoccerNet/sn-spotting/blob/9842826f94e1419580a9d17219c11aca7225f7ce/Benchmarks/CALF/src/loss.py#L10-L55"
+        }
+      ],
+      "limitations": "Static source audit, selected ranges only; no model runtime, full training replication or end-to-end downstream verification.",
+      "relevance": "Adapt role-sensitive supervision, not literal soccer label transfer.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F005",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "TimeRefine predicts quantized endpoints and signed correction velocities",
+      "description": "v9 inference imposes timestep tokens starting at 0.8, decrementing 0.2, generates endpoint and velocity tokens and combines them arithmetically; returns first/last/mean proposal. No independent evidence or completeness check in this function.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "name": "TimeRefine",
+          "repository": "SJTUwxz/TimeRefine_code",
+          "commit": "230cd3e6ebbfbfec69f814895343f5377be02830",
+          "path": "vtimellm/step_by_step_inference.py",
+          "lines": "L547-L674",
+          "url": "https://github.com/SJTUwxz/TimeRefine_code/blob/230cd3e6ebbfbfec69f814895343f5377be02830/vtimellm/step_by_step_inference.py#L547-L674"
+        }
+      ],
+      "code_references": [
+        {
+          "name": "TimeRefine",
+          "repository": "SJTUwxz/TimeRefine_code",
+          "commit": "230cd3e6ebbfbfec69f814895343f5377be02830",
+          "path": "vtimellm/step_by_step_inference.py",
+          "lines": "L547-L674",
+          "url": "https://github.com/SJTUwxz/TimeRefine_code/blob/230cd3e6ebbfbfec69f814895343f5377be02830/vtimellm/step_by_step_inference.py#L547-L674"
+        }
+      ],
+      "limitations": "Static source audit, selected ranges only; no model runtime, full training replication or end-to-end downstream verification.",
+      "relevance": "Use bounded refinement as proposal generation, not approval.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F006",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Time-R1 rewards overlap and optional normalized endpoint accuracy",
+      "description": "Parser takes last answer block and last numeric pair. Reward is tIoU; v2 multiplies by endpoint factors; format is separately rewarded. This does not enforce meaning, and parser does not validate bounds/order.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "name": "Time-R1",
+          "repository": "xiaomi-research/time-r1",
+          "commit": "7f2b5944a0c35993da80634a459d5a48a3a5431e",
+          "path": "main.py",
+          "lines": "L122-L239",
+          "url": "https://github.com/xiaomi-research/time-r1/blob/7f2b5944a0c35993da80634a459d5a48a3a5431e/main.py#L122-L239"
+        }
+      ],
+      "code_references": [
+        {
+          "name": "Time-R1",
+          "repository": "xiaomi-research/time-r1",
+          "commit": "7f2b5944a0c35993da80634a459d5a48a3a5431e",
+          "path": "main.py",
+          "lines": "L122-L239",
+          "url": "https://github.com/xiaomi-research/time-r1/blob/7f2b5944a0c35993da80634a459d5a48a3a5431e/main.py#L122-L239"
+        }
+      ],
+      "limitations": "Static source audit, selected ranges only; no model runtime, full training replication or end-to-end downstream verification.",
+      "relevance": "RL requires human closure supervision and strict interval validation.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F007",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Moment-DETR uses joint normalized span and salience losses",
+      "description": "Source implements L1 and generalized temporal IoU on center-width spans, or endpoint CE; matching and saliency hinge losses. Joint proposals are valuable, but query match is not contextual closure.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "name": "Moment-DETR",
+          "repository": "jayleicn/moment_detr",
+          "commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+          "path": "moment_detr/model.py",
+          "lines": "L185-L253",
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/moment_detr/model.py#L185-L253"
+        }
+      ],
+      "code_references": [
+        {
+          "name": "Moment-DETR",
+          "repository": "jayleicn/moment_detr",
+          "commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+          "path": "moment_detr/model.py",
+          "lines": "L185-L253",
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/moment_detr/model.py#L185-L253"
+        }
+      ],
+      "limitations": "Static source audit, selected ranges only; no model runtime, full training replication or end-to-end downstream verification.",
+      "relevance": "Adapt to hypotheses from InterestLab; keep editorial verification external.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F008",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "ActionFormer uses per-point localization and temporal NMS",
+      "description": "Source locates focal classification and center-distance IoU regression losses, inference and batched NMS. This is an efficient proposal candidate architecture, not an editorial model.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "name": "ActionFormer",
+          "repository": "happyharrycn/actionformer_release",
+          "commit": "61ea7eb9308a568b0cf45e3804830836e30061de",
+          "path": "libs/modeling/meta_archs.py",
+          "lines": "L534-L739",
+          "url": "https://github.com/happyharrycn/actionformer_release/blob/61ea7eb9308a568b0cf45e3804830836e30061de/libs/modeling/meta_archs.py#L534-L739"
+        }
+      ],
+      "code_references": [
+        {
+          "name": "ActionFormer",
+          "repository": "happyharrycn/actionformer_release",
+          "commit": "61ea7eb9308a568b0cf45e3804830836e30061de",
+          "path": "libs/modeling/meta_archs.py",
+          "lines": "L534-L739",
+          "url": "https://github.com/happyharrycn/actionformer_release/blob/61ea7eb9308a568b0cf45e3804830836e30061de/libs/modeling/meta_archs.py#L534-L739"
+        }
+      ],
+      "limitations": "Static source audit, selected ranges only; no model runtime, full training replication or end-to-end downstream verification.",
+      "relevance": "Train lightweight role-aware temporal head only after annotation readiness.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F009",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "ClipSense inherits completeness from overlapping proposals and recombines boundaries",
+      "description": "reasoner.py L254-L320 separately clusters and enumerates start/end pairs; L811-L849 sufficiency can be inherited from a transcript flag or any overlapping conversation proposal. Refiner deep-copies candidate and modifies endpoints L379-L392 without recalculating semantic flags in that function.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "name": "ClipSense",
+          "repository": "NamanBhatia-NB/ClipSense_AI",
+          "commit": "5595802167d0f2b89f2c4410b776bd95de2d6ef2",
+          "path": "backend/pipeline/mter/reasoner.py",
+          "lines": "L811-L849",
+          "url": "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/pipeline/mter/reasoner.py#L811-L849"
+        },
+        {
+          "url": "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/pipeline/mter/reasoner.py#L254-L320"
+        },
+        {
+          "url": "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/pipeline/optimization/boundary_refiner.py#L379-L392"
+        }
+      ],
+      "code_references": [
+        {
+          "name": "ClipSense",
+          "repository": "NamanBhatia-NB/ClipSense_AI",
+          "commit": "5595802167d0f2b89f2c4410b776bd95de2d6ef2",
+          "path": "backend/pipeline/mter/reasoner.py",
+          "lines": "L811-L849",
+          "url": "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/pipeline/mter/reasoner.py#L811-L849"
+        },
+        {
+          "url": "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/pipeline/mter/reasoner.py#L254-L320"
+        },
+        {
+          "url": "https://github.com/NamanBhatia-NB/ClipSense_AI/blob/5595802167d0f2b89f2c4410b776bd95de2d6ef2/backend/pipeline/optimization/boundary_refiner.py#L379-L392"
+        }
+      ],
+      "limitations": "Static source audit, selected ranges only; no model runtime, full training replication or end-to-end downstream verification.",
+      "relevance": "Reverify each candidate and any changed interval; never copy closure approval across boundaries.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F010",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "TimeRefine checkpoint access is not established by the pinned release",
+      "description": "Pinned README L14 says checkpoint link removed due to anonymity, conflicting with paper availability statement. No binary download verified.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "name": "TimeRefine",
+          "repository": "SJTUwxz/TimeRefine_code",
+          "commit": "230cd3e6ebbfbfec69f814895343f5377be02830",
+          "path": "vtimellm/step_by_step_inference.py",
+          "lines": "L547-L674",
+          "url": "https://github.com/SJTUwxz/TimeRefine_code/blob/230cd3e6ebbfbfec69f814895343f5377be02830/vtimellm/step_by_step_inference.py#L547-L674"
+        },
+        {
+          "url": "https://github.com/SJTUwxz/TimeRefine_code/blob/230cd3e6ebbfbfec69f814895343f5377be02830/README.md#L12-L26"
+        }
+      ],
+      "code_references": [
+        {
+          "name": "TimeRefine",
+          "repository": "SJTUwxz/TimeRefine_code",
+          "commit": "230cd3e6ebbfbfec69f814895343f5377be02830",
+          "path": "vtimellm/step_by_step_inference.py",
+          "lines": "L547-L674",
+          "url": "https://github.com/SJTUwxz/TimeRefine_code/blob/230cd3e6ebbfbfec69f814895343f5377be02830/vtimellm/step_by_step_inference.py#L547-L674"
+        },
+        {
+          "url": "https://github.com/SJTUwxz/TimeRefine_code/blob/230cd3e6ebbfbfec69f814895343f5377be02830/README.md#L12-L26"
+        }
+      ],
+      "limitations": "Static source audit, selected ranges only; no model runtime, full training replication or end-to-end downstream verification.",
+      "relevance": "Defer execution until accessible weights/base-model terms verified.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F011",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "QVHighlights annotation license differs from code license",
+      "description": "Moment-DETR README L154-L155 states MIT code and CC BY-NC-SA 4.0 annotations. Model and underlying video rights remain separately unresolved.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "name": "Moment-DETR",
+          "repository": "jayleicn/moment_detr",
+          "commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+          "path": "moment_detr/model.py",
+          "lines": "L185-L253",
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/moment_detr/model.py#L185-L253"
+        },
+        {
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/README.md#L154-L155"
+        }
+      ],
+      "code_references": [
+        {
+          "name": "Moment-DETR",
+          "repository": "jayleicn/moment_detr",
+          "commit": "b7e553ac3b0c898ee6b85e03ee507c064eab89ca",
+          "path": "moment_detr/model.py",
+          "lines": "L185-L253",
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/moment_detr/model.py#L185-L253"
+        },
+        {
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/README.md#L154-L155"
+        }
+      ],
+      "limitations": "Static source audit, selected ranges only; no model runtime, full training replication or end-to-end downstream verification.",
+      "relevance": "Research-only dataset use until rights clearance.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR07",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F012",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Oracle closure is mechanically reliable only under supplied labels",
+      "description": "Synthetic fixture: [{\"method\":\"fixed\",\"accepted\":15,\"faithful\":3,\"invalid\":12,\"correct_abstain\":0,\"false_abstain\":0,\"mean_faithful_duration_ms\":14666.666666666666},{\"method\":\"unit\",\"accepted\":11,\"faithful\":9,\"invalid\":2,\"correct_abstain\":2,\"false_abstain\":2,\"mean_faithful_duration_ms\":18888.88888888889},{\"method\":\"hull\",\"accepted\":11,\"faithful\":10,\"invalid\":1,\"correct_abstain\":4,\"false_abstain\":0,\"mean_faithful_duration_ms\":13400},{\"method\":\"closure\",\"accepted\":11,\"faithful\":11,\"invalid\":0,\"correct_abstain\":4,\"false_abstain\":0,\"mean_faithful_duration_ms\":13363.636363636364},{\"method\":\"missing\",\"accepted\":13,\"faithful\":3,\"invalid\":10,\"correct_abstain\":2,\"false_abstain\":0,\"mean_faithful_duration_ms\":7000},{\"method\":\"uncorrelated\",\"accepted\":11,\"faithful\":11,\"invalid\":0,\"correct_abstain\":4,\"false_abstain\":0,\"mean_faithful_duration_ms\":13363.636363636364}]. Gold oracle uses same predicates and endpoints; this is an invariant check, not fair learned-model comparison.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F013",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Independent endpoint acceptance does not imply pair acceptance",
+      "description": "Two acceptable pairs [10,30] and [20,24] seconds; both crossed pairs fail conditional fixture rules. Joint interval identity required.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F014",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "High temporal IoU can omit a critical qualification",
+      "description": "Synthetic cut [10,39] vs [10,40] seconds has tIoU 0.9666666666666667 but loses [39,40].",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F015",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Technical snapping can invalidate a previously valid interval",
+      "description": "Fixture [18,33] valid; snap to [18,30] removes qualification [28,32] and violates safe end. Independent recheck needed.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F016",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S07",
+      "version": "v0.2.0",
+      "title": "ContextClosure must distinguish hard gates from value and duration ranking",
+      "description": "Enumerate evidence-grounded interval pairs, require viewer dependencies and faithfulness, abstain on infeasible/unknown, then optimize preference/pacing.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR05-F017",
+      "task_id": "KR05",
+      "agent_id": "A05",
+      "substage": "S07",
+      "version": "v0.2.0",
+      "title": "Annotation needs conditional dependency groups and interval-specific review",
+      "description": "Record multiple valid pairs, conditional obligations introduced by earlier/later content, interpretation-only context, and independent blind preference.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        },
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-results.json"
+        }
+      ],
+      "code_references": [
+        {
+          "path": "research/C02/K/KR05-A05-BoundaryLab/S08-experimental-protocol/CC-C02-K-KR05-A05-E001-v0.2.0-closure-probe.js"
+        }
+      ],
+      "limitations": "Author-generated integer-second toy fixtures converted to ms. Gold and oracle share closure predicate; no independent annotation, model inference, real footage or runtime generalization.",
+      "relevance": "Mechanics and evaluation safeguards only.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    }
+  ],
+  "required_fields": [
+    "finding_id",
+    "task_id",
+    "agent_id",
+    "substage",
+    "version",
+    "title",
+    "description",
+    "evidence_class",
+    "sources",
+    "code_references",
+    "limitations",
+    "relevance",
+    "related_tasks",
+    "review_status",
+    "created_at",
+    "updated_at"
+  ]
+}

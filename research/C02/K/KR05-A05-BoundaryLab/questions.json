@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "questions": [
+    {
+      "question_id": "CC-C02-K-KR05-Q001",
+      "question": "Can independently verified closure improve faithfulness over fixed padding and current Director at matched budgets?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR05-Q002",
+      "question": "How can correlated acceptable start/end pairs and alternative dependency groups be annotated without invalid cross-products?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR05-Q003",
+      "question": "How can technical snapping preserve all required spans, including visual actions and delayed qualifications?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR05-Q004",
+      "question": "When must distant viewer-essential context trigger abstention rather than inclusion or montage?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR05-Q005",
+      "question": "Which CALF and temporal refinement mechanisms can transfer to conversational boundaries, with verified checkpoint and license status?",
+      "status": "open",
+      "review_status": "pending"
+    },
+    {
+      "question_id": "CC-C02-K-KR05-Q006",
+      "question": "How will independent human closure labels and creator-disjoint samples be acquired?",
+      "status": "open",
+      "review_status": "pending"
+    }
+  ]
+}
