@@ -78,6 +78,347 @@
       "review_status": "pending",
       "created_at": "2026-11-27",
       "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F004",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "GraphTP sparse weights but dense computation",
+      "description": "All-pairs AV scores, 400-scene padding, top-k 1..6 via Gumbel ST; loops through every pair to create edge_index; zero-weight edges retained. Random noise unconditionally sampled in forward.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/ppapalampidi/GraphTP/blob/904ac5712e1d374b8c09be11fb49f7fc02e871ef/modules/graph_models.py#L270-L477"
+      ],
+      "code_references": [
+        "https://github.com/ppapalampidi/GraphTP/blob/904ac5712e1d374b8c09be11fb49f7fc02e871ef/modules/graph_models.py#L270-L477"
+      ],
+      "limitations": "Static inspection; no execution or memory benchmark.",
+      "relevance": "Do sparse retrieval before pair scoring; avoid assuming deterministic inference.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F005",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "GraphTP objectives do not supervise typed relations",
+      "description": "TP KL plus neighborhood KL target, total loss=loss/5+10*neighborhood_loss; evaluator min scene-index distance, partial and total agreement.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/ppapalampidi/GraphTP/blob/904ac5712e1d374b8c09be11fb49f7fc02e871ef/models/baseline_trainer.py#L17-L44",
+        "https://github.com/ppapalampidi/GraphTP/blob/904ac5712e1d374b8c09be11fb49f7fc02e871ef/modules/evaluation.py#L7-L36"
+      ],
+      "code_references": [
+        "https://github.com/ppapalampidi/GraphTP/blob/904ac5712e1d374b8c09be11fb49f7fc02e871ef/models/baseline_trainer.py#L17-L44",
+        "https://github.com/ppapalampidi/GraphTP/blob/904ac5712e1d374b8c09be11fb49f7fc02e871ef/modules/evaluation.py#L7-L36"
+      ],
+      "limitations": "Neighborhood target details not fully traced; no reported performance replication.",
+      "relevance": "Latent importance association is not semantic proof.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F006",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S02",
+      "version": "v0.2.0",
+      "title": "NEST event extraction bottleneck and relation results",
+      "description": "EMNLP final reports 1005 films, avg 97.87 min, ~103 events; best main zero-shot ETD<8%, EL<6%, EAE<11%; ERE 34.23% macro F1 zero-shot, 49.20% fine-tuned; subsets differ.",
+      "evidence_class": "REPORTED",
+      "sources": [
+        "https://aclanthology.org/2026.emnlp-main.2512.pdf"
+      ],
+      "code_references": [],
+      "limitations": "Authors' results, not reproduced; scripted movie domain.",
+      "relevance": "Separate discovery, grounding, relationship accuracy.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F007",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S05",
+      "version": "v0.2.0",
+      "title": "NEST gold agreement and cost",
+      "description": "5 independently double-annotated movies, 40 annotator-hours, kappa .57 gold-gold/.50 gold-silver, 41.03 relation type agreement on matched positives; ~100B annotation tokens reported.",
+      "evidence_class": "REPORTED",
+      "sources": [
+        "https://aclanthology.org/2026.emnlp-main.2512.pdf"
+      ],
+      "code_references": [],
+      "limitations": "Small gold set; actual dataset and weights not verified (repository 404).",
+      "relevance": "Use independent labels and uncertainty, not silver-only acceptance.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F008",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "CausalChapter intervenes on past titles only",
+      "description": "Historical near+semantic pool, shared generated reference, teacher-forced target logits, directional KL mean and top-k; current visual input held fixed.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/generate/retrieval/kl_support_retriever.py#L144-L325"
+      ],
+      "code_references": [
+        "https://github.com/kong-johnny/CausalChapter/blob/f0b857a9d986ef8af4aa8b57dda7d3cbf2fd6d23/generate/retrieval/kl_support_retriever.py#L144-L325"
+      ],
+      "limitations": "Located release candidate not authenticated author ownership; weights not run.",
+      "relevance": "Adapt intervention; include future raw evidence and dependency groups.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F009",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Keystone reference validation is structural",
+      "description": "SCAN evidence current+last 12 leads; DECIDE range requests and subset checks; no typed edge or semantic entailment validation; containing_span expands across cited evidence and overlap.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/director/semantic.py#L178-L334",
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/director/selection.py#L24-L87",
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/editorial_selection.py#L53-L154"
+      ],
+      "code_references": [
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/director/semantic.py#L178-L334",
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/director/selection.py#L24-L87",
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/editorial_selection.py#L53-L154"
+      ],
+      "limitations": "Static audit of pinned head, not end-to-end runtime test.",
+      "relevance": "Sidecar relation and viewer-necessity separate from rendering.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F010",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "MAVEN-ERE enumerates ordered event pairs",
+      "description": "n(n-1) labels, pair scorer, cross entropy ignore -100; official evaluation micro F1 on positive labels.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/THU-KEG/MAVEN-ERE/blob/ac81a9711a69f43f55bfbc50b3bb573fd11c64b0/causal/src/data.py#L62-L79",
+        "https://github.com/THU-KEG/MAVEN-ERE/blob/ac81a9711a69f43f55bfbc50b3bb573fd11c64b0/utils/model.py#L61-L95",
+        "https://github.com/THU-KEG/MAVEN-ERE/blob/ac81a9711a69f43f55bfbc50b3bb573fd11c64b0/causal/main.py#L136-L162",
+        "https://github.com/THU-KEG/MAVEN-ERE/blob/ac81a9711a69f43f55bfbc50b3bb573fd11c64b0/evaluate.py#L249-L300"
+      ],
+      "code_references": [
+        "https://github.com/THU-KEG/MAVEN-ERE/blob/ac81a9711a69f43f55bfbc50b3bb573fd11c64b0/causal/src/data.py#L62-L79",
+        "https://github.com/THU-KEG/MAVEN-ERE/blob/ac81a9711a69f43f55bfbc50b3bb573fd11c64b0/utils/model.py#L61-L95",
+        "https://github.com/THU-KEG/MAVEN-ERE/blob/ac81a9711a69f43f55bfbc50b3bb573fd11c64b0/causal/main.py#L136-L162",
+        "https://github.com/THU-KEG/MAVEN-ERE/blob/ac81a9711a69f43f55bfbc50b3bb573fd11c64b0/evaluate.py#L249-L300"
+      ],
+      "limitations": "Gold event spans and text-domain conditions differ from VOD discovery.",
+      "relevance": "Pair verifier baseline, not whole-stream exhaustive model.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F011",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Dialogue parser generation and structured encoding alternatives",
+      "description": "Seq2Seq-DDP serializes discourse graphs, masks padding in target, Seq2SeqTrainer and generation; SSA encodes prior graph relations with supervised link/relation policies.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/chuyuanli/Seq2Seq-DDP/blob/92785a95d3b2b42575cd097c55527329bee920ab/dataprocess.py#L9-L132",
+        "https://github.com/chuyuanli/Seq2Seq-DDP/blob/92785a95d3b2b42575cd097c55527329bee920ab/train.py#L23-L35",
+        "https://github.com/chuyuanli/Seq2Seq-DDP/blob/92785a95d3b2b42575cd097c55527329bee920ab/train.py#L108-L155",
+        "https://github.com/chuyuanli/Seq2Seq-DDP/blob/92785a95d3b2b42575cd097c55527329bee920ab/train.py#L231-L277",
+        "https://github.com/shizhouxing/DialogueDiscourseParsing/blob/dee2b5402e6ec0f04b0b3c43ff0050fecf582102/Model.py#L283-L360",
+        "https://github.com/shizhouxing/DialogueDiscourseParsing/blob/dee2b5402e6ec0f04b0b3c43ff0050fecf582102/Agent.py#L112-L121"
+      ],
+      "code_references": [
+        "https://github.com/chuyuanli/Seq2Seq-DDP/blob/92785a95d3b2b42575cd097c55527329bee920ab/dataprocess.py#L9-L132",
+        "https://github.com/chuyuanli/Seq2Seq-DDP/blob/92785a95d3b2b42575cd097c55527329bee920ab/train.py#L23-L35",
+        "https://github.com/chuyuanli/Seq2Seq-DDP/blob/92785a95d3b2b42575cd097c55527329bee920ab/train.py#L108-L155",
+        "https://github.com/chuyuanli/Seq2Seq-DDP/blob/92785a95d3b2b42575cd097c55527329bee920ab/train.py#L231-L277",
+        "https://github.com/shizhouxing/DialogueDiscourseParsing/blob/dee2b5402e6ec0f04b0b3c43ff0050fecf582102/Model.py#L283-L360",
+        "https://github.com/shizhouxing/DialogueDiscourseParsing/blob/dee2b5402e6ec0f04b0b3c43ff0050fecf582102/Agent.py#L112-L121"
+      ],
+      "limitations": "Static excerpt trace; generation parsing and full SSA training not completely traced.",
+      "relevance": "Compare constrained JSON generation vs structured pair link classifier.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F012",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Sarcasm and emotion cause are distinct supervised tasks",
+      "description": "MUStARD SVM uses context features optionally, RBF classification; RECCON classification and extractive QA evaluation exposes context toggle.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        "https://github.com/soujanyaporia/MUStARD/blob/b34b5134beeec42a36cdac79330637de9cc9894e/train_svm.py#L26-L120",
+        "https://github.com/soujanyaporia/MUStARD/blob/b34b5134beeec42a36cdac79330637de9cc9894e/data_loader.py#L133-L160",
+        "https://github.com/declare-lab/RECCON/blob/579ea8a726f6705f7a3a02f7535b8f5595ec35aa/eval_classification.py#L14-L58",
+        "https://github.com/declare-lab/RECCON/blob/579ea8a726f6705f7a3a02f7535b8f5595ec35aa/eval_qa.py#L120-L175"
+      ],
+      "code_references": [
+        "https://github.com/soujanyaporia/MUStARD/blob/b34b5134beeec42a36cdac79330637de9cc9894e/train_svm.py#L26-L120",
+        "https://github.com/soujanyaporia/MUStARD/blob/b34b5134beeec42a36cdac79330637de9cc9894e/data_loader.py#L133-L160",
+        "https://github.com/declare-lab/RECCON/blob/579ea8a726f6705f7a3a02f7535b8f5595ec35aa/eval_classification.py#L14-L58",
+        "https://github.com/declare-lab/RECCON/blob/579ea8a726f6705f7a3a02f7535b8f5595ec35aa/eval_qa.py#L120-L175"
+      ],
+      "limitations": "No weights, training or footage access; RECCON training trace incomplete.",
+      "relevance": "Context ablation and cause-span supervision without assuming internal emotion.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F013",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Grouped removal identifies redundant alternatives in oracle probe",
+      "description": "Six synthetic cases executed; redundant and mixed alternatives have no singleton necessity but nonempty minimal removal sets; unsupported case never closes. This is a logical mechanics demonstration.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/tree/research/cc-c02-k-kr03-a03-v0.1.0/research/C02/K/KR03-A03-NarrativeLab/S08-experimental-protocol"
+      ],
+      "code_references": [],
+      "limitations": "Same author defines fixture and oracle; tautological, not model accuracy, no independent annotation.",
+      "relevance": "Use minimal hitting sets and bounded group ablation.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR03-F014",
+      "task_id": "KR03",
+      "agent_id": "A03",
+      "substage": "S07",
+      "version": "v0.2.0",
+      "title": "Candidate-specific typed graph with distinct closure channels",
+      "description": "Propose retrieval union, typed hypothesis, independent verifier, alternate support groups, interpretation vs viewer closure and abstention.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/research_interfaces.py#L24-L71"
+      ],
+      "code_references": [
+        "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/research_interfaces.py#L24-L71"
+      ],
+      "limitations": "Unvalidated; needs creator-disjoint benchmark.",
+      "relevance": "Keep narrative sidecar out of production until acceptance.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR04",
+        "KR05",
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
     }
   ]
 }

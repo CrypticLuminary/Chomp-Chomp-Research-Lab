@@ -1,0 +1,104 @@
+{
+  "experiment_id": "CC-C02-K-KR03-A03-E001-v0.2.0",
+  "runtime": "JavaScript V8 tool isolate",
+  "actual_execution": true,
+  "fixture_type": "hand-authored synthetic logical oracle, no NLP model",
+  "results": [
+    {
+      "id": "redundant",
+      "full": true,
+      "individual_necessary": [],
+      "minimal_removal_groups": [
+        [
+          "a",
+          "b"
+        ]
+      ],
+      "negative_control_preserved": true,
+      "restoration": true
+    },
+    {
+      "id": "joint",
+      "full": true,
+      "individual_necessary": [
+        "a",
+        "b"
+      ],
+      "minimal_removal_groups": [
+        [
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ],
+      "negative_control_preserved": true,
+      "restoration": true
+    },
+    {
+      "id": "mixed",
+      "full": true,
+      "individual_necessary": [],
+      "minimal_removal_groups": [
+        [
+          "a",
+          "c"
+        ],
+        [
+          "b",
+          "c"
+        ],
+        [
+          "a",
+          "d"
+        ],
+        [
+          "b",
+          "d"
+        ]
+      ],
+      "negative_control_preserved": true,
+      "restoration": true
+    },
+    {
+      "id": "shared",
+      "full": true,
+      "individual_necessary": [
+        "a"
+      ],
+      "minimal_removal_groups": [
+        [
+          "a"
+        ],
+        [
+          "b",
+          "c"
+        ]
+      ],
+      "negative_control_preserved": true,
+      "restoration": true
+    },
+    {
+      "id": "single",
+      "full": true,
+      "individual_necessary": [
+        "a"
+      ],
+      "minimal_removal_groups": [
+        [
+          "a"
+        ]
+      ],
+      "negative_control_preserved": true,
+      "restoration": true
+    },
+    {
+      "id": "no_support",
+      "full": false,
+      "individual_necessary": [],
+      "minimal_removal_groups": [],
+      "negative_control_preserved": true,
+      "restoration": true
+    }
+  ]
+}

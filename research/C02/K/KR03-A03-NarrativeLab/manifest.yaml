@@ -6,7 +6,7 @@ phase: K
 task_id: KR03
 agent_id: A03
 codename: NarrativeLab
-research_version: v0.1.0
+research_version: v0.2.0
 status: in_progress
 agent_model: GPT-6.2
 execution_environment: ChatGPT connector-based GitHub reads and writes, web search; no local checkout or model execution
@@ -17,7 +17,7 @@ dependencies:
   - {task: KR01, commit: 125a7bb81e13904d181701d6e55f198172cacea6, review_status: pending}
   - {task: KR02, commit: 88f6a5b7b170cff5cafb3a2d943505e45405ba11, review_status: pending}
   - {task: KR04, commit: 93a21ee0fd67d25ef8ab6b06bf0375677a40799a, review_status: pending}
-  - {task: KR05, status: pending_branch}
-  - {agent: A09, commit: 5d4b84f45241e14d31934aee1ff3b2960511022b, status: pr_metadata_verified}
+  - {task: KR05, commit: 0fbd9bb277c17f73662d55f5ebda8a951a8c9dce, status: initialized}
+  - {agent: A09, commit: 5d4b84f45241e14d31934aee1ff3b2960511022b, status: static_source_inspection}
 reviewer: A00
 review_status: pending

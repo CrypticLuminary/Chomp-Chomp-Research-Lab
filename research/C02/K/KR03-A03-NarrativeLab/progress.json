@@ -1,17 +1,26 @@
 {
   "schema_version": 1,
   "status": "in_progress",
-  "current_substage": "S00",
+  "current_substage": "S03",
   "completed_substages": [],
   "stage_status": {
-    "S00": "governance and registers verified; dependency documents partially inspected; production source review pending",
-    "S01": "draft",
-    "S02": "initial screen"
+    "S00": "governance and dependency records; full peer documents pending",
+    "S01": "draft taxonomy",
+    "S02": "expanded screening; target incomplete",
+    "S03": "static inspections; full traces incomplete",
+    "S04": "draft mathematical comparison",
+    "S05": "rights and model gaps recorded",
+    "S06": "hypothetical matrix",
+    "S07": "three proposed designs",
+    "S08": "E001 logical probe executed; no neural or human benchmark",
+    "S09": "preliminary synthesis",
+    "S10": "checkpoint handoff"
   },
   "blockers": [
-    "KR05 branch absent at initial listing",
-    "No independent annotation",
-    "Detailed upstream and production source tracing pending"
+    "NEST repository 404",
+    "commercial rights/checkpoints unresolved",
+    "independent annotations absent",
+    "full literature and source depth incomplete"
   ],
   "updated_at": "2026-11-27"
 }
