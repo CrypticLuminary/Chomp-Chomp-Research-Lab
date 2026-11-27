@@ -1,0 +1,29 @@
+{
+  "version": "v0.1.0",
+  "status": "checkpoint_not_complete",
+  "stages": {
+    "S00": "initialized",
+    "S01": "draft_record_pushed",
+    "S02": "draft_record_pushed",
+    "S03": "draft_record_pushed",
+    "S04": "draft_record_pushed",
+    "S05": "draft_record_pushed",
+    "S06": "draft_record_pushed",
+    "S07": "draft_record_pushed",
+    "S08": "draft_record_pushed",
+    "S09": "draft_record_pushed",
+    "S10": "draft_record_pushed"
+  },
+  "questions_addressed": 12,
+  "questions_empirically_resolved": 0,
+  "model_execution": false,
+  "rights_complete": false,
+  "review": "pending",
+  "next": [
+    "KR08 independent annotations",
+    "pin model revisions and rights",
+    "E001 baseline",
+    "E002 retrieval",
+    "E003 frozen heads"
+  ]
+}
