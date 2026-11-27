@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "in_progress",
+  "current_substage": "S03",
+  "completed_substages": [
+    "S00",
+    "S01"
+  ],
+  "blockers": [
+    "Independent gold and real VOD runs not yet available"
+  ],
+  "updated_at": "2026-11-27"
+}
