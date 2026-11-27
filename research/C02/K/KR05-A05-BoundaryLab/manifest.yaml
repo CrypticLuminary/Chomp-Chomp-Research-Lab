@@ -17,15 +17,15 @@ dependencies:
   - task: KR01
     commit: 125a7bb81e13904d181701d6e55f198172cacea6
     status: pending_review
-    inspection: finding_register_27_entries
+    inspection: finding_register_27_entries_and_annotation_contract_and_r01_synthesis
   - task: KR02
     commit: 88f6a5b7b170cff5cafb3a2d943505e45405ba11
     status: pending_review
-    inspection: finding_register_16_entries
+    inspection: finding_register_16_entries_and_memory_proposals
   - task: KR04
     commit: 93a21ee0fd67d25ef8ab6b06bf0375677a40799a
     status: pending_review
-    inspection: finding_register_19_entries
+    inspection: finding_register_19_entries_and_interestnet_proposal
   - task: KR03
     commit: 3b05448afa0f074e49338b20a866cae311f0bc5b
     status: pending_review
