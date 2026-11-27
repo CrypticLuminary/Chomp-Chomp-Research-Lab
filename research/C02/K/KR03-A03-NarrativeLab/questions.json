@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "questions": [
+    {
+      "question_id": "CC-C02-K-KR03-Q001",
+      "question": "How can latent event association be distinguished from a grounded semantic edge?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR03-Q002",
+      "question": "What relation labels and open descriptions are reliable on ASR?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR03-Q003",
+      "question": "How can future qualifications and distant callbacks be retrieved without quadratic pair scoring?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR03-Q004",
+      "question": "How to measure group necessity with redundant and jointly necessary evidence?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR03-Q005",
+      "question": "How to separate AI interpretation context from viewer-required context?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR03-Q006",
+      "question": "How to represent competing interpretations and unknown evidence?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR03-Q007",
+      "question": "Can sparse event models improve matched-budget performance versus lexical retrieval plus LLM verification?",
+      "status": "open"
+    },
+    {
+      "question_id": "CC-C02-K-KR03-Q008",
+      "question": "Which datasets, weights and rights support commercial transfer?",
+      "status": "open"
+    }
+  ]
+}

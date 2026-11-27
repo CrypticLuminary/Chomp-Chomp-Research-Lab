@@ -1,8 +1,2 @@
 # KR03 — NarrativeLab
-
-Agent: A03. Scope: Narrative and discourse relationships.
-Starting sources: GraphTP; NEST; argument mining.
-Branch: research/cc-c02-k-kr03-a03-v0.1.0
-Status: planned; no findings or assignment execution claimed.
-
-Initialize task-local records from templates and create stage directories as research progresses. Follow AGENTS.md and governance.
+CC-C02-K-KR03-A03-v0.2.0. Active draft PR #4. Evidence register 14 findings. GraphTP/CausalChapter/NEST, alternative source traces, Keystone audit, architecture comparison and E001 grouped dependency mechanics. S00–S10 preliminary artifacts; not review-ready. No production changes.
