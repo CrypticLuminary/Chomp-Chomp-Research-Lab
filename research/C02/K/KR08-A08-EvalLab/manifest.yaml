@@ -6,13 +6,14 @@ phase: K
 task_id: KR08
 agent_id: A08
 codename: EvalLab
-research_version: v0.1.0
-status: in_progress
+research_version: v0.2.0
+status: preliminary_review_requested
 agent_model: GPT-6.2
-execution_environment: ChatGPT tools
+execution_environment: ChatGPT GitHub connector, web, JS synthetic probes
 repository: CrypticLuminary/Chomp-Chomp-Research-Lab
 branch: research/cc-c02-k-kr08-a08-v0.1.0
 base_commit: d0dbef6583165f781f217a095f50993faad742e8
+production_reference: 5d4b84f45241e14d31934aee1ff3b2960511022b
 dependencies: [KR01, KR02, KR03, KR04, KR05, A09]
 reviewer: A00
 review_status: pending

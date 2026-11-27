@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "status": "proposed",
+  "experiments": [
+    {
+      "id": "E01",
+      "name": "Fixed windows vs semantic segmentation",
+      "input": "Full source, canonical ASR and audio, hidden atomic/chapter annotations",
+      "arms": "A fixed windows (use pinned Director window/stride), B semantic units; C oracle segmentation diagnostic",
+      "output": "Unit spans, proposal roster and inspected coverage",
+      "metrics": "Boundary P/R/F1, complete-thought rating, recall@K and union footage, downstream approved yield",
+      "gate": "Segmentation gain must improve downstream recall/yield or efficiency, not only boundary F1; no loss of quiet/silent recall",
+      "ablations": "Remove hierarchy; fixed-length matched windows; lexical change-point"
+    },
+    {
+      "id": "E02",
+      "name": "Nearby vs global context",
+      "input": "Same anchor and initial IDs, frozen index, hidden evidence/needs",
+      "arms": "Local ± window vs flat BM25/dense/RRF global; hierarchy/graph separately; oracle evidence diagnostic",
+      "output": "Read evidence IDs, retrieved intervals and conclusion",
+      "metrics": "Need closure, essential evidence recall, false citations, unnecessary retrieval, latency/cost",
+      "gate": "Improve closure at matched calls/tokens/read footage with no worse faithfulness",
+      "ablations": "No reranking; no hierarchy; raw rescue; no graph"
+    },
+    {
+      "id": "E03",
+      "name": "Supplied vs autonomous investigation",
+      "input": "Same candidate and initial observed IDs, hidden needs and queries",
+      "arms": "Gold-query oracle upper-bound, autonomous one-shot, autonomous iterative; same backend",
+      "output": "Generated needs, query history, read IDs, stop reason",
+      "metrics": "Need F1, closure, query rubric, early stop, false stop, no-support correct stop, cost",
+      "gate": "Autonomous beats local/no-investigation, oracle gap documented; no gold leaks",
+      "ablations": "No need detector; no follow-up; no stop rule"
+    },
+    {
+      "id": "E04",
+      "name": "Heuristics vs semantic interest",
+      "input": "Fixed common candidate roster; all outputs unseen by initial annotators",
+      "arms": "Audio/chat heuristic, transcript semantic, speech/audio fusion, optionally replay-pretrained",
+      "output": "Rank scores, selected up to 3, calibrated probabilities if supported",
+      "metrics": "Human pair preference, AP of independent interestingness, approved distinct yield, quiet slices, negative FP",
+      "gate": "Improve paired preference/yield without hard-gate regression; no fixed category whitelist",
+      "ablations": "Text-only, audio-only, chat missing, remove replay model"
+    },
+    {
+      "id": "E05",
+      "name": "Implicit vs verified narrative",
+      "input": "Same anchors and retrieval evidence budget; independent edge gold",
+      "arms": "Implicit reasoning, typed relations verified; oracle node/edge diagnostic",
+      "output": "Directed edge list, support IDs, relation confidence, closure groups",
+      "metrics": "Typed edge macro/micro F1 incl negatives; essential relation recall; removal/restoration, faithfulness",
+      "gate": "Gain on remote dependencies and qualification without higher unsupported claim rate",
+      "ablations": "Remove edge verification; no long-range edges; proximity-only"
+    },
+    {
+      "id": "E06",
+      "name": "Fixed padding vs contextual closure",
+      "input": "Same candidate anchors, source, campaign, allowed durations",
+      "arms": "Pinned baseline padding vs evidence closure; oracle dependencies diagnostic",
+      "output": "Proposed and snapped intervals, required group coverage, rejected reason",
+      "metrics": "Paired-region validity, closure, interval-specific human faithfulness, duration/excess, technical cuts",
+      "gate": "Improved valid faithful intervals; no qualification omissions; no more forced clips",
+      "ablations": "No conditional groups; no snap recheck; no alternative pair search"
+    },
+    {
+      "id": "E07",
+      "name": "Heuristic vs semantic multimodal discovery",
+      "input": "Same full VOD, synchronized available modalities; visual frames sampled with frozen policy",
+      "arms": "Audio/motion heuristic, speech semantic, visual semantic, budget-balanced lane fusion",
+      "output": "Lane provenance, excluded lanes, candidate ranks, frame/time logs",
+      "metrics": "Open event recall at K and footage budget, silent/quiet recall, missing-modality coverage, cost",
+      "gate": "Improve discovery in neglected slices without sacrificing overall yield or violating budget",
+      "ablations": "Remove visual lane; uniform vs targeted frames; no chat; no lane fairness"
+    },
+    {
+      "id": "E08",
+      "name": "Existing vs integrated",
+      "input": "Same locked roster, permissions, campaign, renderer, full source hash",
+      "arms": "Pinned Keystone A/B/C/D descriptors as available plus integrated prototype; production baseline predeclared",
+      "output": "Final 0–3 clips, full run logs and matched review packets",
+      "metrics": "Primary distinct independently approved events/assigned VOD; paired slate preferences; all safety/technical/failure/cost guards",
+      "gate": "Pilot-derived meaningful gain over baseline, no serious distortion, no coverage/budget regression; Nexus approval",
+      "ablations": "Leave one component out (segmentation/memory/autonomy/interest/relations/boundaries/visual), cumulative ladder"
+    }
+  ]
+}

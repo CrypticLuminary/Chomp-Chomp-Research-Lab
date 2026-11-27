@@ -1,4 +1,6 @@
-# v0.2.0 draft
-- Source and cross-lab audit, 12-question evaluation framework; 14 synthetic checks; no real-video or human performance results.
+# v0.2.0 substantive draft
+- Audited PR13 and five lab registers (93 findings), six external evaluator code paths and literature.
+- 14 synthetic arithmetic checks executed; no real clips evaluated.
+- Proposed versioned sidecar schema, human manual, E01–E08, 12 decision cards, implementation handoff. Preliminary Nexus review pending.
 # v0.1.0
 - Initialized task-local branch and audit.

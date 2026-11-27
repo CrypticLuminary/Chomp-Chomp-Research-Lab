@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "status": "in_progress",
-  "current_substage": "S07",
+  "status": "preliminary_review_requested",
+  "current_substage": "S10",
   "completed_substages": [
     "S00",
     "S01",
@@ -9,12 +9,19 @@
     "S03",
     "S04",
     "S05",
-    "S06"
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10"
   ],
+  "completion_scope": "draft design artifacts, not empirical or final approval",
   "blockers": [
-    "NEST code 404",
-    "No authorized gold or real-video experiments",
-    "Upstream models not executed"
+    "NEST release returned 404; LongVideoBench full evaluator not audited",
+    "No authorized pilot media, human labels, actual quality/cost comparisons",
+    "Sidecar schema/adapter not executed against production",
+    "Thresholds and sample size require pilot",
+    "External inference/checkpoint benchmarks not reproduced"
   ],
   "updated_at": "2026-11-27"
 }
