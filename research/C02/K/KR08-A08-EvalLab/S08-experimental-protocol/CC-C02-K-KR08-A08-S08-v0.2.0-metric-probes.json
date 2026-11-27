@@ -1,0 +1,103 @@
+{
+  "origin": "synthetic",
+  "method": "authored deterministic arithmetic checks; not upstream execution or real-media evidence",
+  "count": 14,
+  "results": [
+    {
+      "name": "undefined empty precision",
+      "actual": null,
+      "expected": null,
+      "pass": true
+    },
+    {
+      "name": "duplicate AP upstream arithmetic",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "name": "duplicate-safe AP",
+      "actual": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "name": "failed negative is not correct abstention",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "partial negative is not correct abstention",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "true empty",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "unknown negative",
+      "actual": null,
+      "expected": null,
+      "pass": true
+    },
+    {
+      "name": "critical qualification omitted despite IoU",
+      "actual": 0.99,
+      "expected": 0.99,
+      "pass": true
+    },
+    {
+      "name": "closure rejects omitted qualification",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "alternative explanation sufficient",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "cross-pair invalid",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "event coverage vs clip coverage",
+      "actual": [
+        1,
+        0.5
+      ],
+      "expected": [
+        1,
+        0.5
+      ],
+      "pass": true
+    },
+    {
+      "name": "missing run must stay in assigned roster",
+      "actual": 0.5,
+      "expected": 0.5,
+      "pass": true
+    },
+    {
+      "name": "unknown selected reviews bounds",
+      "actual": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "expected": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "pass": true
+    }
+  ]
+}

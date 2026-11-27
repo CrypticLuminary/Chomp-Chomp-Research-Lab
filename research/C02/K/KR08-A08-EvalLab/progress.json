@@ -1,13 +1,20 @@
 {
   "schema_version": 1,
   "status": "in_progress",
-  "current_substage": "S03",
+  "current_substage": "S07",
   "completed_substages": [
     "S00",
-    "S01"
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06"
   ],
   "blockers": [
-    "Independent gold and real VOD runs not yet available"
+    "NEST code 404",
+    "No authorized gold or real-video experiments",
+    "Upstream models not executed"
   ],
   "updated_at": "2026-11-27"
 }
