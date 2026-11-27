@@ -1,8 +1,4 @@
 # KR08 — EvalLab
-
-Agent: A08. Scope: Human preferences and evaluation.
-Starting sources: ChompBench; ClipLedger.
-Branch: research/cc-c02-k-kr08-a08-v0.1.0
-Status: planned; no findings or assignment execution claimed.
-
-Initialize task-local records from templates and create stage directories as research progresses. Follow AGENTS.md and governance.
+A08 | C02 K phase | v0.2.0 substantive draft, preliminary Nexus review requested.
+- S00–S10: assignment, 93-findings audit, source literature/code, metric contract, pilot estimates, judge protocol, manual + proposed JSON Schema, E01–E08 and 17 executed synthetic checks (14 primary + 3 follow-up), 12 decision cards, Work handoff.
+- Read S09 for decisions, S08 for experiment matrix, S10 for implementation. Human and real-media outcomes not available; no production changes or self-approval. Public repo contains no private recordings/gated data.

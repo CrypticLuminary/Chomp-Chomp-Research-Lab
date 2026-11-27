@@ -1,0 +1,38 @@
+{
+  "origin": "synthetic",
+  "note": "Authored arithmetic illustrations of inspected paths, not upstream execution; final check illustrates specified policy.",
+  "results": [
+    {
+      "name": "QV populated-prediction denominator vs assigned",
+      "value": [
+        1,
+        0.5
+      ],
+      "expected": [
+        1,
+        0.5
+      ],
+      "pass": true
+    },
+    {
+      "name": "LongVideoBench bucket count doubles unique count",
+      "value": [
+        4,
+        2,
+        0.5
+      ],
+      "expected": [
+        4,
+        2,
+        0.5
+      ],
+      "pass": true
+    },
+    {
+      "name": "invalid response explicit failure has no guessed credit",
+      "value": 0,
+      "expected": 0,
+      "pass": true
+    }
+  ]
+}

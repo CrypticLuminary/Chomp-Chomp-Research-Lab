@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "findings": [
+    {
+      "finding_id": "CC-C02-K-KR08-F001",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S01",
+      "version": "v0.2.0",
+      "title": "93 registered findings across five peer labs",
+      "description": "Registers: KR01 27, KR02 16, KR03 14, KR04 19, KR05 17; S01 records five PR heads.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/pull/1",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Registers: KR01 27, KR02 16, KR03 14, KR04 19, KR05 17; S01 records five PR heads."
+      ],
+      "limitations": "Pending draft registers; not independently approved.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F002",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Keystone temporal coverage differs from contextual truth",
+      "description": "REV02; human completeness unavailable without reviews.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/docs/cycle2/review-corrections.md",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "REV02; human completeness unavailable without reviews."
+      ],
+      "limitations": "Production tests reported by PR, not rerun.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F003",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Legacy annotation cannot represent all valid paired boundaries",
+      "description": "Single essential interval and independent edge ranges.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/examples/chompbench/source-events.schema.json",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Single essential interval and independent edge ranges."
+      ],
+      "limitations": "Some events are representable; use additive sidecar.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F004",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "ClipLedger selected-only and determinate precision",
+      "description": "Unknown reviews gate top-slot precision, interesting_rate is good/bad approval.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/evaluation/core.py#L298-L395",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Unknown reviews gate top-slot precision, interesting_rate is good/bad approval."
+      ],
+      "limitations": "Not open discovery recall.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F005",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Existing experiment matcher validates declared budgets",
+      "description": "A/B/C/D, equal known fields, annotation digest.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/5d4b84f45241e14d31934aee1ff3b2960511022b/chomp/evaluation/experiments.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "A/B/C/D, equal known fields, annotation digest."
+      ],
+      "limitations": "Actual tokens/frame/retrieval/cold costs not fully matched.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F006",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Rhapsody excludes negative ground truth by default",
+      "description": "Default skip empty GT.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/evaluate.py#L21-L49",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Default skip empty GT."
+      ],
+      "limitations": "Intentional benchmark convention, not universal defect.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F007",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Rhapsody duplicate AP and zip truncation risks",
+      "description": "AP credits repeated hits; zip truncates unequal lengths.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/metrics.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "AP credits repeated hits; zip truncates unequal lengths."
+      ],
+      "limitations": "No actual upstream model outputs audited.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F008",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Moment-DETR matching and query population",
+      "description": "eval blob 786f8262cb36817f20225c1eaba244386028ce9f; default set match, optional intersection; Hit@1 any worker.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/standalone_eval/eval.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "eval blob 786f8262cb36817f20225c1eaba244386028ce9f; default set match, optional intersection; Hit@1 any worker."
+      ],
+      "limitations": "Pinned commit verified; not upstream execution. Missing or empty windows need explicit policy.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F009",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "Chapter-Llama prediction-key denominator",
+      "description": "vid_ids from pred_keys; average thresholds.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/tools/results/metrics_overlap.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "vid_ids from pred_keys; average thresholds."
+      ],
+      "limitations": "Wrapper might fill missing rows; no claim of published bias.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F010",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "LongVidSearch answer correctness not evidence F1",
+      "description": "FINAL_ANSWER evidence F1 commented; three judges and cost.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/yrywill/LongVidSearch/blob/4aa5620e06ca1bc5cc7cfce2b3e3ed0a5ae82d4e/tools.py#L290-L419",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "FINAL_ANSWER evidence F1 commented; three judges and cost."
+      ],
+      "limitations": "Partial code audit, not full benchmark reproduction.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F011",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "PullQuote per-article AUC",
+      "description": "Binary inclusions; per article ROC AUC macro.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/tannerbohn/AutomaticPullQuoteSelection/blob/74d33a4407ce436a46d33ed8b5e66421168a534c/utils/Evaluator.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Binary inclusions; per article ROC AUC macro."
+      ],
+      "limitations": "No one-class guard in function; not top-three utility.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F012",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "FastChat order-swapped judges",
+      "description": "Two orders, explicit verdict and logs.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/common.py#L313-L359",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Two orders, explicit verdict and logs."
+      ],
+      "limitations": "Text benchmark, not clip-quality calibration.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F013",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S02",
+      "version": "v0.2.0",
+      "title": "NEST difficult grounded event discovery",
+      "description": "Authors report ETD<8%, EL<6%, EAE<11% best zero-shot main subsets.",
+      "evidence_class": "REPORTED",
+      "sources": [
+        {
+          "url": "https://aclanthology.org/2026.emnlp-main.2512/",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Authors report ETD<8%, EL<6%, EAE<11% best zero-shot main subsets."
+      ],
+      "limitations": "Movie domain; source repository 404, not reproduced.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F014",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S02",
+      "version": "v0.2.0",
+      "title": "Replay supervision not human editorial gold",
+      "description": "13K podcasts replay-derived; adapt for weak labels.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://proceedings.colm.cc/paper_files/paper/2025/hash/24fd58f52ff8d0496add8da3991644e9-Abstract-Conference.html",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "13K podcasts replay-derived; adapt for weak labels."
+      ],
+      "limitations": "Human transfer unknown.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F015",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "14 synthetic metric edge probes passed",
+      "description": "Executed authored JS arithmetic checks: duplicate AP=2, safe AP=1; .99 IoU missing qualification; negative/failure and pair checks.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/4c3e818a769e2b5751f7cae0a515c16c96746153/research/C02/K/KR08-A08-EvalLab/S08-experimental-protocol/CC-C02-K-KR08-A08-S08-v0.2.0-metric-probes.json",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Executed authored JS arithmetic checks: duplicate AP=2, safe AP=1; .99 IoU missing qualification; negative/failure and pair checks."
+      ],
+      "limitations": "Not upstream execution, human review or model accuracy.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F016",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S07",
+      "version": "v0.2.0",
+      "title": "Conditional alternative evidence and paired regions",
+      "description": "Sidecar + manual; separate model/scorer inputs.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/tree/research/cc-c02-k-kr08-a08-v0.1.0/research/C02/K/KR08-A08-EvalLab/S07-transfer-design",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Sidecar + manual; separate model/scorer inputs."
+      ],
+      "limitations": "Schema not run against production; proposal only.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F017",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S05",
+      "version": "v0.2.0",
+      "title": "Four-VOD pilot and reviewer effort",
+      "description": "~28–40 hours; expand to 12 VODs; split creator-disjoint.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/4c3e818a769e2b5751f7cae0a515c16c96746153/research/C02/K/KR08-A08-EvalLab/S05-dataset-model-feasibility/CC-C02-K-KR08-A08-S05-v0.2.0-pilot-plan.md",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "~28–40 hours; expand to 12 VODs; split creator-disjoint."
+      ],
+      "limitations": "Estimated, actual rates/variance unknown.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F018",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Assigned-roster distinct approved yield primary",
+      "description": "E08 unique approved events per assigned VOD; strict negatives and cost guards.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/4c3e818a769e2b5751f7cae0a515c16c96746153/research/C02/K/KR08-A08-EvalLab/S04-method-reconstruction/CC-C02-K-KR08-A08-S04-v0.2.0-metrics.md",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "E08 unique approved events per assigned VOD; strict negatives and cost guards."
+      ],
+      "limitations": "Margins must be frozen after pilot.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F019",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S06",
+      "version": "v0.2.0",
+      "title": "AI judge triage not final authority",
+      "description": "Calibrate swapped pairs, source comparison and human escalation.",
+      "evidence_class": "PROPOSED",
+      "sources": [
+        {
+          "url": "https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Calibrate swapped pairs, source comparison and human escalation."
+      ],
+      "limitations": "No judge inference executed.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F020",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "NEST implementation access blocked",
+      "description": "Connector returned 404 for README; search did not locate alternate release.",
+      "evidence_class": "OPEN",
+      "sources": [
+        {
+          "url": "https://github.com/aliasgerovs/nest",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Connector returned 404 for README; search did not locate alternate release."
+      ],
+      "limitations": "Could be renamed/private/unavailable; avoid claim no code exists.",
+      "relevance": "Evaluation and production integration evidence; see stage file for exact protocol.",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F021",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "QVHighlights empty prediction and array length handling",
+      "description": "AP iterates populated prediction keys; empty windows may omit query; R@1 indexes first prediction; saliency arrays padded/truncated.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/jayleicn/moment_detr/blob/b7e553ac3b0c898ee6b85e03ee507c064eab89ca/standalone_eval/eval.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "AP iterates populated prediction keys; empty windows may omit query; R@1 indexes first prediction; saliency arrays padded/truncated."
+      ],
+      "limitations": "Static code only; no claim published model omitted queries.",
+      "relevance": "Validate exact assigned roster and invalid responses; namespace slices.",
+      "related_tasks": [
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F022",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S03",
+      "version": "v0.2.0",
+      "title": "LongVideoBench random fallback and slice double count",
+      "description": "Malformed MCQ may receive random answer; aggregation sums duration and question-category buckets, doubling nominal count when disjoint; weighted accuracy unchanged under equal multiplicity.",
+      "evidence_class": "SOURCE",
+      "sources": [
+        {
+          "url": "https://github.com/EvolvingLMMs-Lab/lmms-eval/blob/9134731f4f617e62ee80bcae9d0d5d9695ea55ef/lmms_eval/tasks/longvideobench/utils.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Malformed MCQ may receive random answer; aggregation sums duration and question-category buckets, doubling nominal count when disjoint; weighted accuracy unchanged under equal multiplicity."
+      ],
+      "limitations": "Task-level scorer only; full harness roster not traced.",
+      "relevance": "Validate exact assigned roster and invalid responses; namespace slices.",
+      "related_tasks": [
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    },
+    {
+      "finding_id": "CC-C02-K-KR08-F023",
+      "task_id": "KR08",
+      "agent_id": "A08",
+      "substage": "S08",
+      "version": "v0.2.0",
+      "title": "Two arithmetic follow-up probes plus failure-policy illustration",
+      "description": "Executed 3 synthetic checks: assigned vs populated AP 0.5 vs 1, slice count 4 vs 2 with same 0.5 accuracy, explicit invalid failure policy.",
+      "evidence_class": "REPRODUCED",
+      "sources": [
+        {
+          "url": "https://github.com/EvolvingLMMs-Lab/lmms-eval/blob/9134731f4f617e62ee80bcae9d0d5d9695ea55ef/lmms_eval/tasks/longvideobench/utils.py",
+          "accessed_at": "2026-11-27"
+        }
+      ],
+      "code_references": [
+        "Executed 3 synthetic checks: assigned vs populated AP 0.5 vs 1, slice count 4 vs 2 with same 0.5 accuracy, explicit invalid failure policy."
+      ],
+      "limitations": "Authored arithmetic not upstream execution; final policy check tautological.",
+      "relevance": "Validate exact assigned roster and invalid responses; namespace slices.",
+      "related_tasks": [
+        "KR08",
+        "A09"
+      ],
+      "review_status": "pending",
+      "created_at": "2026-11-27",
+      "updated_at": "2026-11-27"
+    }
+  ]
+}
