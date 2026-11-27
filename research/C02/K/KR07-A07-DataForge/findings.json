@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "findings": [
+    {
+      "id": "CC-C02-K-KR07-F001",
+      "evidence": "SOURCE",
+      "claim": "Keystone has provider/evidence interfaces, 115/4/1 default call allocation and no production non-dialogue acceptance.",
+      "source_url": "https://github.com/CrypticLuminary/AI_Clipper-Chomp-Chomp-/blob/work/cycle2-keystone/docs/cycle2/research-integration-contract.md",
+      "version": "blob 1a36217f4adecfbdc8fe73ecc6abcc5cb7b8ab82; branch ref",
+      "limitations": "No runtime tests here",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR02",
+        "KR06",
+        "KR08"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F002",
+      "evidence": "SOURCE",
+      "claim": "Rhapsody public card gated; 65.8GB total file size; no actual schema read.",
+      "source_url": "https://huggingface.co/datasets/yhpark/rhapsody",
+      "version": "2026-11-27 public metadata",
+      "limitations": "No authenticated dataset inspection",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR04"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F003",
+      "evidence": "REPORTED",
+      "claim": "Rhapsody HuBERT model F1 .197, precision .266 on 2467 positive test episodes.",
+      "source_url": "https://arxiv.org/html/2505.19429v2",
+      "version": "2025-09-07 Table 2",
+      "limitations": "Replay proxy; not human editorial metric",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR04",
+        "KR08"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F004",
+      "evidence": "SOURCE",
+      "claim": "Rhapsody full loader, segment marker truncation without alignment guard and exclusion of empty validation episodes.",
+      "source_url": "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/ft_llm/train.py",
+      "version": "be7998ed15422707385fa94f494dd65560ff489b",
+      "limitations": "Static audit, failure not reproduced",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR04"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F005",
+      "evidence": "SOURCE",
+      "claim": "Paper appendix HuBERT dimension 512 vs code 768; need actual schema.",
+      "source_url": "https://github.com/younghanstark/rhapsody/blob/be7998ed15422707385fa94f494dd65560ff489b/methods/ft_llm.py",
+      "version": "be7998ed15422707385fa94f494dd65560ff489b; paper v2 B.2",
+      "limitations": "No gated data access",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR04"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F006",
+      "evidence": "SOURCE",
+      "claim": "Chapter-Llama training 16K, LoRA r8 FSDP bf16, caption+ASR textual interleave.",
+      "source_url": "https://github.com/lucas-ventura/chapter-llama/blob/d19a77efcf583f63771de052267fdeea016510e9/configs/model/llama3.1_8B.yaml",
+      "version": "d19a77efcf583f63771de052267fdeea016510e9",
+      "limitations": "No weights run; captioner rights unresolved",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR01"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F007",
+      "evidence": "SOURCE",
+      "claim": "ActionFormer valid-mask focal classification and positive-only DIoU regression.",
+      "source_url": "https://github.com/happyharrycn/actionformer_release/blob/61ea7eb9308a568b0cf45e3804830836e30061de/libs/modeling/meta_archs.py#L534-L598",
+      "version": "61ea7eb9308a568b0cf45e3804830836e30061de",
+      "limitations": "Action labels not closure",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR05"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F008",
+      "evidence": "SOURCE",
+      "claim": "TRL pairwise reward loss supports lightweight scalar ranking adaptation.",
+      "source_url": "https://github.com/huggingface/trl/blob/main/trl/trainer/reward_trainer.py",
+      "version": "blob a166b383bc6a92f166d49d15fe758d09bd187d7d",
+      "limitations": "Commit unresolved; no training",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR04",
+        "KR08"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F009",
+      "evidence": "SOURCE",
+      "claim": "MiniLM 22.7M Apache-2.0 metadata; multilingual E5 117.7M MIT metadata; public cards.",
+      "source_url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+      "version": "2026-11-27 Hub metadata; E5 https://huggingface.co/intfloat/multilingual-e5-small",
+      "limitations": "Weight SHA and actual license not pinned",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR01",
+        "KR02"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F010",
+      "evidence": "PROPOSED",
+      "claim": "Hybrid frozen encoders and task heads with selective reasoning; 401 parameter logistic baseline.",
+      "source_url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/tree/research/cc-c02-k-kr07-a07-v0.1.0/research/C02/K/KR07-A07-DataForge",
+      "version": "S04",
+      "limitations": "No learned quality measurement",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR01",
+        "KR02",
+        "KR03",
+        "KR04",
+        "KR05",
+        "KR06",
+        "KR08"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F011",
+      "evidence": "REPRODUCED",
+      "claim": "Independent synthetic replay threshold rule and head arithmetic sanity checks; not upstream model execution.",
+      "source_url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/blob/addc1462628dffa7f386c6d74d217e426e48c027/research/C02/K/KR07-A07-DataForge/S08-experimental-protocol/CC-C02-K-KR07-A07-S08-v0.1.0-work-experiment-specs.md",
+      "version": "2026-11-27 Python arithmetic",
+      "limitations": "No inference, no real data",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR04",
+        "KR08"
+      ]
+    },
+    {
+      "id": "CC-C02-K-KR07-F012",
+      "evidence": "OPEN",
+      "claim": "Rights and exact revisions, actual gated schema, hardware and real VOD annotation remain blocking.",
+      "source_url": "https://github.com/CrypticLuminary/Chomp-Chomp-Research-Lab/tree/research/cc-c02-k-kr07-a07-v0.1.0/research/C02/K/KR07-A07-DataForge/S05-dataset-model-feasibility",
+      "version": "2026-11-27 S05 ledger",
+      "limitations": "No clearance or self approval",
+      "applicability": "Chomp-Chomp research, shadow only",
+      "review_status": "pending",
+      "related_tasks": [
+        "KR08"
+      ]
+    }
+  ]
+}
