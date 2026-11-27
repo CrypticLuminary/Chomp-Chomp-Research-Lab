@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "preliminary",
+  "current_substage": "S01",
+  "completed_substages": [
+    "S00"
+  ],
+  "blockers": [
+    "Independent authorized VOD annotations and model runtime tests pending"
+  ],
+  "updated_at": "2026-11-27"
+}
